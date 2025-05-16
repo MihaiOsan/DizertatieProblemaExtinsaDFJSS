@@ -1,0 +1,564 @@
+
+=== Individual 1 (Rank in HoF) ===
+Training_Fitness: 3924.6648
+Original_Size: 12, Original_Depth: 5
+Original_Tree (string): mul(PT, max(neg(sub(sub(TQ, SLK), DD)), add(MW, PT)))
+Simplified_Size: 11, Simplified_Depth: 4
+Simplified_Formula (infix): PT * (max(TQ - SLK - DD, MW + PT))
+Simplified_Tree: 
+└─ mul
+   ├─ PT
+   └─ max
+      ├─ sub
+      │  ├─ sub
+      │  │  ├─ TQ
+      │  │  └─ SLK
+      │  └─ DD
+      └─ add
+         ├─ MW
+         └─ PT
+
+Instance Results:
+  test_flex_break_0_util0.75_ec0.08_nm10_v0.json: MS=5977.00, TWT=4073.00, IdleAvg=1962.50, WaitAvg=242.50, EvalTime=0.025s
+  test_flex_break_10_util0.95_ec0.15_nm13_v0.json: MS=4036.00, TWT=5095.00, IdleAvg=1101.54, WaitAvg=293.07, EvalTime=0.024s
+  test_flex_break_11_util0.95_ec0.15_nm16_v0.json: MS=3086.00, TWT=9767.00, IdleAvg=795.62, WaitAvg=385.60, EvalTime=0.027s
+  test_flex_break_12_util0.75_ec0.08_nm10_v1.json: MS=5947.00, TWT=3347.00, IdleAvg=1806.30, WaitAvg=252.32, EvalTime=0.024s
+  test_flex_break_13_util0.75_ec0.08_nm13_v1.json: MS=4727.00, TWT=5602.00, IdleAvg=1531.85, WaitAvg=210.53, EvalTime=0.027s
+  test_flex_break_14_util0.75_ec0.08_nm16_v1.json: MS=3799.00, TWT=4232.00, IdleAvg=1259.06, WaitAvg=223.13, EvalTime=0.030s
+  test_flex_break_15_util0.75_ec0.15_nm10_v1.json: MS=5915.00, TWT=1385.00, IdleAvg=1831.40, WaitAvg=162.67, EvalTime=0.024s
+  test_flex_break_16_util0.75_ec0.15_nm13_v1.json: MS=4110.00, TWT=10434.00, IdleAvg=1236.08, WaitAvg=351.75, EvalTime=0.027s
+  test_flex_break_17_util0.75_ec0.15_nm16_v1.json: MS=3584.00, TWT=4337.00, IdleAvg=986.44, WaitAvg=248.12, EvalTime=0.028s
+  test_flex_break_18_util0.95_ec0.08_nm10_v1.json: MS=4444.00, TWT=47333.00, IdleAvg=921.50, WaitAvg=684.57, EvalTime=0.028s
+  test_flex_break_19_util0.95_ec0.08_nm13_v1.json: MS=3868.00, TWT=2740.00, IdleAvg=1011.54, WaitAvg=272.82, EvalTime=0.023s
+  test_flex_break_1_util0.75_ec0.08_nm13_v0.json: MS=4499.00, TWT=2868.00, IdleAvg=1375.85, WaitAvg=207.34, EvalTime=0.025s
+  test_flex_break_20_util0.95_ec0.08_nm16_v1.json: MS=3447.00, TWT=5512.00, IdleAvg=1081.88, WaitAvg=250.77, EvalTime=0.027s
+  test_flex_break_21_util0.95_ec0.15_nm10_v1.json: MS=4878.00, TWT=7386.00, IdleAvg=1183.40, WaitAvg=347.59, EvalTime=0.022s
+  test_flex_break_22_util0.95_ec0.15_nm13_v1.json: MS=3646.00, TWT=13072.00, IdleAvg=921.15, WaitAvg=383.42, EvalTime=0.024s
+  test_flex_break_23_util0.95_ec0.15_nm16_v1.json: MS=3183.00, TWT=3926.00, IdleAvg=872.12, WaitAvg=276.90, EvalTime=0.024s
+  test_flex_break_2_util0.75_ec0.08_nm16_v0.json: MS=3670.00, TWT=5278.00, IdleAvg=1123.50, WaitAvg=267.44, EvalTime=0.030s
+  test_flex_break_3_util0.75_ec0.15_nm10_v0.json: MS=5428.00, TWT=5105.00, IdleAvg=1596.30, WaitAvg=291.92, EvalTime=0.023s
+  test_flex_break_4_util0.75_ec0.15_nm13_v0.json: MS=4552.00, TWT=4516.00, IdleAvg=1435.08, WaitAvg=201.70, EvalTime=0.025s
+  test_flex_break_5_util0.75_ec0.15_nm16_v0.json: MS=3533.00, TWT=5945.00, IdleAvg=1065.19, WaitAvg=250.10, EvalTime=0.027s
+  test_flex_break_6_util0.95_ec0.08_nm10_v0.json: MS=4494.00, TWT=21262.00, IdleAvg=1061.30, WaitAvg=448.92, EvalTime=0.022s
+  test_flex_break_7_util0.95_ec0.08_nm13_v0.json: MS=4051.00, TWT=5487.00, IdleAvg=1109.00, WaitAvg=233.47, EvalTime=0.023s
+  test_flex_break_8_util0.95_ec0.08_nm16_v0.json: MS=3369.00, TWT=5562.00, IdleAvg=996.81, WaitAvg=281.11, EvalTime=0.026s
+  test_flex_break_9_util0.95_ec0.15_nm10_v0.json: MS=5346.00, TWT=2645.00, IdleAvg=1517.70, WaitAvg=245.23, EvalTime=0.021s
+
+--- TEST AVERAGES for this Individual ---
+Average_Test_MS   : 4316.21
+Average_Test_TWT  : 7787.88
+Average_Test_Idle : 1240.96
+Average_Test_Wait : 292.21
+Average_Eval_Time : 0.025s
+
+=== Individual 2 (Rank in HoF) ===
+Training_Fitness: 3924.6648
+Original_Size: 13, Original_Depth: 4
+Original_Tree (string): mul(PT, max(add(ETPC_D, PT), sub(max(DD, ETPC_D), sub(TQ, SLK))))
+Simplified_Size: 13, Simplified_Depth: 4
+Simplified_Formula (infix): PT * (max(ETPC_D + PT, (max(DD, ETPC_D)) - (TQ - SLK)))
+Simplified_Tree: 
+└─ mul
+   ├─ PT
+   └─ max
+      ├─ add
+      │  ├─ ETPC_D
+      │  └─ PT
+      └─ sub
+         ├─ max
+         │  ├─ DD
+         │  └─ ETPC_D
+         └─ sub
+            ├─ TQ
+            └─ SLK
+
+Instance Results:
+  test_flex_break_0_util0.75_ec0.08_nm10_v0.json: MS=6167.00, TWT=1143.00, IdleAvg=2092.40, WaitAvg=276.04, EvalTime=0.025s
+  test_flex_break_10_util0.95_ec0.15_nm13_v0.json: MS=4146.00, TWT=1847.00, IdleAvg=1102.15, WaitAvg=395.79, EvalTime=0.025s
+  test_flex_break_11_util0.95_ec0.15_nm16_v0.json: MS=3335.00, TWT=1251.00, IdleAvg=930.81, WaitAvg=503.04, EvalTime=0.031s
+  test_flex_break_12_util0.75_ec0.08_nm10_v1.json: MS=6109.00, TWT=2466.00, IdleAvg=1862.80, WaitAvg=307.32, EvalTime=0.025s
+  test_flex_break_13_util0.75_ec0.08_nm13_v1.json: MS=4808.00, TWT=2860.00, IdleAvg=1538.08, WaitAvg=278.09, EvalTime=0.027s
+  test_flex_break_14_util0.75_ec0.08_nm16_v1.json: MS=3864.00, TWT=1640.00, IdleAvg=1239.75, WaitAvg=324.83, EvalTime=0.031s
+  test_flex_break_15_util0.75_ec0.15_nm10_v1.json: MS=6084.00, TWT=2500.00, IdleAvg=1865.30, WaitAvg=185.37, EvalTime=0.023s
+  test_flex_break_16_util0.75_ec0.15_nm13_v1.json: MS=4110.00, TWT=1778.00, IdleAvg=1121.62, WaitAvg=413.47, EvalTime=0.027s
+  test_flex_break_17_util0.75_ec0.15_nm16_v1.json: MS=3673.00, TWT=2016.00, IdleAvg=1020.00, WaitAvg=286.83, EvalTime=0.029s
+  test_flex_break_18_util0.95_ec0.08_nm10_v1.json: MS=4897.00, TWT=2060.00, IdleAvg=1216.90, WaitAvg=739.77, EvalTime=0.030s
+  test_flex_break_19_util0.95_ec0.08_nm13_v1.json: MS=4251.00, TWT=1694.00, IdleAvg=1215.23, WaitAvg=327.78, EvalTime=0.025s
+  test_flex_break_1_util0.75_ec0.08_nm13_v0.json: MS=4556.00, TWT=1818.00, IdleAvg=1319.92, WaitAvg=247.46, EvalTime=0.025s
+  test_flex_break_20_util0.95_ec0.08_nm16_v1.json: MS=3316.00, TWT=2722.00, IdleAvg=889.88, WaitAvg=325.97, EvalTime=0.025s
+  test_flex_break_21_util0.95_ec0.15_nm10_v1.json: MS=4994.00, TWT=1610.00, IdleAvg=1153.70, WaitAvg=449.39, EvalTime=0.024s
+  test_flex_break_22_util0.95_ec0.15_nm13_v1.json: MS=3923.00, TWT=3899.00, IdleAvg=1048.08, WaitAvg=510.52, EvalTime=0.028s
+  test_flex_break_23_util0.95_ec0.15_nm16_v1.json: MS=3384.00, TWT=1997.00, IdleAvg=957.44, WaitAvg=387.51, EvalTime=0.027s
+  test_flex_break_2_util0.75_ec0.08_nm16_v0.json: MS=3745.00, TWT=4057.00, IdleAvg=1064.25, WaitAvg=338.35, EvalTime=0.029s
+  test_flex_break_3_util0.75_ec0.15_nm10_v0.json: MS=5298.00, TWT=2368.00, IdleAvg=1338.30, WaitAvg=417.43, EvalTime=0.023s
+  test_flex_break_4_util0.75_ec0.15_nm13_v0.json: MS=4537.00, TWT=3564.00, IdleAvg=1305.38, WaitAvg=258.53, EvalTime=0.026s
+  test_flex_break_5_util0.75_ec0.15_nm16_v0.json: MS=3613.00, TWT=1531.00, IdleAvg=1034.88, WaitAvg=286.47, EvalTime=0.029s
+  test_flex_break_6_util0.95_ec0.08_nm10_v0.json: MS=4809.00, TWT=3470.00, IdleAvg=1204.10, WaitAvg=587.70, EvalTime=0.025s
+  test_flex_break_7_util0.95_ec0.08_nm13_v0.json: MS=4069.00, TWT=2879.00, IdleAvg=1020.15, WaitAvg=306.93, EvalTime=0.024s
+  test_flex_break_8_util0.95_ec0.08_nm16_v0.json: MS=3582.00, TWT=2391.00, IdleAvg=1067.12, WaitAvg=401.76, EvalTime=0.031s
+  test_flex_break_9_util0.95_ec0.15_nm10_v0.json: MS=5413.00, TWT=2423.00, IdleAvg=1467.00, WaitAvg=312.22, EvalTime=0.022s
+
+--- TEST AVERAGES for this Individual ---
+Average_Test_MS   : 4445.12
+Average_Test_TWT  : 2332.67
+Average_Test_Idle : 1253.14
+Average_Test_Wait : 369.52
+Average_Eval_Time : 0.026s
+
+=== Individual 3 (Rank in HoF) ===
+Training_Fitness: 3924.6648
+Original_Size: 26, Original_Depth: 6
+Original_Tree (string): mul(PT, max(min(protected_div(sub(min(oneF, SLK), sub(TQ, oneF)), protected_div(neg(SLK), sub(RO, WIP))), oneF), sub(max(DD, ETPC_D), sub(TQ, SLK))))
+Simplified_Size: 25, Simplified_Depth: 6
+Simplified_Formula (infix): PT * (max(min(((min(oneF, SLK)) - (TQ - oneF)) / (SLK / (RO - WIP)), oneF), (max(DD, ETPC_D)) - (TQ - SLK)))
+Simplified_Tree: 
+└─ mul
+   ├─ PT
+   └─ max
+      ├─ min
+      │  ├─ protected_div
+      │  │  ├─ sub
+      │  │  │  ├─ min
+      │  │  │  │  ├─ oneF
+      │  │  │  │  └─ SLK
+      │  │  │  └─ sub
+      │  │  │     ├─ TQ
+      │  │  │     └─ oneF
+      │  │  └─ protected_div
+      │  │     ├─ SLK
+      │  │     └─ sub
+      │  │        ├─ RO
+      │  │        └─ WIP
+      │  └─ oneF
+      └─ sub
+         ├─ max
+         │  ├─ DD
+         │  └─ ETPC_D
+         └─ sub
+            ├─ TQ
+            └─ SLK
+
+Instance Results:
+  test_flex_break_0_util0.75_ec0.08_nm10_v0.json: MS=6167.00, TWT=1143.00, IdleAvg=2092.40, WaitAvg=276.04, EvalTime=0.026s
+  test_flex_break_10_util0.95_ec0.15_nm13_v0.json: MS=4146.00, TWT=1847.00, IdleAvg=1102.15, WaitAvg=395.79, EvalTime=0.026s
+  test_flex_break_11_util0.95_ec0.15_nm16_v0.json: MS=3335.00, TWT=1251.00, IdleAvg=930.81, WaitAvg=503.04, EvalTime=0.032s
+  test_flex_break_12_util0.75_ec0.08_nm10_v1.json: MS=6109.00, TWT=2466.00, IdleAvg=1862.80, WaitAvg=307.32, EvalTime=0.026s
+  test_flex_break_13_util0.75_ec0.08_nm13_v1.json: MS=4808.00, TWT=2860.00, IdleAvg=1538.08, WaitAvg=278.09, EvalTime=0.028s
+  test_flex_break_14_util0.75_ec0.08_nm16_v1.json: MS=3864.00, TWT=1640.00, IdleAvg=1239.75, WaitAvg=324.83, EvalTime=0.032s
+  test_flex_break_15_util0.75_ec0.15_nm10_v1.json: MS=6084.00, TWT=2500.00, IdleAvg=1865.30, WaitAvg=185.37, EvalTime=0.023s
+  test_flex_break_16_util0.75_ec0.15_nm13_v1.json: MS=4110.00, TWT=1778.00, IdleAvg=1121.62, WaitAvg=413.47, EvalTime=0.028s
+  test_flex_break_17_util0.75_ec0.15_nm16_v1.json: MS=3673.00, TWT=2016.00, IdleAvg=1020.00, WaitAvg=286.83, EvalTime=0.030s
+  test_flex_break_18_util0.95_ec0.08_nm10_v1.json: MS=4897.00, TWT=2060.00, IdleAvg=1216.90, WaitAvg=739.77, EvalTime=0.032s
+  test_flex_break_19_util0.95_ec0.08_nm13_v1.json: MS=4251.00, TWT=1694.00, IdleAvg=1215.23, WaitAvg=327.78, EvalTime=0.026s
+  test_flex_break_1_util0.75_ec0.08_nm13_v0.json: MS=4556.00, TWT=1818.00, IdleAvg=1319.92, WaitAvg=247.46, EvalTime=0.025s
+  test_flex_break_20_util0.95_ec0.08_nm16_v1.json: MS=3316.00, TWT=2722.00, IdleAvg=889.88, WaitAvg=325.97, EvalTime=0.026s
+  test_flex_break_21_util0.95_ec0.15_nm10_v1.json: MS=4994.00, TWT=1610.00, IdleAvg=1153.70, WaitAvg=449.39, EvalTime=0.025s
+  test_flex_break_22_util0.95_ec0.15_nm13_v1.json: MS=3923.00, TWT=3899.00, IdleAvg=1048.08, WaitAvg=510.52, EvalTime=0.029s
+  test_flex_break_23_util0.95_ec0.15_nm16_v1.json: MS=3384.00, TWT=1997.00, IdleAvg=957.44, WaitAvg=387.51, EvalTime=0.028s
+  test_flex_break_2_util0.75_ec0.08_nm16_v0.json: MS=3745.00, TWT=4057.00, IdleAvg=1064.25, WaitAvg=338.35, EvalTime=0.029s
+  test_flex_break_3_util0.75_ec0.15_nm10_v0.json: MS=5298.00, TWT=2368.00, IdleAvg=1338.30, WaitAvg=417.43, EvalTime=0.024s
+  test_flex_break_4_util0.75_ec0.15_nm13_v0.json: MS=4537.00, TWT=3564.00, IdleAvg=1305.38, WaitAvg=258.53, EvalTime=0.027s
+  test_flex_break_5_util0.75_ec0.15_nm16_v0.json: MS=3613.00, TWT=1531.00, IdleAvg=1034.88, WaitAvg=286.47, EvalTime=0.029s
+  test_flex_break_6_util0.95_ec0.08_nm10_v0.json: MS=4809.00, TWT=3470.00, IdleAvg=1204.10, WaitAvg=587.70, EvalTime=0.027s
+  test_flex_break_7_util0.95_ec0.08_nm13_v0.json: MS=4069.00, TWT=2879.00, IdleAvg=1020.15, WaitAvg=306.93, EvalTime=0.024s
+  test_flex_break_8_util0.95_ec0.08_nm16_v0.json: MS=3582.00, TWT=2391.00, IdleAvg=1067.12, WaitAvg=401.76, EvalTime=0.030s
+  test_flex_break_9_util0.95_ec0.15_nm10_v0.json: MS=5413.00, TWT=2423.00, IdleAvg=1467.00, WaitAvg=312.22, EvalTime=0.023s
+
+--- TEST AVERAGES for this Individual ---
+Average_Test_MS   : 4445.12
+Average_Test_TWT  : 2332.67
+Average_Test_Idle : 1253.14
+Average_Test_Wait : 369.52
+Average_Eval_Time : 0.027s
+
+=== Individual 4 (Rank in HoF) ===
+Training_Fitness: 3924.6648
+Original_Size: 11, Original_Depth: 4
+Original_Tree (string): mul(PT, max(PT, sub(max(DD, ETPC_D), sub(TQ, SLK))))
+Simplified_Size: 11, Simplified_Depth: 4
+Simplified_Formula (infix): PT * (max(PT, (max(DD, ETPC_D)) - (TQ - SLK)))
+Simplified_Tree: 
+└─ mul
+   ├─ PT
+   └─ max
+      ├─ PT
+      └─ sub
+         ├─ max
+         │  ├─ DD
+         │  └─ ETPC_D
+         └─ sub
+            ├─ TQ
+            └─ SLK
+
+Instance Results:
+  test_flex_break_0_util0.75_ec0.08_nm10_v0.json: MS=6167.00, TWT=1143.00, IdleAvg=2092.40, WaitAvg=276.04, EvalTime=0.026s
+  test_flex_break_10_util0.95_ec0.15_nm13_v0.json: MS=4146.00, TWT=1847.00, IdleAvg=1102.15, WaitAvg=395.79, EvalTime=0.025s
+  test_flex_break_11_util0.95_ec0.15_nm16_v0.json: MS=3335.00, TWT=1251.00, IdleAvg=930.81, WaitAvg=503.04, EvalTime=0.031s
+  test_flex_break_12_util0.75_ec0.08_nm10_v1.json: MS=6109.00, TWT=2466.00, IdleAvg=1862.80, WaitAvg=307.32, EvalTime=0.025s
+  test_flex_break_13_util0.75_ec0.08_nm13_v1.json: MS=4808.00, TWT=2860.00, IdleAvg=1538.08, WaitAvg=278.09, EvalTime=0.027s
+  test_flex_break_14_util0.75_ec0.08_nm16_v1.json: MS=3864.00, TWT=1640.00, IdleAvg=1239.75, WaitAvg=324.83, EvalTime=0.031s
+  test_flex_break_15_util0.75_ec0.15_nm10_v1.json: MS=6084.00, TWT=2500.00, IdleAvg=1865.30, WaitAvg=185.37, EvalTime=0.023s
+  test_flex_break_16_util0.75_ec0.15_nm13_v1.json: MS=4110.00, TWT=1778.00, IdleAvg=1121.62, WaitAvg=413.47, EvalTime=0.027s
+  test_flex_break_17_util0.75_ec0.15_nm16_v1.json: MS=3673.00, TWT=2016.00, IdleAvg=1020.00, WaitAvg=286.83, EvalTime=0.029s
+  test_flex_break_18_util0.95_ec0.08_nm10_v1.json: MS=4897.00, TWT=2060.00, IdleAvg=1216.90, WaitAvg=739.77, EvalTime=0.030s
+  test_flex_break_19_util0.95_ec0.08_nm13_v1.json: MS=4251.00, TWT=1694.00, IdleAvg=1215.23, WaitAvg=327.78, EvalTime=0.025s
+  test_flex_break_1_util0.75_ec0.08_nm13_v0.json: MS=4556.00, TWT=1818.00, IdleAvg=1319.92, WaitAvg=247.46, EvalTime=0.025s
+  test_flex_break_20_util0.95_ec0.08_nm16_v1.json: MS=3316.00, TWT=2722.00, IdleAvg=889.88, WaitAvg=325.97, EvalTime=0.025s
+  test_flex_break_21_util0.95_ec0.15_nm10_v1.json: MS=4994.00, TWT=1610.00, IdleAvg=1153.70, WaitAvg=449.39, EvalTime=0.024s
+  test_flex_break_22_util0.95_ec0.15_nm13_v1.json: MS=3923.00, TWT=3899.00, IdleAvg=1048.08, WaitAvg=510.52, EvalTime=0.028s
+  test_flex_break_23_util0.95_ec0.15_nm16_v1.json: MS=3384.00, TWT=1997.00, IdleAvg=957.44, WaitAvg=387.51, EvalTime=0.027s
+  test_flex_break_2_util0.75_ec0.08_nm16_v0.json: MS=3745.00, TWT=4057.00, IdleAvg=1064.25, WaitAvg=338.35, EvalTime=0.028s
+  test_flex_break_3_util0.75_ec0.15_nm10_v0.json: MS=5298.00, TWT=2368.00, IdleAvg=1338.30, WaitAvg=417.43, EvalTime=0.023s
+  test_flex_break_4_util0.75_ec0.15_nm13_v0.json: MS=4537.00, TWT=3564.00, IdleAvg=1305.38, WaitAvg=258.53, EvalTime=0.026s
+  test_flex_break_5_util0.75_ec0.15_nm16_v0.json: MS=3613.00, TWT=1531.00, IdleAvg=1034.88, WaitAvg=286.47, EvalTime=0.029s
+  test_flex_break_6_util0.95_ec0.08_nm10_v0.json: MS=4809.00, TWT=3470.00, IdleAvg=1204.10, WaitAvg=587.70, EvalTime=0.025s
+  test_flex_break_7_util0.95_ec0.08_nm13_v0.json: MS=4069.00, TWT=2879.00, IdleAvg=1020.15, WaitAvg=306.93, EvalTime=0.024s
+  test_flex_break_8_util0.95_ec0.08_nm16_v0.json: MS=3582.00, TWT=2391.00, IdleAvg=1067.12, WaitAvg=401.76, EvalTime=0.029s
+  test_flex_break_9_util0.95_ec0.15_nm10_v0.json: MS=5413.00, TWT=2423.00, IdleAvg=1467.00, WaitAvg=312.22, EvalTime=0.022s
+
+--- TEST AVERAGES for this Individual ---
+Average_Test_MS   : 4445.12
+Average_Test_TWT  : 2332.67
+Average_Test_Idle : 1253.14
+Average_Test_Wait : 369.52
+Average_Eval_Time : 0.026s
+
+=== Individual 5 (Rank in HoF) ===
+Training_Fitness: 3924.6648
+Original_Size: 11, Original_Depth: 4
+Original_Tree (string): mul(PT, max(MW, sub(max(DD, ETPC_D), sub(TQ, SLK))))
+Simplified_Size: 11, Simplified_Depth: 4
+Simplified_Formula (infix): PT * (max(MW, (max(DD, ETPC_D)) - (TQ - SLK)))
+Simplified_Tree: 
+└─ mul
+   ├─ PT
+   └─ max
+      ├─ MW
+      └─ sub
+         ├─ max
+         │  ├─ DD
+         │  └─ ETPC_D
+         └─ sub
+            ├─ TQ
+            └─ SLK
+
+Instance Results:
+  test_flex_break_0_util0.75_ec0.08_nm10_v0.json: MS=6167.00, TWT=1143.00, IdleAvg=2092.40, WaitAvg=276.04, EvalTime=0.026s
+  test_flex_break_10_util0.95_ec0.15_nm13_v0.json: MS=4146.00, TWT=1847.00, IdleAvg=1102.15, WaitAvg=395.79, EvalTime=0.026s
+  test_flex_break_11_util0.95_ec0.15_nm16_v0.json: MS=3335.00, TWT=1251.00, IdleAvg=930.81, WaitAvg=503.04, EvalTime=0.031s
+  test_flex_break_12_util0.75_ec0.08_nm10_v1.json: MS=6109.00, TWT=2466.00, IdleAvg=1862.80, WaitAvg=307.32, EvalTime=0.025s
+  test_flex_break_13_util0.75_ec0.08_nm13_v1.json: MS=4808.00, TWT=2860.00, IdleAvg=1538.08, WaitAvg=278.09, EvalTime=0.027s
+  test_flex_break_14_util0.75_ec0.08_nm16_v1.json: MS=3864.00, TWT=1640.00, IdleAvg=1239.75, WaitAvg=324.83, EvalTime=0.031s
+  test_flex_break_15_util0.75_ec0.15_nm10_v1.json: MS=6084.00, TWT=2500.00, IdleAvg=1865.30, WaitAvg=185.37, EvalTime=0.023s
+  test_flex_break_16_util0.75_ec0.15_nm13_v1.json: MS=4110.00, TWT=1778.00, IdleAvg=1121.62, WaitAvg=413.47, EvalTime=0.028s
+  test_flex_break_17_util0.75_ec0.15_nm16_v1.json: MS=3673.00, TWT=2016.00, IdleAvg=1020.00, WaitAvg=286.83, EvalTime=0.029s
+  test_flex_break_18_util0.95_ec0.08_nm10_v1.json: MS=4897.00, TWT=2060.00, IdleAvg=1216.90, WaitAvg=739.77, EvalTime=0.030s
+  test_flex_break_19_util0.95_ec0.08_nm13_v1.json: MS=4251.00, TWT=1694.00, IdleAvg=1215.23, WaitAvg=327.78, EvalTime=0.025s
+  test_flex_break_1_util0.75_ec0.08_nm13_v0.json: MS=4556.00, TWT=1818.00, IdleAvg=1319.92, WaitAvg=247.46, EvalTime=0.025s
+  test_flex_break_20_util0.95_ec0.08_nm16_v1.json: MS=3316.00, TWT=2722.00, IdleAvg=889.88, WaitAvg=325.97, EvalTime=0.025s
+  test_flex_break_21_util0.95_ec0.15_nm10_v1.json: MS=4994.00, TWT=1610.00, IdleAvg=1153.70, WaitAvg=449.39, EvalTime=0.023s
+  test_flex_break_22_util0.95_ec0.15_nm13_v1.json: MS=3923.00, TWT=3899.00, IdleAvg=1048.08, WaitAvg=510.52, EvalTime=0.028s
+  test_flex_break_23_util0.95_ec0.15_nm16_v1.json: MS=3384.00, TWT=1997.00, IdleAvg=957.44, WaitAvg=387.51, EvalTime=0.027s
+  test_flex_break_2_util0.75_ec0.08_nm16_v0.json: MS=3745.00, TWT=4057.00, IdleAvg=1064.25, WaitAvg=338.35, EvalTime=0.029s
+  test_flex_break_3_util0.75_ec0.15_nm10_v0.json: MS=5298.00, TWT=2368.00, IdleAvg=1338.30, WaitAvg=417.43, EvalTime=0.023s
+  test_flex_break_4_util0.75_ec0.15_nm13_v0.json: MS=4537.00, TWT=3564.00, IdleAvg=1305.38, WaitAvg=258.53, EvalTime=0.026s
+  test_flex_break_5_util0.75_ec0.15_nm16_v0.json: MS=3613.00, TWT=1531.00, IdleAvg=1034.88, WaitAvg=286.47, EvalTime=0.029s
+  test_flex_break_6_util0.95_ec0.08_nm10_v0.json: MS=4809.00, TWT=3470.00, IdleAvg=1204.10, WaitAvg=587.70, EvalTime=0.025s
+  test_flex_break_7_util0.95_ec0.08_nm13_v0.json: MS=4069.00, TWT=2879.00, IdleAvg=1020.15, WaitAvg=306.93, EvalTime=0.024s
+  test_flex_break_8_util0.95_ec0.08_nm16_v0.json: MS=3582.00, TWT=2391.00, IdleAvg=1067.12, WaitAvg=401.76, EvalTime=0.029s
+  test_flex_break_9_util0.95_ec0.15_nm10_v0.json: MS=5413.00, TWT=2423.00, IdleAvg=1467.00, WaitAvg=312.22, EvalTime=0.022s
+
+--- TEST AVERAGES for this Individual ---
+Average_Test_MS   : 4445.12
+Average_Test_TWT  : 2332.67
+Average_Test_Idle : 1253.14
+Average_Test_Wait : 369.52
+Average_Eval_Time : 0.026s
+
+=== Individual 6 (Rank in HoF) ===
+Training_Fitness: 3924.6648
+Original_Size: 19, Original_Depth: 6
+Original_Tree (string): mul(PT, max(min(add(sub(mul(DD, RO), DD), DD), oneF), sub(max(DD, ETPC_D), sub(TQ, SLK))))
+Simplified_Size: 19, Simplified_Depth: 6
+Simplified_Formula (infix): PT * (max(min(DD * RO - DD + DD, oneF), (max(DD, ETPC_D)) - (TQ - SLK)))
+Simplified_Tree: 
+└─ mul
+   ├─ PT
+   └─ max
+      ├─ min
+      │  ├─ add
+      │  │  ├─ sub
+      │  │  │  ├─ mul
+      │  │  │  │  ├─ DD
+      │  │  │  │  └─ RO
+      │  │  │  └─ DD
+      │  │  └─ DD
+      │  └─ oneF
+      └─ sub
+         ├─ max
+         │  ├─ DD
+         │  └─ ETPC_D
+         └─ sub
+            ├─ TQ
+            └─ SLK
+
+Instance Results:
+  test_flex_break_0_util0.75_ec0.08_nm10_v0.json: MS=6167.00, TWT=1143.00, IdleAvg=2092.40, WaitAvg=276.04, EvalTime=0.026s
+  test_flex_break_10_util0.95_ec0.15_nm13_v0.json: MS=4146.00, TWT=1847.00, IdleAvg=1102.15, WaitAvg=395.79, EvalTime=0.026s
+  test_flex_break_11_util0.95_ec0.15_nm16_v0.json: MS=3335.00, TWT=1251.00, IdleAvg=930.81, WaitAvg=503.04, EvalTime=0.032s
+  test_flex_break_12_util0.75_ec0.08_nm10_v1.json: MS=6109.00, TWT=2466.00, IdleAvg=1862.80, WaitAvg=307.32, EvalTime=0.025s
+  test_flex_break_13_util0.75_ec0.08_nm13_v1.json: MS=4808.00, TWT=2860.00, IdleAvg=1538.08, WaitAvg=278.09, EvalTime=0.028s
+  test_flex_break_14_util0.75_ec0.08_nm16_v1.json: MS=3864.00, TWT=1640.00, IdleAvg=1239.75, WaitAvg=324.83, EvalTime=0.031s
+  test_flex_break_15_util0.75_ec0.15_nm10_v1.json: MS=6084.00, TWT=2500.00, IdleAvg=1865.30, WaitAvg=185.37, EvalTime=0.023s
+  test_flex_break_16_util0.75_ec0.15_nm13_v1.json: MS=4110.00, TWT=1778.00, IdleAvg=1121.62, WaitAvg=413.47, EvalTime=0.028s
+  test_flex_break_17_util0.75_ec0.15_nm16_v1.json: MS=3673.00, TWT=2016.00, IdleAvg=1020.00, WaitAvg=286.83, EvalTime=0.029s
+  test_flex_break_18_util0.95_ec0.08_nm10_v1.json: MS=4897.00, TWT=2060.00, IdleAvg=1216.90, WaitAvg=739.77, EvalTime=0.031s
+  test_flex_break_19_util0.95_ec0.08_nm13_v1.json: MS=4251.00, TWT=1694.00, IdleAvg=1215.23, WaitAvg=327.78, EvalTime=0.025s
+  test_flex_break_1_util0.75_ec0.08_nm13_v0.json: MS=4556.00, TWT=1818.00, IdleAvg=1319.92, WaitAvg=247.46, EvalTime=0.025s
+  test_flex_break_20_util0.95_ec0.08_nm16_v1.json: MS=3316.00, TWT=2722.00, IdleAvg=889.88, WaitAvg=325.97, EvalTime=0.025s
+  test_flex_break_21_util0.95_ec0.15_nm10_v1.json: MS=4994.00, TWT=1610.00, IdleAvg=1153.70, WaitAvg=449.39, EvalTime=0.024s
+  test_flex_break_22_util0.95_ec0.15_nm13_v1.json: MS=3923.00, TWT=3899.00, IdleAvg=1048.08, WaitAvg=510.52, EvalTime=0.029s
+  test_flex_break_23_util0.95_ec0.15_nm16_v1.json: MS=3384.00, TWT=1997.00, IdleAvg=957.44, WaitAvg=387.51, EvalTime=0.027s
+  test_flex_break_2_util0.75_ec0.08_nm16_v0.json: MS=3745.00, TWT=4057.00, IdleAvg=1064.25, WaitAvg=338.35, EvalTime=0.029s
+  test_flex_break_3_util0.75_ec0.15_nm10_v0.json: MS=5298.00, TWT=2368.00, IdleAvg=1338.30, WaitAvg=417.43, EvalTime=0.024s
+  test_flex_break_4_util0.75_ec0.15_nm13_v0.json: MS=4537.00, TWT=3564.00, IdleAvg=1305.38, WaitAvg=258.53, EvalTime=0.026s
+  test_flex_break_5_util0.75_ec0.15_nm16_v0.json: MS=3613.00, TWT=1531.00, IdleAvg=1034.88, WaitAvg=286.47, EvalTime=0.029s
+  test_flex_break_6_util0.95_ec0.08_nm10_v0.json: MS=4809.00, TWT=3470.00, IdleAvg=1204.10, WaitAvg=587.70, EvalTime=0.026s
+  test_flex_break_7_util0.95_ec0.08_nm13_v0.json: MS=4069.00, TWT=2879.00, IdleAvg=1020.15, WaitAvg=306.93, EvalTime=0.024s
+  test_flex_break_8_util0.95_ec0.08_nm16_v0.json: MS=3582.00, TWT=2391.00, IdleAvg=1067.12, WaitAvg=401.76, EvalTime=0.030s
+  test_flex_break_9_util0.95_ec0.15_nm10_v0.json: MS=5413.00, TWT=2423.00, IdleAvg=1467.00, WaitAvg=312.22, EvalTime=0.022s
+
+--- TEST AVERAGES for this Individual ---
+Average_Test_MS   : 4445.12
+Average_Test_TWT  : 2332.67
+Average_Test_Idle : 1253.14
+Average_Test_Wait : 369.52
+Average_Eval_Time : 0.027s
+
+=== Individual 7 (Rank in HoF) ===
+Training_Fitness: 3924.6648
+Original_Size: 19, Original_Depth: 6
+Original_Tree (string): mul(PT, max(min(add(sub(sub(TQ, SLK), PT), DD), oneF), sub(max(DD, ETPC_D), sub(TQ, SLK))))
+Simplified_Size: 19, Simplified_Depth: 6
+Simplified_Formula (infix): PT * (max(min(TQ - SLK - PT + DD, oneF), (max(DD, ETPC_D)) - (TQ - SLK)))
+Simplified_Tree: 
+└─ mul
+   ├─ PT
+   └─ max
+      ├─ min
+      │  ├─ add
+      │  │  ├─ sub
+      │  │  │  ├─ sub
+      │  │  │  │  ├─ TQ
+      │  │  │  │  └─ SLK
+      │  │  │  └─ PT
+      │  │  └─ DD
+      │  └─ oneF
+      └─ sub
+         ├─ max
+         │  ├─ DD
+         │  └─ ETPC_D
+         └─ sub
+            ├─ TQ
+            └─ SLK
+
+Instance Results:
+  test_flex_break_0_util0.75_ec0.08_nm10_v0.json: MS=6167.00, TWT=1143.00, IdleAvg=2092.40, WaitAvg=276.04, EvalTime=0.026s
+  test_flex_break_10_util0.95_ec0.15_nm13_v0.json: MS=4146.00, TWT=1847.00, IdleAvg=1102.15, WaitAvg=395.79, EvalTime=0.026s
+  test_flex_break_11_util0.95_ec0.15_nm16_v0.json: MS=3335.00, TWT=1251.00, IdleAvg=930.81, WaitAvg=503.04, EvalTime=0.031s
+  test_flex_break_12_util0.75_ec0.08_nm10_v1.json: MS=6109.00, TWT=2466.00, IdleAvg=1862.80, WaitAvg=307.32, EvalTime=0.025s
+  test_flex_break_13_util0.75_ec0.08_nm13_v1.json: MS=4808.00, TWT=2860.00, IdleAvg=1538.08, WaitAvg=278.09, EvalTime=0.027s
+  test_flex_break_14_util0.75_ec0.08_nm16_v1.json: MS=3864.00, TWT=1640.00, IdleAvg=1239.75, WaitAvg=324.83, EvalTime=0.031s
+  test_flex_break_15_util0.75_ec0.15_nm10_v1.json: MS=6084.00, TWT=2500.00, IdleAvg=1865.30, WaitAvg=185.37, EvalTime=0.023s
+  test_flex_break_16_util0.75_ec0.15_nm13_v1.json: MS=4110.00, TWT=1778.00, IdleAvg=1121.62, WaitAvg=413.47, EvalTime=0.028s
+  test_flex_break_17_util0.75_ec0.15_nm16_v1.json: MS=3673.00, TWT=2016.00, IdleAvg=1020.00, WaitAvg=286.83, EvalTime=0.029s
+  test_flex_break_18_util0.95_ec0.08_nm10_v1.json: MS=4897.00, TWT=2060.00, IdleAvg=1216.90, WaitAvg=739.77, EvalTime=0.031s
+  test_flex_break_19_util0.95_ec0.08_nm13_v1.json: MS=4251.00, TWT=1694.00, IdleAvg=1215.23, WaitAvg=327.78, EvalTime=0.025s
+  test_flex_break_1_util0.75_ec0.08_nm13_v0.json: MS=4556.00, TWT=1818.00, IdleAvg=1319.92, WaitAvg=247.46, EvalTime=0.025s
+  test_flex_break_20_util0.95_ec0.08_nm16_v1.json: MS=3316.00, TWT=2722.00, IdleAvg=889.88, WaitAvg=325.97, EvalTime=0.025s
+  test_flex_break_21_util0.95_ec0.15_nm10_v1.json: MS=4994.00, TWT=1610.00, IdleAvg=1153.70, WaitAvg=449.39, EvalTime=0.024s
+  test_flex_break_22_util0.95_ec0.15_nm13_v1.json: MS=3923.00, TWT=3899.00, IdleAvg=1048.08, WaitAvg=510.52, EvalTime=0.028s
+  test_flex_break_23_util0.95_ec0.15_nm16_v1.json: MS=3384.00, TWT=1997.00, IdleAvg=957.44, WaitAvg=387.51, EvalTime=0.027s
+  test_flex_break_2_util0.75_ec0.08_nm16_v0.json: MS=3745.00, TWT=4057.00, IdleAvg=1064.25, WaitAvg=338.35, EvalTime=0.029s
+  test_flex_break_3_util0.75_ec0.15_nm10_v0.json: MS=5298.00, TWT=2368.00, IdleAvg=1338.30, WaitAvg=417.43, EvalTime=0.024s
+  test_flex_break_4_util0.75_ec0.15_nm13_v0.json: MS=4537.00, TWT=3564.00, IdleAvg=1305.38, WaitAvg=258.53, EvalTime=0.027s
+  test_flex_break_5_util0.75_ec0.15_nm16_v0.json: MS=3613.00, TWT=1531.00, IdleAvg=1034.88, WaitAvg=286.47, EvalTime=0.029s
+  test_flex_break_6_util0.95_ec0.08_nm10_v0.json: MS=4809.00, TWT=3470.00, IdleAvg=1204.10, WaitAvg=587.70, EvalTime=0.026s
+  test_flex_break_7_util0.95_ec0.08_nm13_v0.json: MS=4069.00, TWT=2879.00, IdleAvg=1020.15, WaitAvg=306.93, EvalTime=0.024s
+  test_flex_break_8_util0.95_ec0.08_nm16_v0.json: MS=3582.00, TWT=2391.00, IdleAvg=1067.12, WaitAvg=401.76, EvalTime=0.030s
+  test_flex_break_9_util0.95_ec0.15_nm10_v0.json: MS=5413.00, TWT=2423.00, IdleAvg=1467.00, WaitAvg=312.22, EvalTime=0.022s
+
+--- TEST AVERAGES for this Individual ---
+Average_Test_MS   : 4445.12
+Average_Test_TWT  : 2332.67
+Average_Test_Idle : 1253.14
+Average_Test_Wait : 369.52
+Average_Eval_Time : 0.027s
+
+=== Individual 8 (Rank in HoF) ===
+Training_Fitness: 3924.6648
+Original_Size: 19, Original_Depth: 6
+Original_Tree (string): mul(PT, max(min(add(sub(sub(TQ, SLK), DD), DD), oneF), sub(max(DD, DD), sub(TQ, SLK))))
+Simplified_Size: 17, Simplified_Depth: 6
+Simplified_Formula (infix): PT * (max(min(TQ - SLK - DD + DD, oneF), DD - (TQ - SLK)))
+Simplified_Tree: 
+└─ mul
+   ├─ PT
+   └─ max
+      ├─ min
+      │  ├─ add
+      │  │  ├─ sub
+      │  │  │  ├─ sub
+      │  │  │  │  ├─ TQ
+      │  │  │  │  └─ SLK
+      │  │  │  └─ DD
+      │  │  └─ DD
+      │  └─ oneF
+      └─ sub
+         ├─ DD
+         └─ sub
+            ├─ TQ
+            └─ SLK
+
+Instance Results:
+  test_flex_break_0_util0.75_ec0.08_nm10_v0.json: MS=6167.00, TWT=1143.00, IdleAvg=2092.40, WaitAvg=276.04, EvalTime=0.026s
+  test_flex_break_10_util0.95_ec0.15_nm13_v0.json: MS=4146.00, TWT=1847.00, IdleAvg=1102.15, WaitAvg=395.79, EvalTime=0.025s
+  test_flex_break_11_util0.95_ec0.15_nm16_v0.json: MS=3335.00, TWT=1251.00, IdleAvg=930.81, WaitAvg=503.04, EvalTime=0.031s
+  test_flex_break_12_util0.75_ec0.08_nm10_v1.json: MS=6109.00, TWT=2466.00, IdleAvg=1862.80, WaitAvg=307.32, EvalTime=0.025s
+  test_flex_break_13_util0.75_ec0.08_nm13_v1.json: MS=4808.00, TWT=2860.00, IdleAvg=1538.08, WaitAvg=278.09, EvalTime=0.027s
+  test_flex_break_14_util0.75_ec0.08_nm16_v1.json: MS=3864.00, TWT=1640.00, IdleAvg=1239.75, WaitAvg=324.83, EvalTime=0.031s
+  test_flex_break_15_util0.75_ec0.15_nm10_v1.json: MS=6084.00, TWT=2500.00, IdleAvg=1865.30, WaitAvg=185.37, EvalTime=0.023s
+  test_flex_break_16_util0.75_ec0.15_nm13_v1.json: MS=4110.00, TWT=1778.00, IdleAvg=1121.62, WaitAvg=413.47, EvalTime=0.027s
+  test_flex_break_17_util0.75_ec0.15_nm16_v1.json: MS=3673.00, TWT=2016.00, IdleAvg=1020.00, WaitAvg=286.83, EvalTime=0.029s
+  test_flex_break_18_util0.95_ec0.08_nm10_v1.json: MS=4897.00, TWT=2060.00, IdleAvg=1216.90, WaitAvg=739.77, EvalTime=0.031s
+  test_flex_break_19_util0.95_ec0.08_nm13_v1.json: MS=4251.00, TWT=1694.00, IdleAvg=1215.23, WaitAvg=327.78, EvalTime=0.025s
+  test_flex_break_1_util0.75_ec0.08_nm13_v0.json: MS=4556.00, TWT=1818.00, IdleAvg=1319.92, WaitAvg=247.46, EvalTime=0.025s
+  test_flex_break_20_util0.95_ec0.08_nm16_v1.json: MS=3316.00, TWT=2722.00, IdleAvg=889.88, WaitAvg=325.97, EvalTime=0.025s
+  test_flex_break_21_util0.95_ec0.15_nm10_v1.json: MS=4994.00, TWT=1610.00, IdleAvg=1153.70, WaitAvg=449.39, EvalTime=0.024s
+  test_flex_break_22_util0.95_ec0.15_nm13_v1.json: MS=3923.00, TWT=3899.00, IdleAvg=1048.08, WaitAvg=510.52, EvalTime=0.028s
+  test_flex_break_23_util0.95_ec0.15_nm16_v1.json: MS=3384.00, TWT=1997.00, IdleAvg=957.44, WaitAvg=387.51, EvalTime=0.027s
+  test_flex_break_2_util0.75_ec0.08_nm16_v0.json: MS=3745.00, TWT=4057.00, IdleAvg=1064.25, WaitAvg=338.35, EvalTime=0.029s
+  test_flex_break_3_util0.75_ec0.15_nm10_v0.json: MS=5298.00, TWT=2368.00, IdleAvg=1338.30, WaitAvg=417.43, EvalTime=0.024s
+  test_flex_break_4_util0.75_ec0.15_nm13_v0.json: MS=4537.00, TWT=3564.00, IdleAvg=1305.38, WaitAvg=258.53, EvalTime=0.026s
+  test_flex_break_5_util0.75_ec0.15_nm16_v0.json: MS=3613.00, TWT=1531.00, IdleAvg=1034.88, WaitAvg=286.47, EvalTime=0.029s
+  test_flex_break_6_util0.95_ec0.08_nm10_v0.json: MS=4809.00, TWT=3470.00, IdleAvg=1204.10, WaitAvg=587.70, EvalTime=0.025s
+  test_flex_break_7_util0.95_ec0.08_nm13_v0.json: MS=4069.00, TWT=2879.00, IdleAvg=1020.15, WaitAvg=306.93, EvalTime=0.024s
+  test_flex_break_8_util0.95_ec0.08_nm16_v0.json: MS=3582.00, TWT=2391.00, IdleAvg=1067.12, WaitAvg=401.76, EvalTime=0.030s
+  test_flex_break_9_util0.95_ec0.15_nm10_v0.json: MS=5413.00, TWT=2423.00, IdleAvg=1467.00, WaitAvg=312.22, EvalTime=0.022s
+
+--- TEST AVERAGES for this Individual ---
+Average_Test_MS   : 4445.12
+Average_Test_TWT  : 2332.67
+Average_Test_Idle : 1253.14
+Average_Test_Wait : 369.52
+Average_Eval_Time : 0.027s
+
+=== Individual 9 (Rank in HoF) ===
+Training_Fitness: 3924.6648
+Original_Size: 19, Original_Depth: 6
+Original_Tree (string): mul(PT, max(min(add(sub(sub(TQ, SLK), DD), DD), oneF), sub(max(DD, ETPC_D), sub(TQ, SLK))))
+Simplified_Size: 19, Simplified_Depth: 6
+Simplified_Formula (infix): PT * (max(min(TQ - SLK - DD + DD, oneF), (max(DD, ETPC_D)) - (TQ - SLK)))
+Simplified_Tree: 
+└─ mul
+   ├─ PT
+   └─ max
+      ├─ min
+      │  ├─ add
+      │  │  ├─ sub
+      │  │  │  ├─ sub
+      │  │  │  │  ├─ TQ
+      │  │  │  │  └─ SLK
+      │  │  │  └─ DD
+      │  │  └─ DD
+      │  └─ oneF
+      └─ sub
+         ├─ max
+         │  ├─ DD
+         │  └─ ETPC_D
+         └─ sub
+            ├─ TQ
+            └─ SLK
+
+Instance Results:
+  test_flex_break_0_util0.75_ec0.08_nm10_v0.json: MS=6167.00, TWT=1143.00, IdleAvg=2092.40, WaitAvg=276.04, EvalTime=0.026s
+  test_flex_break_10_util0.95_ec0.15_nm13_v0.json: MS=4146.00, TWT=1847.00, IdleAvg=1102.15, WaitAvg=395.79, EvalTime=0.026s
+  test_flex_break_11_util0.95_ec0.15_nm16_v0.json: MS=3335.00, TWT=1251.00, IdleAvg=930.81, WaitAvg=503.04, EvalTime=0.032s
+  test_flex_break_12_util0.75_ec0.08_nm10_v1.json: MS=6109.00, TWT=2466.00, IdleAvg=1862.80, WaitAvg=307.32, EvalTime=0.025s
+  test_flex_break_13_util0.75_ec0.08_nm13_v1.json: MS=4808.00, TWT=2860.00, IdleAvg=1538.08, WaitAvg=278.09, EvalTime=0.027s
+  test_flex_break_14_util0.75_ec0.08_nm16_v1.json: MS=3864.00, TWT=1640.00, IdleAvg=1239.75, WaitAvg=324.83, EvalTime=0.031s
+  test_flex_break_15_util0.75_ec0.15_nm10_v1.json: MS=6084.00, TWT=2500.00, IdleAvg=1865.30, WaitAvg=185.37, EvalTime=0.023s
+  test_flex_break_16_util0.75_ec0.15_nm13_v1.json: MS=4110.00, TWT=1778.00, IdleAvg=1121.62, WaitAvg=413.47, EvalTime=0.028s
+  test_flex_break_17_util0.75_ec0.15_nm16_v1.json: MS=3673.00, TWT=2016.00, IdleAvg=1020.00, WaitAvg=286.83, EvalTime=0.029s
+  test_flex_break_18_util0.95_ec0.08_nm10_v1.json: MS=4897.00, TWT=2060.00, IdleAvg=1216.90, WaitAvg=739.77, EvalTime=0.031s
+  test_flex_break_19_util0.95_ec0.08_nm13_v1.json: MS=4251.00, TWT=1694.00, IdleAvg=1215.23, WaitAvg=327.78, EvalTime=0.025s
+  test_flex_break_1_util0.75_ec0.08_nm13_v0.json: MS=4556.00, TWT=1818.00, IdleAvg=1319.92, WaitAvg=247.46, EvalTime=0.025s
+  test_flex_break_20_util0.95_ec0.08_nm16_v1.json: MS=3316.00, TWT=2722.00, IdleAvg=889.88, WaitAvg=325.97, EvalTime=0.025s
+  test_flex_break_21_util0.95_ec0.15_nm10_v1.json: MS=4994.00, TWT=1610.00, IdleAvg=1153.70, WaitAvg=449.39, EvalTime=0.024s
+  test_flex_break_22_util0.95_ec0.15_nm13_v1.json: MS=3923.00, TWT=3899.00, IdleAvg=1048.08, WaitAvg=510.52, EvalTime=0.028s
+  test_flex_break_23_util0.95_ec0.15_nm16_v1.json: MS=3384.00, TWT=1997.00, IdleAvg=957.44, WaitAvg=387.51, EvalTime=0.027s
+  test_flex_break_2_util0.75_ec0.08_nm16_v0.json: MS=3745.00, TWT=4057.00, IdleAvg=1064.25, WaitAvg=338.35, EvalTime=0.029s
+  test_flex_break_3_util0.75_ec0.15_nm10_v0.json: MS=5298.00, TWT=2368.00, IdleAvg=1338.30, WaitAvg=417.43, EvalTime=0.024s
+  test_flex_break_4_util0.75_ec0.15_nm13_v0.json: MS=4537.00, TWT=3564.00, IdleAvg=1305.38, WaitAvg=258.53, EvalTime=0.026s
+  test_flex_break_5_util0.75_ec0.15_nm16_v0.json: MS=3613.00, TWT=1531.00, IdleAvg=1034.88, WaitAvg=286.47, EvalTime=0.029s
+  test_flex_break_6_util0.95_ec0.08_nm10_v0.json: MS=4809.00, TWT=3470.00, IdleAvg=1204.10, WaitAvg=587.70, EvalTime=0.026s
+  test_flex_break_7_util0.95_ec0.08_nm13_v0.json: MS=4069.00, TWT=2879.00, IdleAvg=1020.15, WaitAvg=306.93, EvalTime=0.024s
+  test_flex_break_8_util0.95_ec0.08_nm16_v0.json: MS=3582.00, TWT=2391.00, IdleAvg=1067.12, WaitAvg=401.76, EvalTime=0.030s
+  test_flex_break_9_util0.95_ec0.15_nm10_v0.json: MS=5413.00, TWT=2423.00, IdleAvg=1467.00, WaitAvg=312.22, EvalTime=0.022s
+
+--- TEST AVERAGES for this Individual ---
+Average_Test_MS   : 4445.12
+Average_Test_TWT  : 2332.67
+Average_Test_Idle : 1253.14
+Average_Test_Wait : 369.52
+Average_Eval_Time : 0.027s
+
+=== Individual 10 (Rank in HoF) ===
+Training_Fitness: 3924.6648
+Original_Size: 10, Original_Depth: 5
+Original_Tree (string): mul(PT, max(neg(sub(sub(TQ, SLK), DD)), SLK))
+Simplified_Size: 9, Simplified_Depth: 4
+Simplified_Formula (infix): PT * (max(TQ - SLK - DD, SLK))
+Simplified_Tree: 
+└─ mul
+   ├─ PT
+   └─ max
+      ├─ sub
+      │  ├─ sub
+      │  │  ├─ TQ
+      │  │  └─ SLK
+      │  └─ DD
+      └─ SLK
+
+Instance Results:
+  test_flex_break_0_util0.75_ec0.08_nm10_v0.json: MS=6384.00, TWT=867.00, IdleAvg=2166.80, WaitAvg=296.17, EvalTime=0.026s
+  test_flex_break_10_util0.95_ec0.15_nm13_v0.json: MS=4159.00, TWT=3890.00, IdleAvg=1023.08, WaitAvg=469.55, EvalTime=0.026s
+  test_flex_break_11_util0.95_ec0.15_nm16_v0.json: MS=3609.00, TWT=1783.00, IdleAvg=1087.44, WaitAvg=541.31, EvalTime=0.032s
+  test_flex_break_12_util0.75_ec0.08_nm10_v1.json: MS=5980.00, TWT=2904.00, IdleAvg=1608.10, WaitAvg=344.48, EvalTime=0.023s
+  test_flex_break_13_util0.75_ec0.08_nm13_v1.json: MS=4710.00, TWT=3318.00, IdleAvg=1385.31, WaitAvg=314.26, EvalTime=0.026s
+  test_flex_break_14_util0.75_ec0.08_nm16_v1.json: MS=3897.00, TWT=3058.00, IdleAvg=1227.31, WaitAvg=354.51, EvalTime=0.030s
+  test_flex_break_15_util0.75_ec0.15_nm10_v1.json: MS=6165.00, TWT=4177.00, IdleAvg=1868.00, WaitAvg=225.68, EvalTime=0.022s
+  test_flex_break_16_util0.75_ec0.15_nm13_v1.json: MS=4203.00, TWT=2756.00, IdleAvg=1140.23, WaitAvg=495.41, EvalTime=0.028s
+  test_flex_break_17_util0.75_ec0.15_nm16_v1.json: MS=3744.00, TWT=1428.00, IdleAvg=1050.88, WaitAvg=283.02, EvalTime=0.029s
+  test_flex_break_18_util0.95_ec0.08_nm10_v1.json: MS=5111.00, TWT=1898.00, IdleAvg=1105.00, WaitAvg=878.65, EvalTime=0.031s
+  test_flex_break_19_util0.95_ec0.08_nm13_v1.json: MS=4387.00, TWT=2351.00, IdleAvg=1202.38, WaitAvg=391.15, EvalTime=0.026s
+  test_flex_break_1_util0.75_ec0.08_nm13_v0.json: MS=4597.00, TWT=3398.00, IdleAvg=1299.62, WaitAvg=282.79, EvalTime=0.025s
+  test_flex_break_20_util0.95_ec0.08_nm16_v1.json: MS=3560.00, TWT=3896.00, IdleAvg=1084.44, WaitAvg=358.97, EvalTime=0.027s
+  test_flex_break_21_util0.95_ec0.15_nm10_v1.json: MS=5129.00, TWT=760.00, IdleAvg=1154.30, WaitAvg=468.56, EvalTime=0.024s
+  test_flex_break_22_util0.95_ec0.15_nm13_v1.json: MS=4025.00, TWT=3625.00, IdleAvg=995.38, WaitAvg=534.13, EvalTime=0.027s
+  test_flex_break_23_util0.95_ec0.15_nm16_v1.json: MS=3450.00, TWT=3152.00, IdleAvg=953.38, WaitAvg=401.10, EvalTime=0.028s
+  test_flex_break_2_util0.75_ec0.08_nm16_v0.json: MS=3781.00, TWT=3096.00, IdleAvg=1032.75, WaitAvg=352.41, EvalTime=0.030s
+  test_flex_break_3_util0.75_ec0.15_nm10_v0.json: MS=5486.00, TWT=2928.00, IdleAvg=1380.50, WaitAvg=483.85, EvalTime=0.024s
+  test_flex_break_4_util0.75_ec0.15_nm13_v0.json: MS=4662.00, TWT=1961.00, IdleAvg=1424.69, WaitAvg=277.79, EvalTime=0.026s
+  test_flex_break_5_util0.75_ec0.15_nm16_v0.json: MS=3826.00, TWT=2319.00, IdleAvg=1178.00, WaitAvg=322.19, EvalTime=0.029s
+  test_flex_break_6_util0.95_ec0.08_nm10_v0.json: MS=5039.00, TWT=2516.00, IdleAvg=1283.70, WaitAvg=607.79, EvalTime=0.025s
+  test_flex_break_7_util0.95_ec0.08_nm13_v0.json: MS=4187.00, TWT=4869.00, IdleAvg=1054.23, WaitAvg=401.39, EvalTime=0.024s
+  test_flex_break_8_util0.95_ec0.08_nm16_v0.json: MS=3584.00, TWT=3018.00, IdleAvg=1008.12, WaitAvg=432.33, EvalTime=0.029s
+  test_flex_break_9_util0.95_ec0.15_nm10_v0.json: MS=5713.00, TWT=4212.00, IdleAvg=1558.00, WaitAvg=391.63, EvalTime=0.022s
+
+--- TEST AVERAGES for this Individual ---
+Average_Test_MS   : 4557.83
+Average_Test_TWT  : 2840.83
+Average_Test_Idle : 1261.32
+Average_Test_Wait : 412.88
+Average_Eval_Time : 0.027s
