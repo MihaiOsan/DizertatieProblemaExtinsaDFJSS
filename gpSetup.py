@@ -41,7 +41,7 @@ def create_toolbox(np: int = 3) -> base.Toolbox:
 
     # Argumentele existente:
     pset.renameArguments(ARG0='PT')  # Processing Time
-    pset.renameArguments(ARG1='RO')  # Remaining Operations
+    pset.renameArguments(ARG1='RO')  # Remaining Operations in the same job
     pset.renameArguments(ARG2='MW')  # Machine Wait time
     pset.renameArguments(ARG3='TQ')  # Time in Queue
     pset.renameArguments(ARG4='WIP')  # Work In Progress
