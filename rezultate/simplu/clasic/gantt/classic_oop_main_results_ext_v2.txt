@@ -1,0 +1,4 @@
+
+=== INSTANCE: test_fan21_0_util0.7_ec0.03_nm10_v0.json (Machines: 10, Total Jobs Defined: 3000) ===
+  SPT     => MS=17810.00, TWT=105331.00, IdleAvg=4004.70, WaitAvg=69.65 , T=13.461s
+  LPT     => MS=17776.00, TWT=257275.00, IdleAvg=3963.10, WaitAvg=108.06, T=14.109s

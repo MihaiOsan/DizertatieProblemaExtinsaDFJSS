@@ -157,7 +157,7 @@ def generate_flex_dataset_with_breakdowns(
             # Excludem joburile anulate
             if (j1 != j2 and
                 (j1, j2) not in used_pairs and (j2, j1) not in used_pairs and
-                (not cancel_job_ids or (j1 not in cancel_job_ids and j2 not in cancel_job_ids))
+                (not cancel_job_ids or (j1 not in cancel_job_ids and j2 not in cancel_job_ids)) and arrivals[j1] < jobs_data[j2]['due_date']
             ):
                 used_pairs.add((j1, j2))
                 fore_op_count = len(jobs_data[j1]["operations"])

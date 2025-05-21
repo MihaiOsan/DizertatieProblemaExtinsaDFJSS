@@ -511,9 +511,9 @@ def plot_gantt(schedule: List[Tuple[int, int, int, float, float]],
 # 6) MAIN – evaluare reguli (Refactorizat pentru OOP)
 ###############################################################################
 if __name__ == "__main__":
-    INPUT_DIR_CLASSIC_PATH = Path("//test_sets")
-    OUTPUT_DIR_CLASSIC_PATH = Path("//gantt_outputs/classic_main")
-    RESULTS_DIR_PATH = Path("//rezultate")
+    INPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/fan21/test_sets")
+    OUTPUT_DIR_CLASSIC_PATH = Path("rezultate/simplu/clasic/gantt")
+    RESULTS_DIR_PATH = Path("rezultate/simplu/clasic/gantt")
 
     OUTPUT_DIR_CLASSIC_PATH.mkdir(parents=True, exist_ok=True)
     RESULTS_DIR_PATH.mkdir(parents=True, exist_ok=True)

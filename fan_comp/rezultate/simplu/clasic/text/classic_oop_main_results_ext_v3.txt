@@ -1,0 +1,275 @@
+
+=== INSTANCE: test_fan21_0_util0.7_ec0.03_nm10_v0.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=2973.00, TWT=12827.00, IdleAvg=701.80, WaitAvg=66.82 , T=0.439s
+  ECT     => MS=3021.00, TWT=14753.00, IdleAvg=747.00, WaitAvg=71.86 , T=0.468s
+  Random  => MS=2970.00, TWT=19679.00, IdleAvg=700.60, WaitAvg=84.12 , T=0.445s
+  EDD     => MS=2983.00, TWT=312.00  , IdleAvg=709.20, WaitAvg=79.43 , T=0.448s
+  MST     => MS=3002.00, TWT=31.00   , IdleAvg=727.70, WaitAvg=77.84 , T=0.474s
+  GPISRule1 => MS=3031.00, TWT=469.00  , IdleAvg=758.40, WaitAvg=78.96 , T=0.489s
+  GPISRule2 => MS=2958.00, TWT=379.00  , IdleAvg=687.50, WaitAvg=83.92 , T=0.447s
+  GPISRule3 => MS=2969.00, TWT=15376.00, IdleAvg=694.70, WaitAvg=65.29 , T=0.440s
+  GPISRule4 => MS=3002.00, TWT=31.00   , IdleAvg=727.70, WaitAvg=77.84 , T=0.471s
+  GPISRule5 => MS=2986.00, TWT=124.00  , IdleAvg=711.70, WaitAvg=77.49 , T=0.460s
+  GPISRule6 => MS=2992.00, TWT=12914.00, IdleAvg=716.20, WaitAvg=72.04 , T=0.468s
+
+=== INSTANCE: test_fan21_10_util0.95_ec0.03_nm10_v2.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=2748.00, TWT=201139.00, IdleAvg=450.90, WaitAvg=292.03, T=0.442s
+  ECT     => MS=2752.00, TWT=147324.00, IdleAvg=447.10, WaitAvg=241.36, T=0.461s
+  Random  => MS=2725.00, TWT=210831.00, IdleAvg=431.30, WaitAvg=357.82, T=0.457s
+  EDD     => MS=2747.00, TWT=117538.00, IdleAvg=446.50, WaitAvg=282.03, T=0.472s
+  MST     => MS=2751.00, TWT=121587.00, IdleAvg=450.80, WaitAvg=287.70, T=0.494s
+  GPISRule1 => MS=2755.00, TWT=72527.00, IdleAvg=454.00, WaitAvg=266.47, T=0.479s
+  GPISRule2 => MS=2740.00, TWT=116651.00, IdleAvg=439.90, WaitAvg=279.10, T=0.598s
+  GPISRule3 => MS=2730.00, TWT=219305.00, IdleAvg=434.90, WaitAvg=297.23, T=0.438s
+  GPISRule4 => MS=2747.00, TWT=120642.00, IdleAvg=447.40, WaitAvg=288.00, T=0.493s
+  GPISRule5 => MS=2750.00, TWT=118647.00, IdleAvg=449.50, WaitAvg=283.87, T=0.496s
+  GPISRule6 => MS=2757.00, TWT=156280.00, IdleAvg=455.90, WaitAvg=303.36, T=0.538s
+
+=== INSTANCE: test_fan21_11_util0.95_ec0.08_nm10_v2.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=2552.00, TWT=124295.00, IdleAvg=289.40, WaitAvg=218.85, T=0.303s
+  ECT     => MS=2623.00, TWT=106248.00, IdleAvg=349.00, WaitAvg=193.55, T=0.344s
+  Random  => MS=2542.00, TWT=164516.00, IdleAvg=277.10, WaitAvg=281.67, T=0.331s
+  EDD     => MS=2557.00, TWT=72797.00, IdleAvg=285.50, WaitAvg=228.13, T=0.372s
+  MST     => MS=2556.00, TWT=78616.00, IdleAvg=285.80, WaitAvg=238.08, T=0.379s
+  GPISRule1 => MS=2587.00, TWT=40004.00, IdleAvg=316.20, WaitAvg=212.15, T=0.369s
+  GPISRule2 => MS=2570.00, TWT=75095.00, IdleAvg=301.30, WaitAvg=234.37, T=0.364s
+  GPISRule3 => MS=2529.00, TWT=160487.00, IdleAvg=266.30, WaitAvg=236.95, T=0.297s
+  GPISRule4 => MS=2560.00, TWT=79526.00, IdleAvg=291.10, WaitAvg=238.47, T=0.362s
+  GPISRule5 => MS=2559.00, TWT=72731.00, IdleAvg=288.90, WaitAvg=229.27, T=0.354s
+  GPISRule6 => MS=2568.00, TWT=108259.00, IdleAvg=300.60, WaitAvg=238.97, T=0.387s
+
+=== INSTANCE: test_fan21_12_util0.7_ec0.03_nm10_v3.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=3015.00, TWT=15458.00, IdleAvg=721.40, WaitAvg=72.77 , T=0.457s
+  ECT     => MS=3005.00, TWT=16605.00, IdleAvg=709.80, WaitAvg=73.98 , T=0.448s
+  Random  => MS=3003.00, TWT=20444.00, IdleAvg=711.00, WaitAvg=89.07 , T=0.459s
+  EDD     => MS=2993.00, TWT=464.00  , IdleAvg=697.50, WaitAvg=76.05 , T=0.443s
+  MST     => MS=2986.00, TWT=286.00  , IdleAvg=692.60, WaitAvg=78.67 , T=0.445s
+  GPISRule1 => MS=2982.00, TWT=475.00  , IdleAvg=683.80, WaitAvg=76.71 , T=0.444s
+  GPISRule2 => MS=2960.00, TWT=489.00  , IdleAvg=666.80, WaitAvg=87.15 , T=0.434s
+  GPISRule3 => MS=3004.00, TWT=23248.00, IdleAvg=711.00, WaitAvg=77.93 , T=0.447s
+  GPISRule4 => MS=2991.00, TWT=337.00  , IdleAvg=695.50, WaitAvg=77.85 , T=0.451s
+  GPISRule5 => MS=2993.00, TWT=369.00  , IdleAvg=698.00, WaitAvg=75.78 , T=0.461s
+  GPISRule6 => MS=2994.00, TWT=16175.00, IdleAvg=702.10, WaitAvg=83.81 , T=0.464s
+
+=== INSTANCE: test_fan21_13_util0.7_ec0.08_nm10_v3.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=3417.00, TWT=4530.00 , IdleAvg=1125.00, WaitAvg=37.34 , T=0.621s
+  ECT     => MS=3414.00, TWT=5761.00 , IdleAvg=1121.40, WaitAvg=43.89 , T=0.618s
+  Random  => MS=3433.00, TWT=4839.00 , IdleAvg=1139.30, WaitAvg=41.76 , T=0.741s
+  EDD     => MS=3425.00, TWT=298.00  , IdleAvg=1133.40, WaitAvg=42.95 , T=0.638s
+  MST     => MS=3425.00, TWT=252.00  , IdleAvg=1132.30, WaitAvg=45.02 , T=0.630s
+  GPISRule1 => MS=3427.00, TWT=447.00  , IdleAvg=1132.20, WaitAvg=43.27 , T=0.634s
+  GPISRule2 => MS=3395.00, TWT=291.00  , IdleAvg=1103.20, WaitAvg=47.67 , T=0.617s
+  GPISRule3 => MS=3393.00, TWT=6229.00 , IdleAvg=1099.50, WaitAvg=41.22 , T=0.609s
+  GPISRule4 => MS=3425.00, TWT=281.00  , IdleAvg=1133.40, WaitAvg=44.88 , T=0.738s
+  GPISRule5 => MS=3425.00, TWT=359.00  , IdleAvg=1130.90, WaitAvg=43.52 , T=0.632s
+  GPISRule6 => MS=3442.00, TWT=5017.00 , IdleAvg=1145.90, WaitAvg=43.57 , T=0.650s
+
+=== INSTANCE: test_fan21_14_util0.95_ec0.03_nm10_v3.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=2518.00, TWT=104626.00, IdleAvg=250.40, WaitAvg=198.17, T=0.303s
+  ECT     => MS=2612.00, TWT=87323.00, IdleAvg=338.30, WaitAvg=181.97, T=0.353s
+  Random  => MS=2501.00, TWT=128324.00, IdleAvg=233.00, WaitAvg=261.04, T=0.419s
+  EDD     => MS=2571.00, TWT=52873.00, IdleAvg=297.30, WaitAvg=210.08, T=0.355s
+  MST     => MS=2561.00, TWT=53818.00, IdleAvg=286.50, WaitAvg=210.79, T=0.362s
+  GPISRule1 => MS=2547.00, TWT=33230.00, IdleAvg=276.30, WaitAvg=201.74, T=0.333s
+  GPISRule2 => MS=2537.00, TWT=50618.00, IdleAvg=267.10, WaitAvg=219.34, T=0.351s
+  GPISRule3 => MS=2535.00, TWT=134924.00, IdleAvg=268.80, WaitAvg=208.74, T=0.306s
+  GPISRule4 => MS=2561.00, TWT=54538.00, IdleAvg=287.70, WaitAvg=211.19, T=0.364s
+  GPISRule5 => MS=2551.00, TWT=55650.00, IdleAvg=277.00, WaitAvg=212.12, T=0.357s
+  GPISRule6 => MS=2527.00, TWT=88316.00, IdleAvg=257.60, WaitAvg=216.67, T=0.361s
+
+=== INSTANCE: test_fan21_15_util0.95_ec0.08_nm10_v3.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=2651.00, TWT=104858.00, IdleAvg=394.20, WaitAvg=200.58, T=0.389s
+  ECT     => MS=2673.00, TWT=94318.00, IdleAvg=402.10, WaitAvg=188.27, T=0.377s
+  Random  => MS=2632.00, TWT=147347.00, IdleAvg=372.40, WaitAvg=273.36, T=0.396s
+  EDD     => MS=2701.00, TWT=57516.00, IdleAvg=437.50, WaitAvg=221.22, T=0.439s
+  MST     => MS=2675.00, TWT=55841.00, IdleAvg=414.20, WaitAvg=221.79, T=0.436s
+  GPISRule1 => MS=2707.00, TWT=35531.00, IdleAvg=443.20, WaitAvg=216.19, T=0.440s
+  GPISRule2 => MS=2714.00, TWT=59666.00, IdleAvg=449.70, WaitAvg=227.55, T=0.471s
+  GPISRule3 => MS=2579.00, TWT=151887.00, IdleAvg=322.60, WaitAvg=223.90, T=0.333s
+  GPISRule4 => MS=2696.00, TWT=61738.00, IdleAvg=435.30, WaitAvg=228.44, T=0.457s
+  GPISRule5 => MS=2701.00, TWT=58992.00, IdleAvg=439.80, WaitAvg=222.91, T=0.456s
+  GPISRule6 => MS=2648.00, TWT=92805.00, IdleAvg=386.70, WaitAvg=226.20, T=0.445s
+
+=== INSTANCE: test_fan21_16_util0.7_ec0.03_nm10_v4.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=2841.00, TWT=17466.00, IdleAvg=560.70, WaitAvg=72.44 , T=0.410s
+  ECT     => MS=2853.00, TWT=22138.00, IdleAvg=571.10, WaitAvg=79.86 , T=0.412s
+  Random  => MS=2864.00, TWT=24728.00, IdleAvg=585.20, WaitAvg=88.65 , T=0.429s
+  EDD     => MS=2858.00, TWT=1032.00 , IdleAvg=577.30, WaitAvg=90.32 , T=0.419s
+  MST     => MS=2844.00, TWT=572.00  , IdleAvg=562.00, WaitAvg=91.09 , T=0.417s
+  GPISRule1 => MS=2844.00, TWT=1482.00 , IdleAvg=562.90, WaitAvg=92.50 , T=0.421s
+  GPISRule2 => MS=2826.00, TWT=853.00  , IdleAvg=545.40, WaitAvg=99.47 , T=0.413s
+  GPISRule3 => MS=2827.00, TWT=18280.00, IdleAvg=547.00, WaitAvg=70.33 , T=0.402s
+  GPISRule4 => MS=2839.00, TWT=491.00  , IdleAvg=555.90, WaitAvg=89.16 , T=0.415s
+  GPISRule5 => MS=2839.00, TWT=1143.00 , IdleAvg=556.20, WaitAvg=88.84 , T=0.416s
+  GPISRule6 => MS=2862.00, TWT=18272.00, IdleAvg=576.00, WaitAvg=83.09 , T=0.546s
+
+=== INSTANCE: test_fan21_17_util0.7_ec0.08_nm10_v4.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=3098.00, TWT=13889.00, IdleAvg=716.90, WaitAvg=70.26 , T=0.462s
+  ECT     => MS=3136.00, TWT=14471.00, IdleAvg=751.90, WaitAvg=68.48 , T=0.484s
+  Random  => MS=3097.00, TWT=17309.00, IdleAvg=714.00, WaitAvg=79.93 , T=0.470s
+  EDD     => MS=3137.00, TWT=342.00  , IdleAvg=753.50, WaitAvg=76.92 , T=0.492s
+  MST     => MS=3124.00, TWT=128.00  , IdleAvg=739.40, WaitAvg=76.79 , T=0.486s
+  GPISRule1 => MS=3134.00, TWT=819.00  , IdleAvg=750.30, WaitAvg=79.97 , T=0.496s
+  GPISRule2 => MS=3133.00, TWT=443.00  , IdleAvg=751.10, WaitAvg=84.31 , T=0.499s
+  GPISRule3 => MS=3082.00, TWT=17466.00, IdleAvg=702.30, WaitAvg=72.59 , T=0.455s
+  GPISRule4 => MS=3130.00, TWT=219.00  , IdleAvg=745.70, WaitAvg=75.72 , T=0.491s
+  GPISRule5 => MS=3152.00, TWT=469.00  , IdleAvg=766.40, WaitAvg=75.51 , T=0.508s
+  GPISRule6 => MS=3127.00, TWT=14662.00, IdleAvg=741.70, WaitAvg=79.02 , T=0.503s
+
+=== INSTANCE: test_fan21_18_util0.95_ec0.03_nm10_v4.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=2660.00, TWT=124526.00, IdleAvg=397.80, WaitAvg=220.66, T=0.379s
+  ECT     => MS=2705.00, TWT=103722.00, IdleAvg=434.50, WaitAvg=191.69, T=0.503s
+  Random  => MS=2684.00, TWT=139126.00, IdleAvg=419.10, WaitAvg=277.71, T=0.434s
+  EDD     => MS=2695.00, TWT=65680.00, IdleAvg=426.00, WaitAvg=230.22, T=0.436s
+  MST     => MS=2696.00, TWT=69078.00, IdleAvg=427.70, WaitAvg=234.40, T=0.454s
+  GPISRule1 => MS=2694.00, TWT=41215.00, IdleAvg=423.30, WaitAvg=219.25, T=0.433s
+  GPISRule2 => MS=2754.00, TWT=65601.00, IdleAvg=484.60, WaitAvg=233.82, T=0.498s
+  GPISRule3 => MS=2670.00, TWT=167533.00, IdleAvg=404.10, WaitAvg=233.26, T=0.395s
+  GPISRule4 => MS=2696.00, TWT=69078.00, IdleAvg=427.80, WaitAvg=234.34, T=0.458s
+  GPISRule5 => MS=2695.00, TWT=66496.00, IdleAvg=425.80, WaitAvg=231.41, T=0.455s
+  GPISRule6 => MS=2701.00, TWT=103868.00, IdleAvg=432.50, WaitAvg=244.28, T=0.489s
+
+=== INSTANCE: test_fan21_19_util0.95_ec0.08_nm10_v4.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=2617.00, TWT=192491.00, IdleAvg=282.60, WaitAvg=289.14, T=0.327s
+  ECT     => MS=2661.00, TWT=139356.00, IdleAvg=318.50, WaitAvg=221.90, T=0.334s
+  Random  => MS=2637.00, TWT=220469.00, IdleAvg=301.20, WaitAvg=358.48, T=0.363s
+  EDD     => MS=2672.00, TWT=112416.00, IdleAvg=333.90, WaitAvg=276.60, T=0.381s
+  MST     => MS=2649.00, TWT=114844.00, IdleAvg=311.30, WaitAvg=279.40, T=0.383s
+  GPISRule1 => MS=2692.00, TWT=65624.00, IdleAvg=353.20, WaitAvg=259.97, T=0.504s
+  GPISRule2 => MS=2648.00, TWT=105007.00, IdleAvg=310.10, WaitAvg=268.25, T=0.385s
+  GPISRule3 => MS=2608.00, TWT=211673.00, IdleAvg=275.60, WaitAvg=290.26, T=0.321s
+  GPISRule4 => MS=2649.00, TWT=114665.00, IdleAvg=311.30, WaitAvg=279.77, T=0.385s
+  GPISRule5 => MS=2668.00, TWT=108760.00, IdleAvg=330.90, WaitAvg=272.42, T=0.397s
+  GPISRule6 => MS=2648.00, TWT=138991.00, IdleAvg=307.50, WaitAvg=279.51, T=0.415s
+
+=== INSTANCE: test_fan21_1_util0.7_ec0.08_nm10_v0.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=3008.00, TWT=11923.00, IdleAvg=693.40, WaitAvg=60.03 , T=0.459s
+  ECT     => MS=3079.00, TWT=12316.00, IdleAvg=760.50, WaitAvg=67.11 , T=0.503s
+  Random  => MS=3030.00, TWT=13723.00, IdleAvg=717.00, WaitAvg=75.94 , T=0.478s
+  EDD     => MS=3037.00, TWT=551.00  , IdleAvg=721.00, WaitAvg=67.31 , T=0.476s
+  MST     => MS=3034.00, TWT=450.00  , IdleAvg=719.90, WaitAvg=69.52 , T=0.497s
+  GPISRule1 => MS=3037.00, TWT=422.00  , IdleAvg=719.00, WaitAvg=65.18 , T=0.483s
+  GPISRule2 => MS=3019.00, TWT=316.00  , IdleAvg=706.20, WaitAvg=73.14 , T=0.476s
+  GPISRule3 => MS=3022.00, TWT=15001.00, IdleAvg=705.10, WaitAvg=63.06 , T=0.471s
+  GPISRule4 => MS=3035.00, TWT=407.00  , IdleAvg=719.80, WaitAvg=71.74 , T=0.485s
+  GPISRule5 => MS=3038.00, TWT=486.00  , IdleAvg=722.30, WaitAvg=68.58 , T=0.486s
+  GPISRule6 => MS=3038.00, TWT=11971.00, IdleAvg=721.10, WaitAvg=65.98 , T=0.494s
+
+=== INSTANCE: test_fan21_2_util0.95_ec0.03_nm10_v0.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=2652.00, TWT=90277.00, IdleAvg=407.50, WaitAvg=179.66, T=0.480s
+  ECT     => MS=2716.00, TWT=89437.00, IdleAvg=462.80, WaitAvg=174.81, T=0.394s
+  Random  => MS=2613.00, TWT=104293.00, IdleAvg=366.50, WaitAvg=211.84, T=0.352s
+  EDD     => MS=2679.00, TWT=46774.00, IdleAvg=429.70, WaitAvg=186.77, T=0.396s
+  MST     => MS=2690.00, TWT=47142.00, IdleAvg=441.20, WaitAvg=190.98, T=0.418s
+  GPISRule1 => MS=2708.00, TWT=26385.00, IdleAvg=457.80, WaitAvg=183.23, T=0.413s
+  GPISRule2 => MS=2673.00, TWT=43263.00, IdleAvg=424.70, WaitAvg=187.84, T=0.416s
+  GPISRule3 => MS=2621.00, TWT=110560.00, IdleAvg=373.70, WaitAvg=182.64, T=0.353s
+  GPISRule4 => MS=2705.00, TWT=51442.00, IdleAvg=456.20, WaitAvg=196.36, T=0.434s
+  GPISRule5 => MS=2707.00, TWT=51336.00, IdleAvg=457.10, WaitAvg=193.13, T=0.433s
+  GPISRule6 => MS=2639.00, TWT=70621.00, IdleAvg=389.60, WaitAvg=181.21, T=0.408s
+
+=== INSTANCE: test_fan21_3_util0.95_ec0.08_nm10_v0.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=2491.00, TWT=180489.00, IdleAvg=253.90, WaitAvg=289.54, T=0.348s
+  ECT     => MS=2591.00, TWT=139584.00, IdleAvg=340.70, WaitAvg=239.60, T=0.380s
+  Random  => MS=2546.00, TWT=240628.00, IdleAvg=304.90, WaitAvg=364.93, T=0.381s
+  EDD     => MS=2583.00, TWT=138916.00, IdleAvg=337.80, WaitAvg=292.17, T=0.401s
+  MST     => MS=2600.00, TWT=143407.00, IdleAvg=353.80, WaitAvg=296.99, T=0.435s
+  GPISRule1 => MS=2533.00, TWT=80422.00, IdleAvg=285.50, WaitAvg=268.62, T=0.363s
+  GPISRule2 => MS=2588.00, TWT=132064.00, IdleAvg=343.30, WaitAvg=283.36, T=0.425s
+  GPISRule3 => MS=2479.00, TWT=218383.00, IdleAvg=242.20, WaitAvg=310.56, T=0.314s
+  GPISRule4 => MS=2597.00, TWT=144317.00, IdleAvg=351.70, WaitAvg=299.56, T=0.436s
+  GPISRule5 => MS=2582.00, TWT=131911.00, IdleAvg=335.20, WaitAvg=285.33, T=0.420s
+  GPISRule6 => MS=2594.00, TWT=169970.00, IdleAvg=348.10, WaitAvg=303.22, T=0.470s
+
+=== INSTANCE: test_fan21_4_util0.7_ec0.03_nm10_v1.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=3181.00, TWT=5589.00 , IdleAvg=896.00, WaitAvg=46.74 , T=0.520s
+  ECT     => MS=3192.00, TWT=7195.00 , IdleAvg=904.70, WaitAvg=49.52 , T=0.528s
+  Random  => MS=3164.00, TWT=8396.00 , IdleAvg=876.90, WaitAvg=55.05 , T=0.513s
+  EDD     => MS=3187.00, TWT=112.00  , IdleAvg=899.30, WaitAvg=52.33 , T=0.524s
+  MST     => MS=3182.00, TWT=79.00   , IdleAvg=896.50, WaitAvg=52.56 , T=0.523s
+  GPISRule1 => MS=3180.00, TWT=284.00  , IdleAvg=893.10, WaitAvg=51.03 , T=0.528s
+  GPISRule2 => MS=3141.00, TWT=186.00  , IdleAvg=854.70, WaitAvg=54.18 , T=0.500s
+  GPISRule3 => MS=3171.00, TWT=10586.00, IdleAvg=884.70, WaitAvg=48.43 , T=0.515s
+  GPISRule4 => MS=3188.00, TWT=66.00   , IdleAvg=902.50, WaitAvg=52.10 , T=0.529s
+  GPISRule5 => MS=3190.00, TWT=283.00  , IdleAvg=902.90, WaitAvg=54.30 , T=0.531s
+  GPISRule6 => MS=3183.00, TWT=6596.00 , IdleAvg=895.30, WaitAvg=52.05 , T=0.536s
+
+=== INSTANCE: test_fan21_5_util0.7_ec0.08_nm10_v1.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=2956.00, TWT=16554.00, IdleAvg=611.30, WaitAvg=75.58 , T=0.422s
+  ECT     => MS=2982.00, TWT=19684.00, IdleAvg=635.60, WaitAvg=80.29 , T=0.435s
+  Random  => MS=2918.00, TWT=19692.00, IdleAvg=573.10, WaitAvg=85.14 , T=0.404s
+  EDD     => MS=2978.00, TWT=627.00  , IdleAvg=629.80, WaitAvg=80.37 , T=0.437s
+  MST     => MS=2967.00, TWT=548.00  , IdleAvg=619.70, WaitAvg=79.10 , T=0.435s
+  GPISRule1 => MS=2969.00, TWT=625.00  , IdleAvg=621.40, WaitAvg=81.73 , T=0.440s
+  GPISRule2 => MS=2916.00, TWT=512.00  , IdleAvg=568.30, WaitAvg=84.18 , T=0.410s
+  GPISRule3 => MS=2929.00, TWT=17473.00, IdleAvg=583.30, WaitAvg=74.58 , T=0.406s
+  GPISRule4 => MS=2991.00, TWT=550.00  , IdleAvg=644.30, WaitAvg=85.12 , T=0.454s
+  GPISRule5 => MS=2951.00, TWT=641.00  , IdleAvg=604.20, WaitAvg=79.30 , T=0.428s
+  GPISRule6 => MS=2919.00, TWT=15304.00, IdleAvg=572.50, WaitAvg=79.76 , T=0.418s
+
+=== INSTANCE: test_fan21_6_util0.95_ec0.03_nm10_v1.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=2473.00, TWT=174709.00, IdleAvg=215.00, WaitAvg=255.91, T=0.280s
+  ECT     => MS=2562.00, TWT=125601.00, IdleAvg=296.20, WaitAvg=205.17, T=0.332s
+  Random  => MS=2484.00, TWT=194708.00, IdleAvg=224.00, WaitAvg=305.81, T=0.319s
+  EDD     => MS=2546.00, TWT=111609.00, IdleAvg=280.20, WaitAvg=260.23, T=0.356s
+  MST     => MS=2542.00, TWT=116606.00, IdleAvg=274.50, WaitAvg=265.95, T=0.374s
+  GPISRule1 => MS=2546.00, TWT=58612.00, IdleAvg=279.10, WaitAvg=238.28, T=0.357s
+  GPISRule2 => MS=2573.00, TWT=111737.00, IdleAvg=308.20, WaitAvg=256.31, T=0.393s
+  GPISRule3 => MS=2460.00, TWT=194689.00, IdleAvg=203.60, WaitAvg=264.36, T=0.277s
+  GPISRule4 => MS=2541.00, TWT=110970.00, IdleAvg=275.00, WaitAvg=261.60, T=0.474s
+  GPISRule5 => MS=2543.00, TWT=108137.00, IdleAvg=277.80, WaitAvg=258.99, T=0.373s
+  GPISRule6 => MS=2556.00, TWT=142675.00, IdleAvg=293.10, WaitAvg=268.36, T=0.414s
+
+=== INSTANCE: test_fan21_7_util0.95_ec0.08_nm10_v1.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=2544.00, TWT=107216.00, IdleAvg=352.50, WaitAvg=176.63, T=0.325s
+  ECT     => MS=2547.00, TWT=81525.00, IdleAvg=349.30, WaitAvg=151.19, T=0.307s
+  Random  => MS=2555.00, TWT=131144.00, IdleAvg=362.20, WaitAvg=234.64, T=0.795s
+  EDD     => MS=2583.00, TWT=42629.00, IdleAvg=386.50, WaitAvg=174.77, T=0.475s
+  MST     => MS=2572.00, TWT=44318.00, IdleAvg=375.80, WaitAvg=180.63, T=0.370s
+  GPISRule1 => MS=2590.00, TWT=22352.00, IdleAvg=392.80, WaitAvg=162.47, T=0.378s
+  GPISRule2 => MS=2560.00, TWT=31837.00, IdleAvg=362.90, WaitAvg=175.19, T=0.479s
+  GPISRule3 => MS=2572.00, TWT=124831.00, IdleAvg=379.70, WaitAvg=192.57, T=0.334s
+  GPISRule4 => MS=2587.00, TWT=43377.00, IdleAvg=390.80, WaitAvg=177.13, T=0.384s
+  GPISRule5 => MS=2578.00, TWT=39045.00, IdleAvg=382.50, WaitAvg=172.38, T=0.376s
+  GPISRule6 => MS=2602.00, TWT=73926.00, IdleAvg=406.40, WaitAvg=184.19, T=0.411s
+
+=== INSTANCE: test_fan21_8_util0.7_ec0.03_nm10_v2.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=2903.00, TWT=23481.00, IdleAvg=608.20, WaitAvg=84.57 , T=0.406s
+  ECT     => MS=2976.00, TWT=23207.00, IdleAvg=676.60, WaitAvg=86.33 , T=0.448s
+  Random  => MS=2923.00, TWT=24341.00, IdleAvg=629.90, WaitAvg=101.76, T=0.428s
+  EDD     => MS=2953.00, TWT=761.00  , IdleAvg=654.20, WaitAvg=86.89 , T=0.438s
+  MST     => MS=2959.00, TWT=1207.00 , IdleAvg=659.50, WaitAvg=92.63 , T=0.449s
+  GPISRule1 => MS=2925.00, TWT=1586.00 , IdleAvg=628.80, WaitAvg=91.47 , T=0.429s
+  GPISRule2 => MS=2903.00, TWT=803.00  , IdleAvg=607.60, WaitAvg=97.40 , T=0.419s
+  GPISRule3 => MS=2904.00, TWT=25369.00, IdleAvg=607.60, WaitAvg=82.51 , T=0.408s
+  GPISRule4 => MS=2959.00, TWT=1207.00 , IdleAvg=659.50, WaitAvg=92.63 , T=0.451s
+  GPISRule5 => MS=2943.00, TWT=734.00  , IdleAvg=642.20, WaitAvg=87.69 , T=0.440s
+  GPISRule6 => MS=2942.00, TWT=22336.00, IdleAvg=646.70, WaitAvg=98.74 , T=0.456s
+
+=== INSTANCE: test_fan21_9_util0.7_ec0.08_nm10_v2.json (Machines: 10, Total Jobs Defined: 500) ===
+  SPT     => MS=2957.00, TWT=9370.00 , IdleAvg=707.00, WaitAvg=59.09 , T=0.395s
+  ECT     => MS=3044.00, TWT=15286.00, IdleAvg=786.80, WaitAvg=70.17 , T=0.451s
+  Random  => MS=3005.00, TWT=17174.00, IdleAvg=753.60, WaitAvg=74.93 , T=0.436s
+  EDD     => MS=3032.00, TWT=675.00  , IdleAvg=781.40, WaitAvg=69.04 , T=0.445s
+  MST     => MS=3023.00, TWT=366.00  , IdleAvg=769.30, WaitAvg=67.66 , T=0.447s
+  GPISRule1 => MS=3026.00, TWT=454.00  , IdleAvg=775.20, WaitAvg=66.03 , T=0.450s
+  GPISRule2 => MS=2976.00, TWT=344.00  , IdleAvg=727.00, WaitAvg=75.31 , T=0.544s
+  GPISRule3 => MS=2966.00, TWT=12625.00, IdleAvg=716.60, WaitAvg=61.70 , T=0.405s
+  GPISRule4 => MS=3030.00, TWT=266.00  , IdleAvg=776.10, WaitAvg=68.36 , T=0.451s
+  GPISRule5 => MS=3022.00, TWT=490.00  , IdleAvg=769.50, WaitAvg=68.36 , T=0.467s
+  GPISRule6 => MS=2997.00, TWT=12218.00, IdleAvg=746.20, WaitAvg=67.51 , T=0.439s
+
+
+=== Average Performance per Rule (across all instances) ===
+Rule   : AvgMS  , AvgTWT  , AvgIdle, AvgWait, AvgT (s)
+SPT    : 2812.75, 76785.65, 531.79 , 148.34 , 0.409  
+ECT    : 2857.20, 63292.70, 570.19 , 134.05 , 0.429  
+Random : 2816.30, 92585.55, 534.62 , 185.18 , 0.452  
+EDD    : 2845.85, 41196.10, 560.88 , 154.19 , 0.442  
+MST    : 2841.90, 42458.80, 557.02 , 156.88 , 0.445  
+GPISRule1: 2845.70, 24148.25, 560.33 , 147.76 , 0.444  
+GPISRule2: 2829.20, 39807.75, 545.48 , 157.59 , 0.457  
+GPISRule3: 2802.50, 92796.25, 521.17 , 154.91 , 0.396  
+GPISRule4: 2846.45, 42707.40, 561.73 , 157.51 , 0.459  
+GPISRule5: 2843.65, 40840.15, 558.44 , 154.06 , 0.447  
+GPISRule6: 2836.80, 64058.80, 552.09 , 158.58 , 0.466  

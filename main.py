@@ -21,8 +21,8 @@ from simpleTree import simplify_individual, tree_str, infix_str
 # ---------------------------------------------------------------------------
 # CONFIG
 # ---------------------------------------------------------------------------
-TRAIN_DIR = Path("training_sets")
-TEST_DIR = Path("test_sets")
+TRAIN_DIR = Path("dynamic_data/extended/test_sets")
+TEST_DIR = Path("dynamic_data/extended/test_sets")
 POP_SIZE = 75
 N_GENERATIONS = 40
 N_WORKERS = 5
