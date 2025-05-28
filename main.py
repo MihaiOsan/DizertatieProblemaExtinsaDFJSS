@@ -23,12 +23,15 @@ from simpleTree import simplify_individual, tree_str, infix_str
 # ---------------------------------------------------------------------------
 TRAIN_DIR = Path("dynamic_data/extended/test_sets")
 TEST_DIR = Path("dynamic_data/extended/test_sets")
+TEST_DIR_SMALL = Path("dynamic_data/extended/test_sets_small")
 POP_SIZE = 75
-N_GENERATIONS = 40
+N_GENERATIONS = 50
 N_WORKERS = 5
 MAX_HOF = 10
 
 BASE_OUTPUT_DIR = Path("rezultate/genetic")
+
+
 
 # ----------------------------------------------------------
 # TUPLE_FIELDS si field()
@@ -240,40 +243,14 @@ def generate_per_job_metrics_csv(
         print(f"Error writing job metrics CSV to {file_path}: {e}")
 
 
-# ---------------------------------------------------------------------------
-# MAIN
-# ---------------------------------------------------------------------------
-def main() -> None:
-    global_start = time.time()
-    BASE_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    print("--- Loading Training Instances ---")
-    train_insts: List[FJSPInstance] = load_instances_from_directory(str(TRAIN_DIR))
-    print(f"Loaded {len(train_insts)} training instances.\n")
-    print("--- Loading Test Instances ---")
-    test_insts: List[FJSPInstance] = load_instances_from_directory(str(TEST_DIR))
-    print(f"Loaded {len(test_insts)} test instances.\n")
-    if not train_insts:
-        print("No training instances loaded. Exiting.");
-        return
-    toolbox = create_toolbox(np=N_WORKERS)
-    print("\n=== GP TRAINING ===")
-    hof = run_genetic_program(
-        train_instances=train_insts, toolbox=toolbox,
-        ngen=N_GENERATIONS, pop_size=POP_SIZE,
-        halloffame_size=MAX_HOF, alpha=0.7
-    )
-    best_individuals: List[gp.PrimitiveTree] = list(hof)[:MAX_HOF]
-    print("\nTop Individuals (from Hall of Fame):")
-    for idx, ind_tree_original in enumerate(best_individuals, 1):
-        fit_val = ind_tree_original.fitness.values[0] if ind_tree_original.fitness.valid else float("inf")
-        print(f"  {idx}: Fitness={fit_val:.4f}  ->  {str(ind_tree_original)}")
-    instances_for_testing = test_insts if test_insts else train_insts
-    if not instances_for_testing:
-        print("No instances available for final testing. Exiting.");
-        return
-    testing_on_label = "Test" if test_insts else "Training (as Test)"
-    print(f"\n=== Final Testing on {len(instances_for_testing)} {testing_on_label} Instances ===")
-
+def evaluate_and_save_results(
+    instances_for_testing: List[FJSPInstance],
+    best_individuals: List[gp.PrimitiveTree],
+    toolbox,
+    output_base_dir: Path,
+    label: str = ""
+):
+    output_base_dir.mkdir(parents=True, exist_ok=True)
     for rank, individual_tree_original in enumerate(best_individuals, 1):
         individual_fitness_train = individual_tree_original.fitness.values[0] if individual_tree_original.fitness.valid else float("inf")
         simplified_individual_tree = simplify_individual(individual_tree_original, toolbox.pset)
@@ -283,19 +260,19 @@ def main() -> None:
         ind_depth_simplified = simplified_individual_tree.height
         formula_infix_str = infix_str(simplified_individual_tree)
         formula_str_sanitized = sanitize_filename_str(formula_infix_str)
-        individual_output_dir = BASE_OUTPUT_DIR / f"Indiv_{rank}"
+        individual_output_dir = output_base_dir / f"Indiv_{rank}"
         individual_output_dir.mkdir(parents=True, exist_ok=True)
         summary_results_file_path = individual_output_dir / "summary_overall_metrics.txt"
         per_instance_details_dir = individual_output_dir / "per_instance_details"
 
         print(
-            f"\n--- Testing Individual {rank}/{len(best_individuals)} (Train Fitness={individual_fitness_train:.4f}) ---")
+            f"\n--- Testing Individual {rank}/{len(best_individuals)} ({label} Train Fitness={individual_fitness_train:.4f}) ---")
         print(f"Output directory: {individual_output_dir}")
         print(f"Original Tree: {str(individual_tree_original)}")
         print(f"Simplified Formula: {formula_infix_str}")
 
         all_instance_makespans: List[float] = []
-        all_instance_total_weighted_tardiness: List[float] = []  # Nume schimbat si initializat
+        all_instance_total_weighted_tardiness: List[float] = []
         all_instance_avg_machine_idles: List[float] = []
         all_instance_std_dev_machine_idles: List[float] = []
         all_instance_avg_job_waits: List[float] = []
@@ -342,8 +319,7 @@ def main() -> None:
                 job_metrics = calc_job_related_metrics(schedule_tuples, fjsp_instance_obj, makespan)
 
                 all_instance_makespans.append(makespan)
-                all_instance_total_weighted_tardiness.append(
-                    job_metrics["total_weighted_tardiness"])  # Folosim numele corect
+                all_instance_total_weighted_tardiness.append(job_metrics["total_weighted_tardiness"])
                 all_instance_avg_machine_idles.append(avg_idle)
                 all_instance_std_dev_machine_idles.append(std_idle)
                 all_instance_avg_job_waits.append(job_metrics["avg_wait_time"])
@@ -401,7 +377,7 @@ def main() -> None:
             outf_summary.write(
                 f"Average_MS                     : {safe_avg_list(all_instance_makespans):.2f}\n")
             outf_summary.write(
-                f"Average_TWT                    : {safe_avg_list(all_instance_total_weighted_tardiness):.2f}\n")  # Folosim numele corect
+                f"Average_TWT                    : {safe_avg_list(all_instance_total_weighted_tardiness):.2f}\n")
             outf_summary.write(
                 f"Average_Avg_Machine_Idle       : {safe_avg_list(all_instance_avg_machine_idles):.2f}\n")
             outf_summary.write(
@@ -423,7 +399,7 @@ def main() -> None:
 
             print("  ------- OVERALL AVERAGES for this Individual (across test instances) -------")
             print(f"  Avg Test MS                     = {safe_avg_list(all_instance_makespans):.2f}")
-            print(f"  Avg Test TWT                    = {safe_avg_list(all_instance_total_weighted_tardiness):.2f}")  # Folosim numele corect
+            print(f"  Avg Test TWT                    = {safe_avg_list(all_instance_total_weighted_tardiness):.2f}")
             print(f"  Avg Test Avg_Machine_Idle       = {safe_avg_list(all_instance_avg_machine_idles):.2f}")
             print(f"  Avg Test Std_Machine_Idle       = {safe_avg_list(all_instance_std_dev_machine_idles):.2f}")
             print(f"  Avg Test Avg_Job_Wait           = {safe_avg_list(all_instance_avg_job_waits):.2f}")
@@ -434,9 +410,55 @@ def main() -> None:
             print(f"  Avg Test Avg_Machine_Utilization= {safe_avg_list(all_instance_avg_busy_util) * 100:.2f}%")
             print(f"  Avg Eval Time                   = {safe_avg_list(all_instance_evaluation_times):.3f}s")
 
+
+# ---------------------------------------------------------------------------
+# MAIN
+# ---------------------------------------------------------------------------
+def main() -> None:
+    global_start = time.time()
+    BASE_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+    print("--- Loading Training Instances ---")
+    train_insts: List[FJSPInstance] = load_instances_from_directory(str(TRAIN_DIR))
+    print(f"Loaded {len(train_insts)} training instances.\n")
+    print("--- Loading Test Instances ---")
+    test_insts: List[FJSPInstance] = load_instances_from_directory(str(TEST_DIR))
+    print(f"Loaded {len(test_insts)} test instances.\n")
+    if not train_insts:
+        print("No training instances loaded. Exiting.");
+        return
+    toolbox = create_toolbox(np=N_WORKERS)
+    print("\n=== GP TRAINING ===")
+    hof = run_genetic_program(
+        train_instances=train_insts, toolbox=toolbox,
+        ngen=N_GENERATIONS, pop_size=POP_SIZE,
+        halloffame_size=MAX_HOF, alpha=0.4
+    )
+    best_individuals: List[gp.PrimitiveTree] = list(hof)[:MAX_HOF]
+
+    # ---- Test Set Mare ----
+    evaluate_and_save_results(
+        instances_for_testing=test_insts,
+        best_individuals=best_individuals,
+        toolbox=toolbox,
+        output_base_dir=BASE_OUTPUT_DIR / "TestSet_Big",
+        label="TestSet_Big"
+    )
+
+    # ---- Test Set Mic ----
+    test_insts_small = load_instances_from_directory(str(TEST_DIR_SMALL))
+    print(f"Loaded {len(test_insts_small)} small test instances.\n")
+    evaluate_and_save_results(
+        instances_for_testing=test_insts_small,
+        best_individuals=best_individuals,
+        toolbox=toolbox,
+        output_base_dir=BASE_OUTPUT_DIR / "TestSet_Small",
+        label="TestSet_Small"
+    )
+
     total_elapsed_time = time.time() - global_start
     print(f"\nResults written to per-individual files in '{BASE_OUTPUT_DIR}'.")
     print(f"Total execution time: {total_elapsed_time:.1f}s")
+
 
 
 if __name__ == "__main__":

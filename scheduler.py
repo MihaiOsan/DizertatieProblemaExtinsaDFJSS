@@ -229,7 +229,7 @@ def evaluate_individual(
                                                                              etpc_min_start_for_hind[(hj_sim, ho_idx)])
                     job_done_obj = get_job_object_from_sim(job_sim_id_done)
                     if job_done_obj and op_idx_done + 1 < job_done_obj.num_operations and job_sim_id_done not in cancelled_sim_ids:
-                        make_op_ready_sim(job_sim_id_done, op_idx_done + 1, op_end_time)
+                        make_op_ready_sim(job_sim_id_done, op_idx_done + 1, current_time)
 
         for machine in machines:
             if not machine.busy and machine.broken_until <= current_time + 1e-9:

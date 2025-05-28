@@ -3,87 +3,17 @@
     {
       "id": 0,
       "arrival_time": 0,
-      "weight": 1,
-      "due_date": 780,
+      "weight": 2,
+      "due_date": 570,
       "operations": [
         {
           "candidate_machines": {
-            "0": 74,
-            "2": 71,
-            "5": 73,
-            "13": 64,
-            "15": 56
-          }
-        },
-        {
-          "candidate_machines": {
-            "0": 73,
-            "4": 28,
-            "5": 46,
-            "13": 31
-          }
-        },
-        {
-          "candidate_machines": {
-            "6": 33,
-            "10": 25,
-            "13": 71
-          }
-        },
-        {
-          "candidate_machines": {
-            "0": 46,
-            "3": 52,
-            "6": 48,
-            "8": 58,
-            "9": 53,
-            "15": 69
-          }
-        },
-        {
-          "candidate_machines": {
-            "0": 38,
-            "2": 30,
-            "9": 71,
-            "12": 49,
-            "13": 70
-          }
-        },
-        {
-          "candidate_machines": {
-            "0": 35,
-            "1": 26,
-            "4": 28,
-            "10": 50,
-            "11": 39,
-            "14": 73
-          }
-        },
-        {
-          "candidate_machines": {
-            "1": 34,
-            "3": 49,
-            "4": 62,
-            "9": 74,
-            "10": 25
-          }
-        },
-        {
-          "candidate_machines": {
-            "2": 69,
-            "3": 41,
-            "7": 49,
-            "13": 53,
-            "14": 50
-          }
-        },
-        {
-          "candidate_machines": {
-            "1": 51,
-            "3": 29,
-            "6": 69,
-            "9": 41,
-            "11": 66
+            "1": 66,
+            "3": 69,
+            "4": 41,
+            "11": 29,
+            "12": 51,
+            "14": 51
           }
         },
         {
@@ -109,22 +39,20 @@
             "5": 46,
             "7": 26
           }
-        }
-      ]
-    },
-    {
-      "id": 1,
-      "arrival_time": 0,
-      "weight": 2,
-      "due_date": 602,
-      "operations": [
+        },
         {
           "candidate_machines": {
-            "2": 39,
-            "5": 67,
-            "6": 58,
-            "10": 32,
-            "12": 54
+            "5": 46,
+            "12": 73,
+            "13": 59
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 58,
+            "6": 67,
+            "7": 66,
+            "11": 39
           }
         },
         {
@@ -150,44 +78,92 @@
             "1": 74,
             "14": 65
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "arrival_time": 0,
+      "weight": 2,
+      "due_date": 596,
+      "operations": [
         {
           "candidate_machines": {
-            "2": 73,
-            "4": 30,
-            "14": 57
+            "1": 62,
+            "5": 47,
+            "8": 75,
+            "13": 35,
+            "15": 37
           }
         },
         {
           "candidate_machines": {
-            "2": 58,
-            "9": 51,
-            "11": 37,
-            "12": 56,
-            "13": 57
+            "0": 57,
+            "1": 62,
+            "5": 59,
+            "8": 44,
+            "12": 69,
+            "13": 33
           }
         },
         {
           "candidate_machines": {
-            "5": 57,
-            "11": 32,
-            "14": 33
+            "2": 45,
+            "4": 25,
+            "9": 25,
+            "10": 44,
+            "15": 41
           }
         },
         {
           "candidate_machines": {
-            "8": 62,
-            "10": 72,
-            "11": 65,
-            "12": 65,
-            "15": 58
+            "4": 27,
+            "13": 25,
+            "14": 37
           }
         },
         {
           "candidate_machines": {
-            "2": 25,
-            "8": 66,
-            "9": 45
+            "5": 44,
+            "14": 73,
+            "15": 51
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 69,
+            "7": 60,
+            "13": 62,
+            "14": 48
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 51,
+            "3": 48,
+            "6": 32,
+            "10": 70,
+            "12": 64,
+            "15": 39
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 39,
+            "7": 42,
+            "9": 30,
+            "10": 60,
+            "11": 53
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 29,
+            "5": 70,
+            "6": 40,
+            "7": 42,
+            "11": 26,
+            "12": 62
           }
         }
       ]
@@ -196,77 +172,64 @@
       "id": 2,
       "arrival_time": 0,
       "weight": 1,
-      "due_date": 1644,
+      "due_date": 464,
       "operations": [
         {
           "candidate_machines": {
-            "0": 54,
-            "3": 27,
-            "4": 27,
-            "6": 73,
-            "15": 47
-          }
-        },
-        {
-          "candidate_machines": {
-            "3": 67,
-            "6": 60,
-            "8": 51,
-            "9": 68,
-            "11": 46
-          }
-        },
-        {
-          "candidate_machines": {
-            "5": 36,
-            "8": 51,
-            "9": 49,
-            "11": 72,
-            "13": 67,
-            "15": 31
-          }
-        },
-        {
-          "candidate_machines": {
-            "1": 70,
-            "6": 66,
-            "9": 46,
-            "11": 39
-          }
-        },
-        {
-          "candidate_machines": {
-            "9": 53,
-            "11": 39,
-            "13": 42,
-            "15": 68
-          }
-        },
-        {
-          "candidate_machines": {
-            "10": 37,
-            "12": 35,
-            "14": 52
-          }
-        },
-        {
-          "candidate_machines": {
-            "0": 33,
-            "1": 27,
-            "2": 36,
-            "3": 29,
+            "2": 50,
             "4": 50,
-            "9": 35
+            "14": 27
           }
         },
         {
           "candidate_machines": {
             "1": 72,
-            "3": 46,
-            "9": 54,
-            "12": 62,
-            "14": 67,
-            "15": 30
+            "7": 61,
+            "14": 54
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 66,
+            "5": 32,
+            "6": 49,
+            "9": 75,
+            "10": 40
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 31,
+            "9": 37,
+            "10": 58,
+            "12": 45
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 33,
+            "3": 37,
+            "5": 74,
+            "8": 75,
+            "12": 74
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 48,
+            "1": 48,
+            "2": 67,
+            "5": 32,
+            "13": 30,
+            "15": 66
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 71,
+            "4": 64,
+            "6": 41,
+            "15": 25
           }
         }
       ]
@@ -275,104 +238,72 @@
       "id": 3,
       "arrival_time": 0,
       "weight": 2,
-      "due_date": 3360,
+      "due_date": 1668,
       "operations": [
         {
           "candidate_machines": {
-            "1": 65,
-            "3": 31,
-            "6": 74,
-            "7": 36,
-            "12": 62
+            "1": 25,
+            "3": 50,
+            "4": 65,
+            "10": 41,
+            "12": 48,
+            "14": 57
           }
         },
         {
           "candidate_machines": {
-            "8": 49,
-            "10": 44,
-            "12": 58,
-            "13": 38
+            "3": 42,
+            "6": 40,
+            "12": 70
           }
         },
         {
           "candidate_machines": {
-            "3": 63,
-            "10": 33,
-            "12": 74,
-            "14": 53
+            "1": 63,
+            "2": 45,
+            "10": 74
           }
         },
         {
           "candidate_machines": {
-            "1": 29,
-            "5": 27,
+            "0": 63,
+            "1": 40,
+            "4": 46,
+            "14": 54
+          }
+        },
+        {
+          "candidate_machines": {
+            "6": 37,
+            "7": 45,
+            "10": 74,
+            "12": 33
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 34,
+            "7": 59,
+            "11": 47,
+            "14": 48
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 35,
+            "4": 41,
+            "5": 38,
+            "8": 69,
             "15": 67
           }
         },
         {
           "candidate_machines": {
-            "1": 50,
-            "3": 37,
-            "5": 38,
-            "13": 67,
-            "14": 38
-          }
-        },
-        {
-          "candidate_machines": {
-            "0": 52,
-            "3": 74,
-            "8": 42,
-            "9": 60,
-            "11": 62
-          }
-        },
-        {
-          "candidate_machines": {
-            "3": 74,
-            "7": 68,
-            "12": 43
-          }
-        },
-        {
-          "candidate_machines": {
-            "5": 28,
-            "8": 65,
-            "12": 41
-          }
-        },
-        {
-          "candidate_machines": {
-            "3": 29,
-            "4": 65,
-            "6": 28,
-            "11": 30
-          }
-        },
-        {
-          "candidate_machines": {
-            "0": 54,
-            "1": 33,
-            "2": 63,
-            "6": 46,
-            "13": 40
-          }
-        },
-        {
-          "candidate_machines": {
-            "3": 36,
-            "10": 74,
-            "12": 33,
-            "15": 45
-          }
-        },
-        {
-          "candidate_machines": {
-            "2": 47,
-            "5": 59,
-            "7": 48,
-            "13": 55,
-            "15": 75
+            "0": 70,
+            "3": 31,
+            "6": 49,
+            "10": 26,
+            "13": 45
           }
         }
       ]
@@ -381,112 +312,97 @@
       "id": 4,
       "arrival_time": 0,
       "weight": 2,
-      "due_date": 404,
+      "due_date": 2274,
       "operations": [
         {
           "candidate_machines": {
-            "2": 50,
-            "10": 44,
-            "11": 41,
-            "14": 38,
-            "15": 25
-          }
-        },
-        {
-          "candidate_machines": {
-            "0": 50,
-            "1": 65,
-            "5": 74,
-            "12": 52
-          }
-        },
-        {
-          "candidate_machines": {
-            "0": 25,
-            "3": 66,
+            "1": 66,
             "4": 44,
             "5": 33,
             "6": 71,
-            "14": 68
+            "13": 68,
+            "14": 28
           }
         },
         {
           "candidate_machines": {
-            "1": 26,
-            "2": 25,
-            "5": 47,
-            "7": 34,
-            "13": 58
+            "0": 48,
+            "11": 33,
+            "13": 55
           }
         },
         {
           "candidate_machines": {
-            "1": 41,
-            "3": 67,
-            "9": 54,
-            "11": 55
+            "0": 75,
+            "2": 40,
+            "5": 66
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 67,
+            "9": 55,
+            "11": 41
           }
         },
         {
           "candidate_machines": {
             "0": 46,
             "3": 70,
-            "5": 36,
+            "5": 42,
             "6": 54,
-            "11": 42,
-            "15": 60
-          }
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "arrival_time": 0,
-      "weight": 2,
-      "due_date": 1590,
-      "operations": [
-        {
-          "candidate_machines": {
-            "2": 40,
-            "8": 47,
-            "9": 49,
-            "11": 66,
-            "15": 45
+            "11": 60,
+            "12": 46
           }
         },
         {
           "candidate_machines": {
-            "0": 66,
-            "2": 32,
-            "5": 30,
-            "8": 63,
-            "9": 31,
-            "14": 59
+            "4": 63,
+            "5": 34,
+            "7": 60,
+            "15": 70
           }
         },
         {
           "candidate_machines": {
-            "1": 30,
-            "2": 49,
-            "3": 58,
-            "7": 25,
-            "8": 29,
-            "10": 52
+            "3": 26,
+            "4": 63,
+            "5": 34,
+            "7": 47,
+            "8": 61,
+            "11": 64
           }
         },
         {
           "candidate_machines": {
-            "0": 30,
-            "5": 43,
-            "8": 30,
-            "15": 73
+            "3": 59,
+            "10": 56,
+            "14": 30
           }
         },
         {
           "candidate_machines": {
-            "0": 38,
-            "1": 49,
-            "13": 25
+            "1": 25,
+            "3": 30,
+            "5": 59,
+            "10": 49
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 73,
+            "2": 47,
+            "3": 30,
+            "8": 25,
+            "10": 43,
+            "15": 30
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 38,
+            "13": 25,
+            "14": 49
           }
         },
         {
@@ -495,14 +411,22 @@
             "2": 36,
             "3": 30
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "arrival_time": 0,
+      "weight": 1,
+      "due_date": 1722,
+      "operations": [
         {
           "candidate_machines": {
-            "5": 54,
-            "11": 40,
-            "12": 50,
-            "13": 51,
-            "14": 26
+            "6": 71,
+            "7": 73,
+            "11": 26,
+            "14": 50,
+            "15": 40
           }
         },
         {
@@ -521,40 +445,35 @@
             "12": 75,
             "15": 26
           }
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "arrival_time": 0,
-      "weight": 2,
-      "due_date": 634,
-      "operations": [
+        },
         {
           "candidate_machines": {
-            "0": 40,
-            "2": 60,
-            "5": 56,
-            "6": 37,
-            "11": 26,
-            "14": 50
+            "3": 50,
+            "7": 37,
+            "10": 33,
+            "11": 28,
+            "12": 34,
+            "13": 45
           }
         },
         {
           "candidate_machines": {
-            "1": 65,
-            "2": 53,
-            "7": 62,
-            "9": 52,
-            "10": 57
+            "0": 56,
+            "5": 65,
+            "7": 58,
+            "8": 62,
+            "9": 36,
+            "13": 28
           }
         },
         {
           "candidate_machines": {
-            "1": 26,
-            "4": 29,
-            "9": 59,
-            "12": 54
+            "3": 54,
+            "6": 29,
+            "8": 30,
+            "9": 26,
+            "11": 59,
+            "14": 42
           }
         },
         {
@@ -578,24 +497,31 @@
             "7": 70,
             "12": 47
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "arrival_time": 0,
+      "weight": 1,
+      "due_date": 680,
+      "operations": [
         {
           "candidate_machines": {
             "0": 65,
             "1": 61,
             "6": 28,
-            "8": 31,
-            "11": 31
+            "11": 31,
+            "12": 52
           }
         },
         {
           "candidate_machines": {
-            "1": 29,
-            "4": 51,
-            "5": 50,
-            "6": 58,
-            "8": 64,
-            "11": 73
+            "1": 50,
+            "5": 51,
+            "6": 73,
+            "9": 64,
+            "11": 29
           }
         },
         {
@@ -605,28 +531,21 @@
             "9": 36,
             "13": 60
           }
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "arrival_time": 0,
-      "weight": 2,
-      "due_date": 400,
-      "operations": [
+        },
         {
           "candidate_machines": {
-            "4": 36,
-            "8": 44,
-            "12": 41
+            "0": 44,
+            "3": 42,
+            "11": 43
           }
         },
         {
           "candidate_machines": {
-            "5": 56,
-            "6": 63,
-            "8": 73,
-            "11": 43
+            "3": 63,
+            "5": 69,
+            "8": 56,
+            "14": 73,
+            "15": 43
           }
         },
         {
@@ -662,24 +581,23 @@
             "14": 63,
             "15": 73
           }
+        },
+        {
+          "candidate_machines": {
+            "0": 67,
+            "5": 61,
+            "13": 60,
+            "15": 41
+          }
         }
       ]
     },
     {
-      "id": 8,
+      "id": 7,
       "arrival_time": 0,
       "weight": 1,
-      "due_date": 1932,
+      "due_date": 1704,
       "operations": [
-        {
-          "candidate_machines": {
-            "1": 67,
-            "4": 74,
-            "8": 43,
-            "9": 62,
-            "12": 38
-          }
-        },
         {
           "candidate_machines": {
             "3": 29,
@@ -754,9 +672,9 @@
       ]
     },
     {
-      "id": 9,
+      "id": 8,
       "arrival_time": 0,
-      "weight": 4,
+      "weight": 2,
       "due_date": 2220,
       "operations": [
         {
@@ -836,7 +754,7 @@
       ]
     },
     {
-      "id": 10,
+      "id": 9,
       "arrival_time": 0,
       "weight": 2,
       "due_date": 2440,
@@ -922,9 +840,9 @@
       ]
     },
     {
-      "id": 11,
+      "id": 10,
       "arrival_time": 0,
-      "weight": 2,
+      "weight": 1,
       "due_date": 652,
       "operations": [
         {
@@ -1008,7 +926,7 @@
       ]
     },
     {
-      "id": 12,
+      "id": 11,
       "arrival_time": 0,
       "weight": 2,
       "due_date": 2464,
@@ -1089,9 +1007,9 @@
       ]
     },
     {
-      "id": 13,
+      "id": 12,
       "arrival_time": 0,
-      "weight": 2,
+      "weight": 4,
       "due_date": 864,
       "operations": [
         {
@@ -1198,7 +1116,7 @@
       ]
     },
     {
-      "id": 14,
+      "id": 13,
       "arrival_time": 0,
       "weight": 1,
       "due_date": 3032,
@@ -1309,9 +1227,9 @@
       ]
     },
     {
-      "id": 15,
+      "id": 14,
       "arrival_time": 0,
-      "weight": 4,
+      "weight": 1,
       "due_date": 1928,
       "operations": [
         {
@@ -1362,10 +1280,10 @@
       ]
     },
     {
-      "id": 16,
-      "arrival_time": 22.0,
-      "weight": 1,
-      "due_date": 818,
+      "id": 15,
+      "arrival_time": 0,
+      "weight": 2,
+      "due_date": 796,
       "operations": [
         {
           "candidate_machines": {
@@ -1469,10 +1387,10 @@
       ]
     },
     {
-      "id": 17,
-      "arrival_time": 24.0,
+      "id": 16,
+      "arrival_time": 22.0,
       "weight": 2,
-      "due_date": 3520,
+      "due_date": 3518,
       "operations": [
         {
           "candidate_machines": {
@@ -1581,10 +1499,10 @@
       ]
     },
     {
-      "id": 18,
-      "arrival_time": 32.0,
-      "weight": 2,
-      "due_date": 1632,
+      "id": 17,
+      "arrival_time": 24.0,
+      "weight": 4,
+      "due_date": 1624,
       "operations": [
         {
           "candidate_machines": {
@@ -1647,10 +1565,10 @@
       ]
     },
     {
-      "id": 19,
-      "arrival_time": 71.0,
-      "weight": 4,
-      "due_date": 911,
+      "id": 18,
+      "arrival_time": 32.0,
+      "weight": 1,
+      "due_date": 872,
       "operations": [
         {
           "candidate_machines": {
@@ -1756,10 +1674,10 @@
       ]
     },
     {
-      "id": 20,
-      "arrival_time": 74.0,
-      "weight": 4,
-      "due_date": 528,
+      "id": 19,
+      "arrival_time": 71.0,
+      "weight": 2,
+      "due_date": 525,
       "operations": [
         {
           "candidate_machines": {
@@ -1822,10 +1740,10 @@
       ]
     },
     {
-      "id": 21,
-      "arrival_time": 96.0,
+      "id": 20,
+      "arrival_time": 74.0,
       "weight": 2,
-      "due_date": 1794,
+      "due_date": 1772,
       "operations": [
         {
           "candidate_machines": {
@@ -1907,10 +1825,10 @@
       ]
     },
     {
-      "id": 22,
-      "arrival_time": 161.0,
+      "id": 21,
+      "arrival_time": 96.0,
       "weight": 2,
-      "due_date": 3145,
+      "due_date": 3080,
       "operations": [
         {
           "candidate_machines": {
@@ -2010,10 +1928,10 @@
       ]
     },
     {
-      "id": 23,
-      "arrival_time": 180.0,
+      "id": 22,
+      "arrival_time": 161.0,
       "weight": 2,
-      "due_date": 2604,
+      "due_date": 2585,
       "operations": [
         {
           "candidate_machines": {
@@ -2082,10 +2000,10 @@
       ]
     },
     {
-      "id": 24,
-      "arrival_time": 275.0,
+      "id": 23,
+      "arrival_time": 180.0,
       "weight": 2,
-      "due_date": 2699,
+      "due_date": 2604,
       "operations": [
         {
           "candidate_machines": {
@@ -2184,10 +2102,10 @@
       ]
     },
     {
-      "id": 25,
-      "arrival_time": 279.0,
+      "id": 24,
+      "arrival_time": 275.0,
       "weight": 2,
-      "due_date": 1029,
+      "due_date": 1025,
       "operations": [
         {
           "candidate_machines": {
@@ -2274,10 +2192,10 @@
       ]
     },
     {
-      "id": 26,
-      "arrival_time": 283.0,
+      "id": 25,
+      "arrival_time": 279.0,
       "weight": 2,
-      "due_date": 1051,
+      "due_date": 1047,
       "operations": [
         {
           "candidate_machines": {
@@ -2362,10 +2280,10 @@
       ]
     },
     {
-      "id": 27,
-      "arrival_time": 434.0,
+      "id": 26,
+      "arrival_time": 283.0,
       "weight": 2,
-      "due_date": 1022,
+      "due_date": 871,
       "operations": [
         {
           "candidate_machines": {
@@ -2446,7 +2364,7 @@
       ]
     },
     {
-      "id": 28,
+      "id": 27,
       "arrival_time": 434.0,
       "weight": 2,
       "due_date": 2756,
@@ -2547,10 +2465,10 @@
       ]
     },
     {
-      "id": 29,
-      "arrival_time": 445.0,
-      "weight": 1,
-      "due_date": 1981,
+      "id": 28,
+      "arrival_time": 434.0,
+      "weight": 4,
+      "due_date": 1970,
       "operations": [
         {
           "candidate_machines": {
@@ -2624,10 +2542,10 @@
       ]
     },
     {
-      "id": 30,
-      "arrival_time": 464.0,
+      "id": 29,
+      "arrival_time": 445.0,
       "weight": 2,
-      "due_date": 1898,
+      "due_date": 1879,
       "operations": [
         {
           "candidate_machines": {
@@ -2686,10 +2604,10 @@
       ]
     },
     {
-      "id": 31,
-      "arrival_time": 465.0,
+      "id": 30,
+      "arrival_time": 464.0,
       "weight": 2,
-      "due_date": 2625,
+      "due_date": 2624,
       "operations": [
         {
           "candidate_machines": {
@@ -2759,10 +2677,10 @@
       ]
     },
     {
-      "id": 32,
-      "arrival_time": 547.0,
-      "weight": 4,
-      "due_date": 1245,
+      "id": 31,
+      "arrival_time": 465.0,
+      "weight": 1,
+      "due_date": 1163,
       "operations": [
         {
           "candidate_machines": {
@@ -2854,10 +2772,10 @@
       ]
     },
     {
-      "id": 33,
-      "arrival_time": 657.0,
+      "id": 32,
+      "arrival_time": 547.0,
       "weight": 2,
-      "due_date": 2193,
+      "due_date": 2083,
       "operations": [
         {
           "candidate_machines": {
@@ -2921,10 +2839,10 @@
       ]
     },
     {
-      "id": 34,
-      "arrival_time": 709.0,
-      "weight": 1,
-      "due_date": 3173,
+      "id": 33,
+      "arrival_time": 657.0,
+      "weight": 2,
+      "due_date": 3121,
       "operations": [
         {
           "candidate_machines": {
@@ -3010,10 +2928,10 @@
       ]
     },
     {
-      "id": 35,
-      "arrival_time": 710.0,
+      "id": 34,
+      "arrival_time": 709.0,
       "weight": 2,
-      "due_date": 3308,
+      "due_date": 3307,
       "operations": [
         {
           "candidate_machines": {
@@ -3110,10 +3028,10 @@
       ]
     },
     {
-      "id": 36,
-      "arrival_time": 729.0,
+      "id": 35,
+      "arrival_time": 710.0,
       "weight": 2,
-      "due_date": 1323,
+      "due_date": 1304,
       "operations": [
         {
           "candidate_machines": {
@@ -3192,10 +3110,10 @@
       ]
     },
     {
-      "id": 37,
-      "arrival_time": 742.0,
-      "weight": 4,
-      "due_date": 2878,
+      "id": 36,
+      "arrival_time": 729.0,
+      "weight": 2,
+      "due_date": 2865,
       "operations": [
         {
           "candidate_machines": {
@@ -3296,10 +3214,10 @@
       ]
     },
     {
-      "id": 38,
-      "arrival_time": 756.0,
+      "id": 37,
+      "arrival_time": 742.0,
       "weight": 2,
-      "due_date": 1974,
+      "due_date": 1960,
       "operations": [
         {
           "candidate_machines": {
@@ -3353,9 +3271,9 @@
       ]
     },
     {
-      "id": 39,
+      "id": 38,
       "arrival_time": 756.0,
-      "weight": 2,
+      "weight": 4,
       "due_date": 1424,
       "operations": [
         {
@@ -3432,10 +3350,10 @@
       ]
     },
     {
-      "id": 40,
-      "arrival_time": 785.0,
-      "weight": 1,
-      "due_date": 1245,
+      "id": 39,
+      "arrival_time": 756.0,
+      "weight": 2,
+      "due_date": 1216,
       "operations": [
         {
           "candidate_machines": {
@@ -3489,10 +3407,10 @@
       ]
     },
     {
-      "id": 41,
-      "arrival_time": 857.0,
+      "id": 40,
+      "arrival_time": 785.0,
       "weight": 2,
-      "due_date": 3289,
+      "due_date": 3217,
       "operations": [
         {
           "candidate_machines": {
@@ -3576,10 +3494,10 @@
       ]
     },
     {
-      "id": 42,
-      "arrival_time": 917.0,
+      "id": 41,
+      "arrival_time": 857.0,
       "weight": 2,
-      "due_date": 4149,
+      "due_date": 4089,
       "operations": [
         {
           "candidate_machines": {
@@ -3682,10 +3600,10 @@
       ]
     },
     {
-      "id": 43,
-      "arrival_time": 928.0,
+      "id": 42,
+      "arrival_time": 917.0,
       "weight": 2,
-      "due_date": 1438,
+      "due_date": 1427,
       "operations": [
         {
           "candidate_machines": {
@@ -3756,10 +3674,10 @@
       ]
     },
     {
-      "id": 44,
-      "arrival_time": 930.0,
+      "id": 43,
+      "arrival_time": 928.0,
       "weight": 2,
-      "due_date": 2064,
+      "due_date": 2062,
       "operations": [
         {
           "candidate_machines": {
@@ -3814,10 +3732,10 @@
       ]
     },
     {
-      "id": 45,
-      "arrival_time": 954.0,
-      "weight": 4,
-      "due_date": 2330,
+      "id": 44,
+      "arrival_time": 930.0,
+      "weight": 2,
+      "due_date": 2306,
       "operations": [
         {
           "candidate_machines": {
@@ -3877,10 +3795,10 @@
       ]
     },
     {
-      "id": 46,
-      "arrival_time": 1015.0,
+      "id": 45,
+      "arrival_time": 954.0,
       "weight": 2,
-      "due_date": 3271,
+      "due_date": 3210,
       "operations": [
         {
           "candidate_machines": {
@@ -3949,10 +3867,10 @@
       ]
     },
     {
-      "id": 47,
-      "arrival_time": 1037.0,
+      "id": 46,
+      "arrival_time": 1015.0,
       "weight": 1,
-      "due_date": 3861,
+      "due_date": 3839,
       "operations": [
         {
           "candidate_machines": {
@@ -4040,10 +3958,10 @@
       ]
     },
     {
-      "id": 48,
-      "arrival_time": 1096.0,
-      "weight": 1,
-      "due_date": 1474,
+      "id": 47,
+      "arrival_time": 1037.0,
+      "weight": 2,
+      "due_date": 1415,
       "operations": [
         {
           "candidate_machines": {
@@ -4105,10 +4023,10 @@
       ]
     },
     {
-      "id": 49,
-      "arrival_time": 1158.0,
+      "id": 48,
+      "arrival_time": 1096.0,
       "weight": 2,
-      "due_date": 3622,
+      "due_date": 3560,
       "operations": [
         {
           "candidate_machines": {
@@ -4189,10 +4107,10 @@
       ]
     },
     {
-      "id": 50,
-      "arrival_time": 1341.0,
+      "id": 49,
+      "arrival_time": 1158.0,
       "weight": 4,
-      "due_date": 3009,
+      "due_date": 2826,
       "operations": [
         {
           "candidate_machines": {
@@ -4264,10 +4182,10 @@
       ]
     },
     {
-      "id": 51,
-      "arrival_time": 1383.0,
-      "weight": 2,
-      "due_date": 4735,
+      "id": 50,
+      "arrival_time": 1341.0,
+      "weight": 4,
+      "due_date": 4693,
       "operations": [
         {
           "candidate_machines": {
@@ -4367,10 +4285,10 @@
       ]
     },
     {
-      "id": 52,
-      "arrival_time": 1455.0,
-      "weight": 1,
-      "due_date": 2559,
+      "id": 51,
+      "arrival_time": 1383.0,
+      "weight": 2,
+      "due_date": 2487,
       "operations": [
         {
           "candidate_machines": {
@@ -4426,10 +4344,10 @@
       ]
     },
     {
-      "id": 53,
-      "arrival_time": 1490.0,
-      "weight": 2,
-      "due_date": 1992,
+      "id": 52,
+      "arrival_time": 1455.0,
+      "weight": 4,
+      "due_date": 1957,
       "operations": [
         {
           "candidate_machines": {
@@ -4498,10 +4416,10 @@
       ]
     },
     {
-      "id": 54,
-      "arrival_time": 1572.0,
+      "id": 53,
+      "arrival_time": 1490.0,
       "weight": 4,
-      "due_date": 4284,
+      "due_date": 4202,
       "operations": [
         {
           "candidate_machines": {
@@ -4590,10 +4508,10 @@
       ]
     },
     {
-      "id": 55,
-      "arrival_time": 1595.0,
+      "id": 54,
+      "arrival_time": 1572.0,
       "weight": 1,
-      "due_date": 3467,
+      "due_date": 3444,
       "operations": [
         {
           "candidate_machines": {
@@ -4656,10 +4574,10 @@
       ]
     },
     {
-      "id": 56,
-      "arrival_time": 1646.0,
+      "id": 55,
+      "arrival_time": 1595.0,
       "weight": 2,
-      "due_date": 2182,
+      "due_date": 2131,
       "operations": [
         {
           "candidate_machines": {
@@ -4731,10 +4649,10 @@
       ]
     },
     {
-      "id": 57,
-      "arrival_time": 1660.0,
-      "weight": 2,
-      "due_date": 4828,
+      "id": 56,
+      "arrival_time": 1646.0,
+      "weight": 4,
+      "due_date": 4814,
       "operations": [
         {
           "candidate_machines": {
@@ -4845,10 +4763,10 @@
       ]
     },
     {
-      "id": 58,
-      "arrival_time": 1669.0,
+      "id": 57,
+      "arrival_time": 1660.0,
       "weight": 2,
-      "due_date": 3965,
+      "due_date": 3956,
       "operations": [
         {
           "candidate_machines": {
@@ -4917,10 +4835,10 @@
       ]
     },
     {
-      "id": 59,
-      "arrival_time": 1670.0,
-      "weight": 4,
-      "due_date": 2332,
+      "id": 58,
+      "arrival_time": 1669.0,
+      "weight": 1,
+      "due_date": 2331,
       "operations": [
         {
           "candidate_machines": {
@@ -5004,10 +4922,10 @@
       ]
     },
     {
-      "id": 60,
-      "arrival_time": 1704.0,
+      "id": 59,
+      "arrival_time": 1670.0,
       "weight": 2,
-      "due_date": 2512,
+      "due_date": 2478,
       "operations": [
         {
           "candidate_machines": {
@@ -5115,10 +5033,10 @@
       ]
     },
     {
-      "id": 61,
-      "arrival_time": 1726.0,
+      "id": 60,
+      "arrival_time": 1704.0,
       "weight": 2,
-      "due_date": 2346,
+      "due_date": 2324,
       "operations": [
         {
           "candidate_machines": {
@@ -5200,10 +5118,10 @@
       ]
     },
     {
-      "id": 62,
-      "arrival_time": 1754.0,
-      "weight": 1,
-      "due_date": 3836,
+      "id": 61,
+      "arrival_time": 1726.0,
+      "weight": 2,
+      "due_date": 3808,
       "operations": [
         {
           "candidate_machines": {
@@ -5300,10 +5218,10 @@
       ]
     },
     {
-      "id": 63,
-      "arrival_time": 1855.0,
+      "id": 62,
+      "arrival_time": 1754.0,
       "weight": 2,
-      "due_date": 3367,
+      "due_date": 3266,
       "operations": [
         {
           "candidate_machines": {
@@ -5361,10 +5279,10 @@
       ]
     },
     {
-      "id": 64,
-      "arrival_time": 1925.0,
-      "weight": 4,
-      "due_date": 3731,
+      "id": 63,
+      "arrival_time": 1855.0,
+      "weight": 1,
+      "due_date": 3661,
       "operations": [
         {
           "candidate_machines": {
@@ -5436,10 +5354,10 @@
       ]
     },
     {
-      "id": 65,
-      "arrival_time": 1962.0,
+      "id": 64,
+      "arrival_time": 1925.0,
       "weight": 2,
-      "due_date": 2518,
+      "due_date": 2481,
       "operations": [
         {
           "candidate_machines": {
@@ -5504,10 +5422,10 @@
       ]
     },
     {
-      "id": 66,
-      "arrival_time": 1969.0,
-      "weight": 4,
-      "due_date": 4121,
+      "id": 65,
+      "arrival_time": 1962.0,
+      "weight": 2,
+      "due_date": 4114,
       "operations": [
         {
           "candidate_machines": {
@@ -5568,10 +5486,10 @@
       ]
     },
     {
-      "id": 67,
-      "arrival_time": 2004.0,
+      "id": 66,
+      "arrival_time": 1969.0,
       "weight": 2,
-      "due_date": 4180,
+      "due_date": 4145,
       "operations": [
         {
           "candidate_machines": {
@@ -5650,10 +5568,10 @@
       ]
     },
     {
-      "id": 68,
-      "arrival_time": 2044.0,
-      "weight": 4,
-      "due_date": 4260,
+      "id": 67,
+      "arrival_time": 2004.0,
+      "weight": 2,
+      "due_date": 4220,
       "operations": [
         {
           "candidate_machines": {
@@ -5723,10 +5641,10 @@
       ]
     },
     {
-      "id": 69,
-      "arrival_time": 2059.0,
-      "weight": 1,
-      "due_date": 3901,
+      "id": 68,
+      "arrival_time": 2044.0,
+      "weight": 2,
+      "due_date": 3886,
       "operations": [
         {
           "candidate_machines": {
@@ -5809,10 +5727,10 @@
       ]
     },
     {
-      "id": 70,
-      "arrival_time": 2092.0,
-      "weight": 2,
-      "due_date": 4108,
+      "id": 69,
+      "arrival_time": 2059.0,
+      "weight": 1,
+      "due_date": 4075,
       "operations": [
         {
           "candidate_machines": {
@@ -5876,10 +5794,10 @@
       ]
     },
     {
-      "id": 71,
-      "arrival_time": 2096.0,
+      "id": 70,
+      "arrival_time": 2092.0,
       "weight": 4,
-      "due_date": 3952,
+      "due_date": 3948,
       "operations": [
         {
           "candidate_machines": {
@@ -5932,10 +5850,10 @@
       ]
     },
     {
-      "id": 72,
-      "arrival_time": 2154.0,
+      "id": 71,
+      "arrival_time": 2096.0,
       "weight": 2,
-      "due_date": 3762,
+      "due_date": 3704,
       "operations": [
         {
           "candidate_machines": {
@@ -5995,10 +5913,10 @@
       ]
     },
     {
-      "id": 73,
-      "arrival_time": 2156.0,
-      "weight": 2,
-      "due_date": 2656,
+      "id": 72,
+      "arrival_time": 2154.0,
+      "weight": 1,
+      "due_date": 2654,
       "operations": [
         {
           "candidate_machines": {
@@ -6058,10 +5976,10 @@
       ]
     },
     {
-      "id": 74,
-      "arrival_time": 2180.0,
+      "id": 73,
+      "arrival_time": 2156.0,
       "weight": 4,
-      "due_date": 5220,
+      "due_date": 5196,
       "operations": [
         {
           "candidate_machines": {
@@ -6164,10 +6082,10 @@
       ]
     },
     {
-      "id": 75,
-      "arrival_time": 2247.0,
+      "id": 74,
+      "arrival_time": 2180.0,
       "weight": 4,
-      "due_date": 5575,
+      "due_date": 5508,
       "operations": [
         {
           "candidate_machines": {
@@ -6273,10 +6191,10 @@
       ]
     },
     {
-      "id": 76,
-      "arrival_time": 2251.0,
+      "id": 75,
+      "arrival_time": 2247.0,
       "weight": 2,
-      "due_date": 4547,
+      "due_date": 4543,
       "operations": [
         {
           "candidate_machines": {
@@ -6349,10 +6267,10 @@
       ]
     },
     {
-      "id": 77,
-      "arrival_time": 2327.0,
+      "id": 76,
+      "arrival_time": 2251.0,
       "weight": 2,
-      "due_date": 2753,
+      "due_date": 2677,
       "operations": [
         {
           "candidate_machines": {
@@ -6406,10 +6324,10 @@
       ]
     },
     {
-      "id": 78,
-      "arrival_time": 2331.0,
+      "id": 77,
+      "arrival_time": 2327.0,
       "weight": 2,
-      "due_date": 4563,
+      "due_date": 4559,
       "operations": [
         {
           "candidate_machines": {
@@ -6518,10 +6436,10 @@
       ]
     },
     {
-      "id": 79,
-      "arrival_time": 2410.0,
-      "weight": 1,
-      "due_date": 4888,
+      "id": 78,
+      "arrival_time": 2331.0,
+      "weight": 2,
+      "due_date": 4809,
       "operations": [
         {
           "candidate_machines": {
@@ -6619,10 +6537,10 @@
       ]
     },
     {
-      "id": 80,
-      "arrival_time": 2473.0,
+      "id": 79,
+      "arrival_time": 2410.0,
       "weight": 2,
-      "due_date": 5005,
+      "due_date": 4942,
       "operations": [
         {
           "candidate_machines": {
@@ -6732,10 +6650,10 @@
       ]
     },
     {
-      "id": 81,
-      "arrival_time": 2508.0,
+      "id": 80,
+      "arrival_time": 2473.0,
       "weight": 2,
-      "due_date": 3268,
+      "due_date": 3233,
       "operations": [
         {
           "candidate_machines": {
@@ -6832,10 +6750,10 @@
       ]
     },
     {
-      "id": 82,
-      "arrival_time": 2518.0,
-      "weight": 1,
-      "due_date": 5942,
+      "id": 81,
+      "arrival_time": 2508.0,
+      "weight": 2,
+      "due_date": 5932,
       "operations": [
         {
           "candidate_machines": {
@@ -6939,10 +6857,10 @@
       ]
     },
     {
-      "id": 83,
-      "arrival_time": 2527.0,
-      "weight": 2,
-      "due_date": 5287,
+      "id": 82,
+      "arrival_time": 2518.0,
+      "weight": 1,
+      "due_date": 5278,
       "operations": [
         {
           "candidate_machines": {
@@ -7032,10 +6950,10 @@
       ]
     },
     {
-      "id": 84,
-      "arrival_time": 2566.0,
-      "weight": 1,
-      "due_date": 5854,
+      "id": 83,
+      "arrival_time": 2527.0,
+      "weight": 4,
+      "due_date": 5815,
       "operations": [
         {
           "candidate_machines": {
@@ -7136,10 +7054,10 @@
       ]
     },
     {
-      "id": 85,
-      "arrival_time": 2593.0,
+      "id": 84,
+      "arrival_time": 2566.0,
       "weight": 2,
-      "due_date": 3253,
+      "due_date": 3226,
       "operations": [
         {
           "candidate_machines": {
@@ -7228,10 +7146,10 @@
       ]
     },
     {
-      "id": 86,
-      "arrival_time": 2598.0,
+      "id": 85,
+      "arrival_time": 2593.0,
       "weight": 1,
-      "due_date": 3306,
+      "due_date": 3301,
       "operations": [
         {
           "candidate_machines": {
@@ -7324,10 +7242,10 @@
       ]
     },
     {
-      "id": 87,
-      "arrival_time": 2601.0,
-      "weight": 2,
-      "due_date": 3321,
+      "id": 86,
+      "arrival_time": 2598.0,
+      "weight": 1,
+      "due_date": 3318,
       "operations": [
         {
           "candidate_machines": {
@@ -7417,10 +7335,10 @@
       ]
     },
     {
-      "id": 88,
-      "arrival_time": 2655.0,
-      "weight": 2,
-      "due_date": 3765,
+      "id": 87,
+      "arrival_time": 2601.0,
+      "weight": 1,
+      "due_date": 3711,
       "operations": [
         {
           "candidate_machines": {
@@ -7476,10 +7394,10 @@
       ]
     },
     {
-      "id": 89,
-      "arrival_time": 2664.0,
+      "id": 88,
+      "arrival_time": 2655.0,
       "weight": 2,
-      "due_date": 4264,
+      "due_date": 4255,
       "operations": [
         {
           "candidate_machines": {
@@ -7541,10 +7459,10 @@
       ]
     },
     {
-      "id": 90,
-      "arrival_time": 2687.0,
+      "id": 89,
+      "arrival_time": 2664.0,
       "weight": 4,
-      "due_date": 5311,
+      "due_date": 5288,
       "operations": [
         {
           "candidate_machines": {
@@ -7627,10 +7545,10 @@
       ]
     },
     {
-      "id": 91,
-      "arrival_time": 2729.0,
+      "id": 90,
+      "arrival_time": 2687.0,
       "weight": 2,
-      "due_date": 4865,
+      "due_date": 4823,
       "operations": [
         {
           "candidate_machines": {
@@ -7692,10 +7610,10 @@
       ]
     },
     {
-      "id": 92,
-      "arrival_time": 2766.0,
-      "weight": 2,
-      "due_date": 5902,
+      "id": 91,
+      "arrival_time": 2729.0,
+      "weight": 1,
+      "due_date": 5865,
       "operations": [
         {
           "candidate_machines": {
@@ -7785,10 +7703,10 @@
       ]
     },
     {
-      "id": 93,
-      "arrival_time": 2821.0,
-      "weight": 2,
-      "due_date": 5749,
+      "id": 92,
+      "arrival_time": 2766.0,
+      "weight": 4,
+      "due_date": 5694,
       "operations": [
         {
           "candidate_machines": {
@@ -7887,10 +7805,10 @@
       ]
     },
     {
-      "id": 94,
-      "arrival_time": 2850.0,
-      "weight": 2,
-      "due_date": 3522,
+      "id": 93,
+      "arrival_time": 2821.0,
+      "weight": 4,
+      "due_date": 3493,
       "operations": [
         {
           "candidate_machines": {
@@ -7978,10 +7896,10 @@
       ]
     },
     {
-      "id": 95,
-      "arrival_time": 2856.0,
-      "weight": 4,
-      "due_date": 4170,
+      "id": 94,
+      "arrival_time": 2850.0,
+      "weight": 2,
+      "due_date": 4164,
       "operations": [
         {
           "candidate_machines": {
@@ -8049,10 +7967,10 @@
       ]
     },
     {
-      "id": 96,
-      "arrival_time": 2868.0,
-      "weight": 1,
-      "due_date": 5436,
+      "id": 95,
+      "arrival_time": 2856.0,
+      "weight": 2,
+      "due_date": 5424,
       "operations": [
         {
           "candidate_machines": {
@@ -8132,10 +8050,10 @@
       ]
     },
     {
-      "id": 97,
-      "arrival_time": 2892.0,
+      "id": 96,
+      "arrival_time": 2868.0,
       "weight": 2,
-      "due_date": 4404,
+      "due_date": 4380,
       "operations": [
         {
           "candidate_machines": {
@@ -8207,10 +8125,10 @@
       ]
     },
     {
-      "id": 98,
-      "arrival_time": 2908.0,
-      "weight": 1,
-      "due_date": 3426,
+      "id": 97,
+      "arrival_time": 2892.0,
+      "weight": 2,
+      "due_date": 3410,
       "operations": [
         {
           "candidate_machines": {
@@ -8282,10 +8200,10 @@
       ]
     },
     {
-      "id": 99,
-      "arrival_time": 2916.0,
-      "weight": 2,
-      "due_date": 5428,
+      "id": 98,
+      "arrival_time": 2908.0,
+      "weight": 4,
+      "due_date": 5420,
       "operations": [
         {
           "candidate_machines": {
@@ -8366,10 +8284,10 @@
       ]
     },
     {
-      "id": 100,
-      "arrival_time": 2926.0,
+      "id": 99,
+      "arrival_time": 2916.0,
       "weight": 1,
-      "due_date": 3570,
+      "due_date": 3560,
       "operations": [
         {
           "candidate_machines": {
@@ -8442,10 +8360,10 @@
       ]
     },
     {
-      "id": 101,
-      "arrival_time": 2999.0,
-      "weight": 4,
-      "due_date": 3677,
+      "id": 100,
+      "arrival_time": 2926.0,
+      "weight": 2,
+      "due_date": 3604,
       "operations": [
         {
           "candidate_machines": {
@@ -8544,10 +8462,10 @@
       ]
     },
     {
-      "id": 102,
-      "arrival_time": 3008.0,
+      "id": 101,
+      "arrival_time": 2999.0,
       "weight": 2,
-      "due_date": 5000,
+      "due_date": 4991,
       "operations": [
         {
           "candidate_machines": {
@@ -8635,10 +8553,10 @@
       ]
     },
     {
-      "id": 103,
-      "arrival_time": 3032.0,
-      "weight": 1,
-      "due_date": 4568,
+      "id": 102,
+      "arrival_time": 3008.0,
+      "weight": 2,
+      "due_date": 4544,
       "operations": [
         {
           "candidate_machines": {
@@ -8693,10 +8611,10 @@
       ]
     },
     {
-      "id": 104,
-      "arrival_time": 3097.0,
-      "weight": 2,
-      "due_date": 5047,
+      "id": 103,
+      "arrival_time": 3032.0,
+      "weight": 4,
+      "due_date": 4982,
       "operations": [
         {
           "candidate_machines": {
@@ -8776,10 +8694,10 @@
       ]
     },
     {
-      "id": 105,
-      "arrival_time": 3129.0,
+      "id": 104,
+      "arrival_time": 3097.0,
       "weight": 1,
-      "due_date": 4359,
+      "due_date": 4327,
       "operations": [
         {
           "candidate_machines": {
@@ -8834,10 +8752,10 @@
       ]
     },
     {
-      "id": 106,
-      "arrival_time": 3178.0,
+      "id": 105,
+      "arrival_time": 3129.0,
       "weight": 4,
-      "due_date": 4972,
+      "due_date": 4923,
       "operations": [
         {
           "candidate_machines": {
@@ -8924,10 +8842,10 @@
       ]
     },
     {
-      "id": 107,
-      "arrival_time": 3226.0,
-      "weight": 4,
-      "due_date": 6450,
+      "id": 106,
+      "arrival_time": 3178.0,
+      "weight": 1,
+      "due_date": 6402,
       "operations": [
         {
           "candidate_machines": {
@@ -9022,10 +8940,10 @@
       ]
     },
     {
-      "id": 108,
-      "arrival_time": 3281.0,
+      "id": 107,
+      "arrival_time": 3226.0,
       "weight": 2,
-      "due_date": 4919,
+      "due_date": 4864,
       "operations": [
         {
           "candidate_machines": {
@@ -9097,10 +9015,10 @@
       ]
     },
     {
-      "id": 109,
-      "arrival_time": 3283.0,
-      "weight": 1,
-      "due_date": 5953,
+      "id": 108,
+      "arrival_time": 3281.0,
+      "weight": 2,
+      "due_date": 5951,
       "operations": [
         {
           "candidate_machines": {
@@ -9213,10 +9131,10 @@
       ]
     },
     {
-      "id": 110,
-      "arrival_time": 3293.0,
+      "id": 109,
+      "arrival_time": 3283.0,
       "weight": 2,
-      "due_date": 3735,
+      "due_date": 3725,
       "operations": [
         {
           "candidate_machines": {
@@ -9279,10 +9197,10 @@
       ]
     },
     {
-      "id": 111,
-      "arrival_time": 3373.0,
-      "weight": 2,
-      "due_date": 3827,
+      "id": 110,
+      "arrival_time": 3293.0,
+      "weight": 1,
+      "due_date": 3747,
       "operations": [
         {
           "candidate_machines": {
@@ -9348,10 +9266,10 @@
       ]
     },
     {
-      "id": 112,
-      "arrival_time": 3432.0,
+      "id": 111,
+      "arrival_time": 3373.0,
       "weight": 2,
-      "due_date": 5800,
+      "due_date": 5741,
       "operations": [
         {
           "candidate_machines": {
@@ -9437,10 +9355,10 @@
       ]
     },
     {
-      "id": 113,
-      "arrival_time": 3441.0,
+      "id": 112,
+      "arrival_time": 3432.0,
       "weight": 2,
-      "due_date": 5703,
+      "due_date": 5694,
       "operations": [
         {
           "candidate_machines": {
@@ -9540,10 +9458,10 @@
       ]
     },
     {
-      "id": 114,
-      "arrival_time": 3490.0,
-      "weight": 4,
-      "due_date": 5762,
+      "id": 113,
+      "arrival_time": 3441.0,
+      "weight": 2,
+      "due_date": 5713,
       "operations": [
         {
           "candidate_machines": {
@@ -9614,10 +9532,10 @@
       ]
     },
     {
-      "id": 115,
-      "arrival_time": 3569.0,
+      "id": 114,
+      "arrival_time": 3490.0,
       "weight": 2,
-      "due_date": 4841,
+      "due_date": 4762,
       "operations": [
         {
           "candidate_machines": {
@@ -9675,10 +9593,10 @@
       ]
     },
     {
-      "id": 116,
-      "arrival_time": 3664.0,
+      "id": 115,
+      "arrival_time": 3569.0,
       "weight": 2,
-      "due_date": 6478,
+      "due_date": 6383,
       "operations": [
         {
           "candidate_machines": {
@@ -9779,10 +9697,10 @@
       ]
     },
     {
-      "id": 117,
-      "arrival_time": 3665.0,
-      "weight": 4,
-      "due_date": 4261,
+      "id": 116,
+      "arrival_time": 3664.0,
+      "weight": 2,
+      "due_date": 4260,
       "operations": [
         {
           "candidate_machines": {
@@ -9871,10 +9789,10 @@
       ]
     },
     {
-      "id": 118,
-      "arrival_time": 3722.0,
-      "weight": 2,
-      "due_date": 5074,
+      "id": 117,
+      "arrival_time": 3665.0,
+      "weight": 4,
+      "due_date": 5017,
       "operations": [
         {
           "candidate_machines": {
@@ -9927,10 +9845,10 @@
       ]
     },
     {
-      "id": 119,
-      "arrival_time": 3807.0,
+      "id": 118,
+      "arrival_time": 3722.0,
       "weight": 4,
-      "due_date": 6663,
+      "due_date": 6578,
       "operations": [
         {
           "candidate_machines": {
@@ -10038,134 +9956,2662 @@
           }
         }
       ]
+    },
+    {
+      "id": 119,
+      "arrival_time": 3807.0,
+      "weight": 4,
+      "due_date": 4365,
+      "operations": [
+        {
+          "candidate_machines": {
+            "0": 51,
+            "1": 43,
+            "12": 49,
+            "13": 31
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 57,
+            "5": 35,
+            "12": 67
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 71,
+            "5": 75,
+            "7": 66,
+            "9": 55,
+            "15": 56
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 58,
+            "7": 61,
+            "14": 62
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 71,
+            "1": 50,
+            "9": 52,
+            "13": 27
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 68,
+            "2": 73,
+            "11": 34,
+            "12": 31,
+            "15": 36
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 54,
+            "8": 42,
+            "9": 47,
+            "14": 72
+          }
+        }
+      ]
+    },
+    {
+      "id": 120,
+      "arrival_time": 3810.0,
+      "weight": 1,
+      "due_date": 7402,
+      "operations": [
+        {
+          "candidate_machines": {
+            "2": 75,
+            "5": 64,
+            "8": 70,
+            "9": 65,
+            "13": 54
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 41,
+            "4": 48,
+            "6": 66,
+            "12": 49,
+            "13": 51
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 45,
+            "10": 36,
+            "11": 30,
+            "13": 45
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 55,
+            "2": 37,
+            "7": 38,
+            "8": 29,
+            "9": 75
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 25,
+            "7": 34,
+            "11": 34,
+            "12": 42,
+            "14": 39
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 74,
+            "1": 49,
+            "5": 45,
+            "7": 55,
+            "12": 27,
+            "14": 55
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 46,
+            "8": 65,
+            "15": 35
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 43,
+            "2": 39,
+            "10": 62
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 63,
+            "10": 66,
+            "13": 49
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 63,
+            "8": 70,
+            "9": 43,
+            "11": 45
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 55,
+            "2": 65,
+            "3": 71,
+            "4": 58,
+            "7": 51
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 26,
+            "5": 32,
+            "7": 48,
+            "10": 49,
+            "11": 59,
+            "14": 72
+          }
+        }
+      ]
+    },
+    {
+      "id": 121,
+      "arrival_time": 3815.0,
+      "weight": 1,
+      "due_date": 5405,
+      "operations": [
+        {
+          "candidate_machines": {
+            "1": 67,
+            "3": 70,
+            "14": 56
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 49,
+            "6": 75,
+            "15": 56
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 67,
+            "6": 32,
+            "7": 73,
+            "11": 37
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 63,
+            "11": 42,
+            "14": 67
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 55,
+            "6": 33,
+            "11": 35,
+            "14": 30
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 59,
+            "2": 26,
+            "4": 46,
+            "8": 37,
+            "9": 65,
+            "14": 25
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 31,
+            "7": 75,
+            "9": 38,
+            "10": 51,
+            "12": 66,
+            "13": 53
+          }
+        }
+      ]
+    },
+    {
+      "id": 122,
+      "arrival_time": 3848.0,
+      "weight": 2,
+      "due_date": 6984,
+      "operations": [
+        {
+          "candidate_machines": {
+            "9": 75,
+            "10": 54,
+            "11": 60,
+            "13": 74,
+            "15": 58
+          }
+        },
+        {
+          "candidate_machines": {
+            "6": 67,
+            "9": 59,
+            "12": 41,
+            "13": 55,
+            "15": 66
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 50,
+            "2": 45,
+            "8": 46,
+            "11": 56,
+            "12": 49
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 28,
+            "7": 72,
+            "9": 46,
+            "14": 38
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 26,
+            "5": 35,
+            "6": 56,
+            "13": 34
+          }
+        },
+        {
+          "candidate_machines": {
+            "6": 38,
+            "12": 67,
+            "13": 28,
+            "15": 37
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 50,
+            "4": 47,
+            "10": 40,
+            "13": 46,
+            "14": 64,
+            "15": 40
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 55,
+            "4": 44,
+            "10": 58,
+            "11": 40,
+            "12": 45,
+            "13": 35
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 36,
+            "4": 65,
+            "9": 32,
+            "15": 27
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 58,
+            "7": 64,
+            "9": 43,
+            "12": 37
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 31,
+            "6": 67,
+            "10": 47
+          }
+        }
+      ]
+    },
+    {
+      "id": 123,
+      "arrival_time": 3849.0,
+      "weight": 2,
+      "due_date": 5433,
+      "operations": [
+        {
+          "candidate_machines": {
+            "0": 52,
+            "4": 33,
+            "6": 70,
+            "13": 66
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 74,
+            "3": 42,
+            "5": 36,
+            "9": 53,
+            "14": 39
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 65,
+            "4": 44,
+            "5": 33,
+            "6": 49,
+            "7": 71
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 66,
+            "6": 59,
+            "14": 26
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 74,
+            "2": 45,
+            "6": 34,
+            "14": 44,
+            "15": 38
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 73,
+            "8": 34,
+            "9": 27,
+            "11": 38,
+            "13": 38
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 51,
+            "5": 42,
+            "6": 74
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 37,
+            "4": 33,
+            "7": 62,
+            "8": 70,
+            "12": 41
+          }
+        }
+      ]
+    },
+    {
+      "id": 124,
+      "arrival_time": 3890.0,
+      "weight": 2,
+      "due_date": 6426,
+      "operations": [
+        {
+          "candidate_machines": {
+            "0": 52,
+            "2": 64,
+            "7": 46,
+            "9": 59,
+            "12": 73
+          }
+        },
+        {
+          "candidate_machines": {
+            "11": 38,
+            "12": 36,
+            "15": 49
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 52,
+            "4": 59,
+            "5": 42,
+            "6": 57,
+            "15": 75
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 27,
+            "11": 59,
+            "13": 42,
+            "14": 41
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 60,
+            "2": 75,
+            "5": 70,
+            "13": 66,
+            "14": 44
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 35,
+            "4": 41,
+            "7": 27
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 74,
+            "4": 45,
+            "9": 37,
+            "10": 33,
+            "13": 29,
+            "14": 48
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 72,
+            "2": 54,
+            "3": 42,
+            "7": 39
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 36,
+            "2": 27,
+            "5": 52,
+            "6": 40,
+            "12": 32,
+            "13": 70
+          }
+        }
+      ]
+    },
+    {
+      "id": 125,
+      "arrival_time": 4029.0,
+      "weight": 2,
+      "due_date": 5793,
+      "operations": [
+        {
+          "candidate_machines": {
+            "4": 41,
+            "10": 27,
+            "15": 49
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 72,
+            "2": 64,
+            "5": 56,
+            "6": 71,
+            "8": 38
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 43,
+            "6": 41,
+            "9": 49,
+            "11": 36,
+            "12": 72
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 44,
+            "7": 52,
+            "8": 39,
+            "9": 32,
+            "12": 40,
+            "15": 71
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 39,
+            "6": 31,
+            "9": 47,
+            "10": 27
+          }
+        },
+        {
+          "candidate_machines": {
+            "8": 65,
+            "11": 52,
+            "13": 73
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 57,
+            "3": 30,
+            "9": 73,
+            "14": 71
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 64,
+            "6": 67,
+            "8": 52,
+            "12": 58
+          }
+        }
+      ]
+    },
+    {
+      "id": 126,
+      "arrival_time": 4053.0,
+      "weight": 2,
+      "due_date": 6189,
+      "operations": [
+        {
+          "candidate_machines": {
+            "4": 73,
+            "10": 39,
+            "11": 45,
+            "12": 57
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 52,
+            "8": 72,
+            "10": 54,
+            "11": 57,
+            "12": 63,
+            "15": 70
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 35,
+            "2": 41,
+            "7": 50,
+            "9": 54,
+            "15": 49
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 43,
+            "5": 27,
+            "9": 67,
+            "10": 29,
+            "11": 33
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 63,
+            "10": 75,
+            "14": 69
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 65,
+            "3": 38,
+            "8": 60,
+            "9": 69,
+            "10": 33
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 39,
+            "8": 53,
+            "10": 70,
+            "11": 75,
+            "12": 70,
+            "13": 66
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 65,
+            "5": 37,
+            "8": 53
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 61,
+            "3": 39,
+            "11": 62,
+            "12": 31
+          }
+        }
+      ]
+    },
+    {
+      "id": 127,
+      "arrival_time": 4074.0,
+      "weight": 4,
+      "due_date": 4840,
+      "operations": [
+        {
+          "candidate_machines": {
+            "4": 44,
+            "6": 26,
+            "8": 32,
+            "13": 71,
+            "15": 68
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 73,
+            "4": 72,
+            "5": 29,
+            "15": 64
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 28,
+            "1": 67,
+            "4": 38,
+            "6": 51,
+            "13": 30
+          }
+        },
+        {
+          "candidate_machines": {
+            "6": 33,
+            "10": 36,
+            "12": 44
+          }
+        },
+        {
+          "candidate_machines": {
+            "6": 66,
+            "8": 54,
+            "9": 72
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 73,
+            "9": 34,
+            "11": 44,
+            "14": 48,
+            "15": 70
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 52,
+            "10": 43,
+            "13": 62
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 50,
+            "5": 72,
+            "8": 48,
+            "14": 74,
+            "15": 43
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 58,
+            "6": 34,
+            "8": 45,
+            "10": 67,
+            "11": 56,
+            "13": 62
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 63,
+            "7": 45,
+            "8": 38,
+            "9": 33,
+            "10": 48,
+            "14": 69
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 34,
+            "5": 27,
+            "8": 26,
+            "14": 54,
+            "15": 72
+          }
+        }
+      ]
+    },
+    {
+      "id": 128,
+      "arrival_time": 4075.0,
+      "weight": 1,
+      "due_date": 5521,
+      "operations": [
+        {
+          "candidate_machines": {
+            "1": 69,
+            "4": 73,
+            "7": 36,
+            "10": 52,
+            "13": 75,
+            "15": 51
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 61,
+            "2": 38,
+            "7": 26,
+            "10": 64
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 59,
+            "7": 30,
+            "8": 61,
+            "10": 53,
+            "11": 45
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 63,
+            "6": 52,
+            "11": 31,
+            "14": 51
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 58,
+            "3": 50,
+            "8": 25,
+            "9": 25,
+            "13": 69
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 36,
+            "5": 56,
+            "12": 40,
+            "15": 40
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 26,
+            "3": 45,
+            "6": 31,
+            "9": 39,
+            "10": 27,
+            "12": 39
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 49,
+            "4": 51,
+            "6": 31,
+            "13": 57,
+            "15": 65
+          }
+        }
+      ]
+    },
+    {
+      "id": 129,
+      "arrival_time": 4091.0,
+      "weight": 4,
+      "due_date": 4633,
+      "operations": [
+        {
+          "candidate_machines": {
+            "1": 75,
+            "8": 67,
+            "12": 25
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 42,
+            "3": 38,
+            "10": 54,
+            "13": 62,
+            "14": 29
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 26,
+            "3": 64,
+            "4": 54,
+            "5": 56,
+            "14": 36
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 62,
+            "4": 40,
+            "8": 46,
+            "13": 55,
+            "14": 33,
+            "15": 52
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 36,
+            "5": 46,
+            "6": 60
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 52,
+            "7": 34,
+            "13": 75
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 49,
+            "5": 75,
+            "8": 56,
+            "11": 53,
+            "13": 59
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 70,
+            "7": 39,
+            "8": 55
+          }
+        }
+      ]
+    },
+    {
+      "id": 130,
+      "arrival_time": 4118.0,
+      "weight": 2,
+      "due_date": 5438,
+      "operations": [
+        {
+          "candidate_machines": {
+            "3": 37,
+            "4": 59,
+            "11": 43,
+            "13": 52
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 29,
+            "9": 32,
+            "11": 30,
+            "13": 39,
+            "14": 30
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 66,
+            "2": 39,
+            "4": 53,
+            "6": 71,
+            "7": 53
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 63,
+            "7": 47,
+            "8": 47
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 45,
+            "5": 45,
+            "6": 71,
+            "8": 40,
+            "12": 66
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 34,
+            "5": 64,
+            "8": 70,
+            "10": 28
+          }
+        }
+      ]
+    },
+    {
+      "id": 131,
+      "arrival_time": 4172.0,
+      "weight": 1,
+      "due_date": 7060,
+      "operations": [
+        {
+          "candidate_machines": {
+            "0": 42,
+            "2": 60,
+            "5": 28,
+            "6": 25,
+            "10": 50
+          }
+        },
+        {
+          "candidate_machines": {
+            "6": 50,
+            "8": 73,
+            "9": 56,
+            "13": 55,
+            "14": 36,
+            "15": 72
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 33,
+            "6": 54,
+            "7": 53,
+            "11": 68,
+            "13": 70
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 44,
+            "9": 67,
+            "10": 32
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 32,
+            "5": 51,
+            "7": 50,
+            "14": 72
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 73,
+            "7": 25,
+            "8": 27,
+            "9": 50,
+            "13": 32,
+            "15": 60
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 68,
+            "4": 49,
+            "6": 57,
+            "7": 45,
+            "11": 43,
+            "15": 31
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 59,
+            "2": 41,
+            "9": 61
+          }
+        },
+        {
+          "candidate_machines": {
+            "10": 41,
+            "11": 65,
+            "12": 45,
+            "14": 43
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 69,
+            "6": 46,
+            "7": 57,
+            "9": 27
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 59,
+            "9": 51,
+            "10": 38,
+            "15": 56
+          }
+        }
+      ]
+    },
+    {
+      "id": 132,
+      "arrival_time": 4193.0,
+      "weight": 2,
+      "due_date": 5831,
+      "operations": [
+        {
+          "candidate_machines": {
+            "4": 53,
+            "7": 52,
+            "9": 53,
+            "10": 39,
+            "14": 31
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 69,
+            "7": 26,
+            "15": 68
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 46,
+            "1": 42,
+            "4": 70,
+            "8": 63,
+            "9": 74,
+            "15": 65
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 50,
+            "3": 38,
+            "5": 49,
+            "10": 65,
+            "13": 54,
+            "14": 69
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 37,
+            "3": 66,
+            "5": 70,
+            "11": 64,
+            "14": 70
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 44,
+            "5": 68,
+            "8": 25,
+            "10": 42,
+            "12": 39,
+            "14": 55
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 40,
+            "5": 67,
+            "7": 40,
+            "9": 30,
+            "10": 70,
+            "12": 50
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 52,
+            "2": 44,
+            "15": 64
+          }
+        }
+      ]
+    },
+    {
+      "id": 133,
+      "arrival_time": 4277.0,
+      "weight": 2,
+      "due_date": 5037,
+      "operations": [
+        {
+          "candidate_machines": {
+            "2": 31,
+            "8": 75,
+            "12": 50
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 69,
+            "3": 69,
+            "4": 69,
+            "10": 48,
+            "11": 62
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 65,
+            "4": 62,
+            "5": 63,
+            "7": 47,
+            "9": 69,
+            "11": 64
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 26,
+            "1": 27,
+            "13": 63
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 46,
+            "8": 28,
+            "10": 25,
+            "13": 52,
+            "14": 44
+          }
+        },
+        {
+          "candidate_machines": {
+            "10": 32,
+            "12": 28,
+            "13": 44,
+            "14": 26
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 25,
+            "4": 41,
+            "5": 58
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 70,
+            "12": 53,
+            "13": 44,
+            "14": 63,
+            "15": 25
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 49,
+            "9": 37,
+            "11": 71,
+            "15": 64
+          }
+        },
+        {
+          "candidate_machines": {
+            "6": 49,
+            "12": 71,
+            "13": 46
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 52,
+            "10": 73,
+            "12": 44,
+            "14": 70
+          }
+        }
+      ]
+    },
+    {
+      "id": 134,
+      "arrival_time": 4311.0,
+      "weight": 2,
+      "due_date": 5823,
+      "operations": [
+        {
+          "candidate_machines": {
+            "0": 55,
+            "3": 42,
+            "4": 52,
+            "6": 73,
+            "10": 42,
+            "11": 69
+          }
+        },
+        {
+          "candidate_machines": {
+            "6": 50,
+            "14": 64,
+            "15": 39
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 33,
+            "4": 31,
+            "5": 42,
+            "7": 63,
+            "10": 48,
+            "13": 49
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 38,
+            "2": 58,
+            "3": 69,
+            "6": 43,
+            "12": 58,
+            "15": 58
+          }
+        },
+        {
+          "candidate_machines": {
+            "7": 33,
+            "11": 49,
+            "12": 41,
+            "13": 48,
+            "14": 70
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 33,
+            "1": 26,
+            "3": 48,
+            "7": 49,
+            "15": 37
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 43,
+            "3": 44,
+            "4": 49,
+            "14": 46
+          }
+        }
+      ]
+    },
+    {
+      "id": 135,
+      "arrival_time": 4318.0,
+      "weight": 2,
+      "due_date": 5398,
+      "operations": [
+        {
+          "candidate_machines": {
+            "4": 26,
+            "7": 48,
+            "10": 42,
+            "12": 61
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 46,
+            "3": 51,
+            "4": 67,
+            "5": 34,
+            "10": 32,
+            "11": 49
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 75,
+            "2": 28,
+            "9": 72,
+            "12": 74
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 37,
+            "9": 43,
+            "15": 37
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 67,
+            "6": 57,
+            "10": 32
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 25,
+            "2": 37,
+            "12": 39
+          }
+        }
+      ]
+    },
+    {
+      "id": 136,
+      "arrival_time": 4327.0,
+      "weight": 4,
+      "due_date": 4697,
+      "operations": [
+        {
+          "candidate_machines": {
+            "2": 35,
+            "3": 64,
+            "4": 42,
+            "7": 30,
+            "8": 34,
+            "13": 58
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 35,
+            "2": 75,
+            "7": 54,
+            "10": 42,
+            "11": 59,
+            "13": 27
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 49,
+            "8": 40,
+            "11": 57,
+            "14": 68,
+            "15": 59
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 38,
+            "2": 42,
+            "4": 55,
+            "6": 71,
+            "7": 34,
+            "13": 57
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 63,
+            "6": 64,
+            "7": 73,
+            "13": 53,
+            "15": 29
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 33,
+            "13": 25,
+            "14": 52
+          }
+        }
+      ]
+    },
+    {
+      "id": 137,
+      "arrival_time": 4340.0,
+      "weight": 2,
+      "due_date": 6026,
+      "operations": [
+        {
+          "candidate_machines": {
+            "1": 58,
+            "2": 60,
+            "11": 26,
+            "12": 49,
+            "14": 73
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 67,
+            "6": 75,
+            "14": 56
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 56,
+            "7": 53,
+            "11": 57
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 67,
+            "5": 56,
+            "6": 45,
+            "7": 55,
+            "9": 55,
+            "11": 61
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 52,
+            "7": 73,
+            "9": 50,
+            "10": 69,
+            "13": 67,
+            "14": 71
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 40,
+            "4": 47,
+            "7": 73,
+            "9": 25,
+            "11": 37,
+            "13": 73
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 40,
+            "4": 73,
+            "11": 59,
+            "14": 26
+          }
+        }
+      ]
+    },
+    {
+      "id": 138,
+      "arrival_time": 4371.0,
+      "weight": 4,
+      "due_date": 8187,
+      "operations": [
+        {
+          "candidate_machines": {
+            "0": 66,
+            "12": 57,
+            "14": 70,
+            "15": 55
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 34,
+            "10": 37,
+            "12": 46,
+            "13": 73
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 59,
+            "4": 27,
+            "6": 39,
+            "8": 56,
+            "9": 53
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 71,
+            "10": 66,
+            "12": 72
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 40,
+            "4": 52,
+            "5": 45,
+            "7": 43,
+            "8": 71,
+            "15": 72
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 54,
+            "7": 61,
+            "8": 35,
+            "12": 54,
+            "13": 32,
+            "15": 40
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 46,
+            "8": 32,
+            "9": 51,
+            "13": 46,
+            "15": 47
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 66,
+            "7": 75,
+            "8": 71,
+            "11": 61
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 34,
+            "4": 73,
+            "5": 43,
+            "9": 50,
+            "15": 41
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 71,
+            "6": 52,
+            "10": 31
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 34,
+            "2": 48,
+            "4": 30,
+            "10": 71
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 59,
+            "12": 67,
+            "13": 35
+          }
+        }
+      ]
+    },
+    {
+      "id": 139,
+      "arrival_time": 4401.0,
+      "weight": 2,
+      "due_date": 5069,
+      "operations": [
+        {
+          "candidate_machines": {
+            "1": 47,
+            "2": 52,
+            "4": 36
+          }
+        },
+        {
+          "candidate_machines": {
+            "6": 38,
+            "7": 58,
+            "9": 50,
+            "14": 30,
+            "15": 53
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 31,
+            "13": 44,
+            "14": 58,
+            "15": 47
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 74,
+            "5": 61,
+            "11": 72,
+            "14": 60,
+            "15": 42
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 55,
+            "3": 36,
+            "7": 35,
+            "12": 38,
+            "13": 70,
+            "14": 34
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 70,
+            "5": 32,
+            "6": 36,
+            "9": 72,
+            "10": 38,
+            "14": 46
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 55,
+            "1": 72,
+            "2": 41,
+            "14": 54
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 26,
+            "5": 31,
+            "7": 38,
+            "15": 54
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 53,
+            "4": 65,
+            "10": 66,
+            "13": 25,
+            "14": 69
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 37,
+            "4": 63,
+            "11": 47
+          }
+        }
+      ]
+    },
+    {
+      "id": 140,
+      "arrival_time": 4409.0,
+      "weight": 2,
+      "due_date": 5507,
+      "operations": [
+        {
+          "candidate_machines": {
+            "2": 38,
+            "6": 39,
+            "8": 42,
+            "9": 29
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 52,
+            "8": 55,
+            "12": 40
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 44,
+            "4": 39,
+            "5": 29,
+            "9": 49,
+            "10": 64,
+            "14": 27
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 35,
+            "3": 52,
+            "6": 73,
+            "15": 45
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 49,
+            "7": 56,
+            "10": 35,
+            "12": 30,
+            "14": 27
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 27,
+            "3": 47,
+            "8": 25,
+            "12": 53,
+            "13": 66,
+            "14": 27
+          }
+        }
+      ]
+    },
+    {
+      "id": 141,
+      "arrival_time": 4445.0,
+      "weight": 1,
+      "due_date": 6693,
+      "operations": [
+        {
+          "candidate_machines": {
+            "1": 66,
+            "5": 55,
+            "10": 33,
+            "13": 53,
+            "14": 67
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 26,
+            "8": 74,
+            "11": 68,
+            "13": 49,
+            "15": 36
+          }
+        },
+        {
+          "candidate_machines": {
+            "6": 42,
+            "8": 73,
+            "15": 66
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 74,
+            "7": 56,
+            "8": 33,
+            "12": 25,
+            "15": 54
+          }
+        },
+        {
+          "candidate_machines": {
+            "8": 60,
+            "11": 27,
+            "12": 32
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 43,
+            "6": 33,
+            "7": 64,
+            "13": 38
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 54,
+            "6": 69,
+            "7": 50,
+            "8": 39,
+            "15": 57
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 29,
+            "2": 35,
+            "5": 26,
+            "14": 64
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 55,
+            "3": 45,
+            "5": 69,
+            "7": 46,
+            "9": 35,
+            "13": 30
+          }
+        }
+      ]
+    },
+    {
+      "id": 142,
+      "arrival_time": 4469.0,
+      "weight": 4,
+      "due_date": 6713,
+      "operations": [
+        {
+          "candidate_machines": {
+            "2": 65,
+            "6": 51,
+            "8": 59
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 43,
+            "3": 40,
+            "12": 32,
+            "14": 37
+          }
+        },
+        {
+          "candidate_machines": {
+            "6": 55,
+            "12": 26,
+            "15": 75
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 73,
+            "4": 31,
+            "10": 25,
+            "11": 57,
+            "12": 69
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 60,
+            "8": 44,
+            "10": 70,
+            "11": 45,
+            "13": 40
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 36,
+            "4": 60,
+            "6": 70,
+            "11": 57,
+            "15": 65
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 61,
+            "9": 71,
+            "12": 62,
+            "13": 67,
+            "14": 70
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 54,
+            "14": 30,
+            "15": 74
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 50,
+            "7": 59,
+            "8": 69,
+            "9": 48,
+            "14": 62
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 25,
+            "1": 42,
+            "7": 48,
+            "8": 43,
+            "14": 66
+          }
+        }
+      ]
+    },
+    {
+      "id": 143,
+      "arrival_time": 4541.0,
+      "weight": 1,
+      "due_date": 5717,
+      "operations": [
+        {
+          "candidate_machines": {
+            "1": 34,
+            "4": 56,
+            "12": 60,
+            "13": 74
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 54,
+            "8": 26,
+            "10": 49
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 27,
+            "8": 74,
+            "11": 60
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 59,
+            "3": 55,
+            "10": 61
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 70,
+            "4": 29,
+            "6": 48
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 55,
+            "2": 68,
+            "5": 58,
+            "6": 25,
+            "9": 45,
+            "12": 72
+          }
+        }
+      ]
+    },
+    {
+      "id": 144,
+      "arrival_time": 4587.0,
+      "weight": 2,
+      "due_date": 4977,
+      "operations": [
+        {
+          "candidate_machines": {
+            "1": 41,
+            "2": 55,
+            "4": 25,
+            "7": 30,
+            "12": 44,
+            "13": 58
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 28,
+            "3": 67,
+            "6": 28,
+            "10": 63,
+            "12": 61,
+            "15": 66
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 55,
+            "3": 33,
+            "8": 70,
+            "9": 41,
+            "11": 64,
+            "13": 68
+          }
+        },
+        {
+          "candidate_machines": {
+            "7": 74,
+            "11": 29,
+            "14": 70
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 54,
+            "6": 25,
+            "9": 29,
+            "10": 73,
+            "11": 41,
+            "15": 54
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 30,
+            "12": 36,
+            "14": 36
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 39,
+            "5": 61,
+            "10": 25
+          }
+        }
+      ]
+    },
+    {
+      "id": 145,
+      "arrival_time": 4617.0,
+      "weight": 4,
+      "due_date": 7383,
+      "operations": [
+        {
+          "candidate_machines": {
+            "0": 48,
+            "1": 38,
+            "3": 66,
+            "4": 50,
+            "8": 57,
+            "12": 71
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 71,
+            "1": 68,
+            "6": 37,
+            "7": 35,
+            "8": 65,
+            "14": 39
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 72,
+            "6": 48,
+            "7": 32,
+            "9": 32
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 60,
+            "5": 69,
+            "11": 36,
+            "12": 40,
+            "13": 66
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 44,
+            "4": 29,
+            "10": 58
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 48,
+            "8": 52,
+            "10": 66,
+            "13": 59
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 43,
+            "12": 68,
+            "13": 48
+          }
+        },
+        {
+          "candidate_machines": {
+            "7": 69,
+            "9": 39,
+            "10": 34,
+            "14": 35
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 73,
+            "1": 44,
+            "3": 56,
+            "10": 37,
+            "11": 39
+          }
+        },
+        {
+          "candidate_machines": {
+            "9": 53,
+            "11": 53,
+            "12": 29,
+            "13": 56,
+            "14": 75
+          }
+        },
+        {
+          "candidate_machines": {
+            "9": 65,
+            "13": 61,
+            "15": 71
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 39,
+            "1": 48,
+            "8": 60
+          }
+        }
+      ]
+    },
+    {
+      "id": 146,
+      "arrival_time": 4628.0,
+      "weight": 4,
+      "due_date": 6788,
+      "operations": [
+        {
+          "candidate_machines": {
+            "8": 57,
+            "9": 39,
+            "11": 65,
+            "13": 66,
+            "14": 28,
+            "15": 37
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 48,
+            "2": 44,
+            "7": 28,
+            "11": 52,
+            "14": 53,
+            "15": 36
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 43,
+            "10": 73,
+            "12": 49,
+            "13": 65
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 39,
+            "7": 40,
+            "9": 73,
+            "12": 39,
+            "13": 68
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 72,
+            "4": 41,
+            "7": 56,
+            "8": 31,
+            "10": 36,
+            "13": 58
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 60,
+            "12": 71,
+            "13": 60,
+            "14": 62
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 42,
+            "5": 41,
+            "7": 74,
+            "9": 52,
+            "11": 71,
+            "12": 68
+          }
+        }
+      ]
+    },
+    {
+      "id": 147,
+      "arrival_time": 4689.0,
+      "weight": 2,
+      "due_date": 5267,
+      "operations": [
+        {
+          "candidate_machines": {
+            "8": 47,
+            "9": 36,
+            "14": 71,
+            "15": 51
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 30,
+            "8": 60,
+            "15": 58
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 28,
+            "2": 26,
+            "7": 47,
+            "9": 29,
+            "12": 60,
+            "15": 39
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 42,
+            "3": 55,
+            "5": 43,
+            "11": 25,
+            "14": 75
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 26,
+            "5": 75,
+            "12": 50,
+            "13": 27
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 31,
+            "9": 42,
+            "10": 52,
+            "12": 31,
+            "15": 60
+          }
+        },
+        {
+          "candidate_machines": {
+            "6": 61,
+            "7": 26,
+            "14": 66
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 29,
+            "5": 52,
+            "8": 33,
+            "9": 41,
+            "10": 62,
+            "14": 53
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 31,
+            "5": 30,
+            "10": 53,
+            "14": 51
+          }
+        },
+        {
+          "candidate_machines": {
+            "2": 30,
+            "5": 68,
+            "9": 61,
+            "11": 44,
+            "12": 41
+          }
+        }
+      ]
+    },
+    {
+      "id": 148,
+      "arrival_time": 4862.0,
+      "weight": 4,
+      "due_date": 5668,
+      "operations": [
+        {
+          "candidate_machines": {
+            "0": 71,
+            "1": 55,
+            "5": 41,
+            "7": 59,
+            "11": 43
+          }
+        },
+        {
+          "candidate_machines": {
+            "6": 50,
+            "9": 74,
+            "11": 75
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 51,
+            "4": 73,
+            "8": 55,
+            "9": 42,
+            "10": 40
+          }
+        },
+        {
+          "candidate_machines": {
+            "7": 57,
+            "11": 71,
+            "14": 34
+          }
+        },
+        {
+          "candidate_machines": {
+            "3": 48,
+            "4": 51,
+            "10": 28,
+            "12": 52,
+            "15": 40
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 71,
+            "4": 45,
+            "7": 60,
+            "8": 28,
+            "14": 29
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 54,
+            "6": 27,
+            "7": 42,
+            "9": 62,
+            "12": 27
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 53,
+            "6": 53,
+            "9": 44,
+            "15": 70
+          }
+        },
+        {
+          "candidate_machines": {
+            "5": 69,
+            "8": 56,
+            "9": 62,
+            "11": 45,
+            "14": 52
+          }
+        },
+        {
+          "candidate_machines": {
+            "8": 73,
+            "9": 38,
+            "10": 66,
+            "11": 62,
+            "13": 74
+          }
+        },
+        {
+          "candidate_machines": {
+            "1": 63,
+            "3": 28,
+            "7": 54,
+            "9": 45,
+            "15": 58
+          }
+        }
+      ]
+    },
+    {
+      "id": 149,
+      "arrival_time": 4866.0,
+      "weight": 2,
+      "due_date": 6144,
+      "operations": [
+        {
+          "candidate_machines": {
+            "2": 72,
+            "3": 41,
+            "11": 25,
+            "13": 60,
+            "14": 66
+          }
+        },
+        {
+          "candidate_machines": {
+            "4": 63,
+            "7": 72,
+            "13": 42,
+            "14": 30
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 37,
+            "2": 68,
+            "5": 55,
+            "9": 63
+          }
+        },
+        {
+          "candidate_machines": {
+            "8": 65,
+            "11": 40,
+            "13": 39
+          }
+        },
+        {
+          "candidate_machines": {
+            "0": 48,
+            "1": 66,
+            "7": 71,
+            "8": 71,
+            "13": 74,
+            "15": 42
+          }
+        },
+        {
+          "candidate_machines": {
+            "7": 74,
+            "14": 40,
+            "15": 41
+          }
+        }
+      ]
     }
   ],
   "etpc_constraints": [
     {
+      "fore_job": 60,
+      "fore_op_idx": 5,
+      "hind_job": 129,
+      "hind_op_idx": 2,
+      "time_lapse": 5
+    },
+    {
       "fore_job": 48,
-      "fore_op_idx": 2,
-      "hind_job": 40,
+      "fore_op_idx": 0,
+      "hind_job": 127,
       "hind_op_idx": 5,
-      "time_lapse": 6
+      "time_lapse": 5
     },
     {
-      "fore_job": 64,
-      "fore_op_idx": 4,
-      "hind_job": 34,
-      "hind_op_idx": 5,
-      "time_lapse": 8
-    },
-    {
-      "fore_job": 76,
-      "fore_op_idx": 4,
-      "hind_job": 114,
-      "hind_op_idx": 7,
-      "time_lapse": 10
-    },
-    {
-      "fore_job": 62,
-      "fore_op_idx": 1,
-      "hind_job": 93,
-      "hind_op_idx": 3,
-      "time_lapse": 6
-    },
-    {
-      "fore_job": 28,
-      "fore_op_idx": 8,
-      "hind_job": 72,
-      "hind_op_idx": 4,
-      "time_lapse": 10
-    },
-    {
-      "fore_job": 21,
-      "fore_op_idx": 1,
-      "hind_job": 0,
-      "hind_op_idx": 9,
-      "time_lapse": 10
-    },
-    {
-      "fore_job": 109,
-      "fore_op_idx": 6,
-      "hind_job": 115,
-      "hind_op_idx": 0,
-      "time_lapse": 8
-    },
-    {
-      "fore_job": 37,
-      "fore_op_idx": 1,
-      "hind_job": 65,
-      "hind_op_idx": 0,
-      "time_lapse": 10
-    },
-    {
-      "fore_job": 111,
-      "fore_op_idx": 1,
-      "hind_job": 22,
-      "hind_op_idx": 10,
-      "time_lapse": 6
-    },
-    {
-      "fore_job": 25,
-      "fore_op_idx": 8,
-      "hind_job": 104,
+      "fore_job": 3,
+      "fore_op_idx": 5,
+      "hind_job": 74,
       "hind_op_idx": 2,
       "time_lapse": 9
     },
     {
-      "fore_job": 64,
-      "fore_op_idx": 7,
-      "hind_job": 74,
+      "fore_job": 36,
+      "fore_op_idx": 1,
+      "hind_job": 37,
+      "hind_op_idx": 5,
+      "time_lapse": 8
+    },
+    {
+      "fore_job": 100,
+      "fore_op_idx": 4,
+      "hind_job": 70,
+      "hind_op_idx": 3,
+      "time_lapse": 7
+    },
+    {
+      "fore_job": 59,
+      "fore_op_idx": 6,
+      "hind_job": 99,
+      "hind_op_idx": 7,
+      "time_lapse": 8
+    },
+    {
+      "fore_job": 14,
+      "fore_op_idx": 4,
+      "hind_job": 60,
       "hind_op_idx": 4,
       "time_lapse": 10
     },
     {
-      "fore_job": 107,
-      "fore_op_idx": 0,
-      "hind_job": 44,
-      "hind_op_idx": 2,
-      "time_lapse": 10
-    },
-    {
-      "fore_job": 36,
-      "fore_op_idx": 2,
-      "hind_job": 64,
-      "hind_op_idx": 5,
-      "time_lapse": 6
-    },
-    {
-      "fore_job": 81,
-      "fore_op_idx": 9,
-      "hind_job": 109,
-      "hind_op_idx": 7,
-      "time_lapse": 7
-    },
-    {
-      "fore_job": 82,
-      "fore_op_idx": 1,
-      "hind_job": 17,
-      "hind_op_idx": 6,
-      "time_lapse": 7
-    },
-    {
-      "fore_job": 52,
-      "fore_op_idx": 2,
-      "hind_job": 49,
-      "hind_op_idx": 2,
-      "time_lapse": 6
-    },
-    {
-      "fore_job": 110,
+      "fore_job": 58,
       "fore_op_idx": 6,
-      "hind_job": 92,
-      "hind_op_idx": 5,
+      "hind_job": 29,
+      "hind_op_idx": 0,
+      "time_lapse": 6
+    },
+    {
+      "fore_job": 69,
+      "fore_op_idx": 1,
+      "hind_job": 71,
+      "hind_op_idx": 4,
       "time_lapse": 7
+    },
+    {
+      "fore_job": 106,
+      "fore_op_idx": 0,
+      "hind_job": 107,
+      "hind_op_idx": 5,
+      "time_lapse": 8
+    },
+    {
+      "fore_job": 73,
+      "fore_op_idx": 8,
+      "hind_job": 27,
+      "hind_op_idx": 1,
+      "time_lapse": 9
+    },
+    {
+      "fore_job": 137,
+      "fore_op_idx": 5,
+      "hind_job": 73,
+      "hind_op_idx": 1,
+      "time_lapse": 6
+    },
+    {
+      "fore_job": 89,
+      "fore_op_idx": 2,
+      "hind_job": 148,
+      "hind_op_idx": 6,
+      "time_lapse": 6
     },
     {
       "fore_job": 10,
-      "fore_op_idx": 2,
-      "hind_job": 117,
+      "fore_op_idx": 1,
+      "hind_job": 140,
+      "hind_op_idx": 3,
+      "time_lapse": 8
+    },
+    {
+      "fore_job": 46,
+      "fore_op_idx": 7,
+      "hind_job": 29,
+      "hind_op_idx": 0,
+      "time_lapse": 5
+    },
+    {
+      "fore_job": 107,
+      "fore_op_idx": 6,
+      "hind_job": 80,
+      "hind_op_idx": 10,
+      "time_lapse": 5
+    },
+    {
+      "fore_job": 46,
+      "fore_op_idx": 6,
+      "hind_job": 116,
       "hind_op_idx": 5,
+      "time_lapse": 6
+    },
+    {
+      "fore_job": 112,
+      "fore_op_idx": 0,
+      "hind_job": 61,
+      "hind_op_idx": 10,
+      "time_lapse": 8
+    },
+    {
+      "fore_job": 115,
+      "fore_op_idx": 4,
+      "hind_job": 92,
+      "hind_op_idx": 0,
       "time_lapse": 10
+    },
+    {
+      "fore_job": 106,
+      "fore_op_idx": 10,
+      "hind_job": 69,
+      "hind_op_idx": 4,
+      "time_lapse": 5
+    },
+    {
+      "fore_job": 105,
+      "fore_op_idx": 1,
+      "hind_job": 135,
+      "hind_op_idx": 2,
+      "time_lapse": 8
+    },
+    {
+      "fore_job": 20,
+      "fore_op_idx": 7,
+      "hind_job": 139,
+      "hind_op_idx": 3,
+      "time_lapse": 8
     }
   ],
   "machine_breakdowns": {
@@ -12667,7 +15113,7 @@
     ]
   },
   "params": {
-    "num_jobs": 120,
+    "num_jobs": 150,
     "num_machines": 16,
     "machine_util": 0.75,
     "ec_percent": 0.15,
@@ -12705,28 +15151,32 @@
   "dynamic_events": {
     "cancelled_jobs": [
       {
-        "job_id": 19,
-        "time": 403
+        "job_id": 38,
+        "time": 1484
+      },
+      {
+        "job_id": 76,
+        "time": 3214
+      },
+      {
+        "job_id": 15,
+        "time": 841
+      },
+      {
+        "job_id": 57,
+        "time": 2095
+      },
+      {
+        "job_id": 62,
+        "time": 2264
       },
       {
         "job_id": 87,
-        "time": 3277
+        "time": 3445
       },
       {
-        "job_id": 23,
-        "time": 825
-      },
-      {
-        "job_id": 68,
-        "time": 2398
-      },
-      {
-        "job_id": 2,
-        "time": 545
-      },
-      {
-        "job_id": 102,
-        "time": 3288
+        "job_id": 143,
+        "time": 5326
       }
     ]
   }

@@ -230,8 +230,8 @@ if __name__ == "__main__":
     train_instances_no = 4
     test_instances_no = 2
 
-    num_jobs_train = 150
-    num_jobs_test = 120
+    num_jobs_train = 350
+    num_jobs_test = 150
     num_machines_range = (10, 13, 16)
 
     ops_range_train = (5, 15)
@@ -322,6 +322,41 @@ if __name__ == "__main__":
                         cancel_delay_range=cancel_delay_range
                     )
                     fname_test = f"dynamic_data/extended/test_sets/test_flex_events_{test_id}_util{util}_ec{ec}_nm{num_machines}_v{vers}.json"
+                    with open(fname_test, "w") as f:
+                        json.dump(ds_test, f, indent=2)
+
+                    print(f"[TEST FLEX+BREAK+CANCEL] Generated: {fname_test}")
+                    test_id += 1
+
+    # Generez seturi TEST
+    test_id = 0
+    for vers in range(1):
+        for util in test_util_list:
+            for ec in test_etpc_list:
+                for num_machines in num_machines_range:
+                    seed_val = 3000 + test_id
+                    ds_test = generate_flex_dataset_with_breakdowns(
+                        num_jobs=25,
+                        num_machines=num_machines,
+                        machine_util=util,
+                        ec_percent=ec,
+                        min_num_ops=ops_range_test[0],
+                        max_num_ops=ops_range_test[1],
+                        min_num_candidate_machines=candidate_mc_test[0],
+                        max_num_candidate_machines=candidate_mc_test[1],
+                        min_proc_time=proc_range_test[0],
+                        max_proc_time=proc_range_test[1],
+                        allowance_factors=allowance_factors,
+                        max_time_horizon=max_time_horizon,
+                        mean_time_to_failure=mean_time_to_failure,
+                        mean_repair_time=mean_repair_time,
+                        seed=seed_val,
+                        etpc_min_lapse=5,
+                        etpc_max_lapse=10,
+                        cancelled_job_frac=cancelled_job_frac,
+                        cancel_delay_range=cancel_delay_range
+                    )
+                    fname_test = f"dynamic_data/extended/test_sets_small/test_small_flex_events_{test_id}_util{util}_ec{ec}_nm{num_machines}_v{vers}.json"
                     with open(fname_test, "w") as f:
                         json.dump(ds_test, f, indent=2)
 
