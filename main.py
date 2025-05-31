@@ -24,10 +24,10 @@ from simpleTree import simplify_individual, tree_str, infix_str
 TRAIN_DIR = Path("dynamic_data/extended/test_sets")
 TEST_DIR = Path("dynamic_data/extended/test_sets")
 TEST_DIR_SMALL = Path("dynamic_data/extended/test_sets_small")
-POP_SIZE = 75
-N_GENERATIONS = 50
+POP_SIZE = 50
+N_GENERATIONS = 25
 N_WORKERS = 5
-MAX_HOF = 10
+MAX_HOF = 5
 
 BASE_OUTPUT_DIR = Path("rezultate/genetic")
 
@@ -431,7 +431,7 @@ def main() -> None:
     hof = run_genetic_program(
         train_instances=train_insts, toolbox=toolbox,
         ngen=N_GENERATIONS, pop_size=POP_SIZE,
-        halloffame_size=MAX_HOF, alpha=0.4
+        halloffame_size=MAX_HOF, alpha=0.2
     )
     best_individuals: List[gp.PrimitiveTree] = list(hof)[:MAX_HOF]
 

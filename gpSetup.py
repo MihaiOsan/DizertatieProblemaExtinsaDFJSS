@@ -11,7 +11,7 @@ def protected_div(a: float, b: float) -> float:
     """
     # Daca b e 0, am putea returna o valoare mare daca a e pozitiv,
     # sau a insusi, sau 1.0. Alegerea depinde de cum vrem sa penalizam/interpretam.
-    # Varianta initiala `else a` poate fi problematica daca `a` e mic si `b` e aproape de 0.
+    # Varianta initiala `else a` poate fi problematica daca `a` e small si `b` e aproape de 0.
     # O valoare mare ar putea fi mai sigura pentru a evita prioritati neasteptat de mari.
     if abs(b) < 1e-9:
         if a > 1e-9: return 1e9  # Numar mare pozitiv
@@ -65,7 +65,7 @@ def create_toolbox(np: int = 3) -> base.Toolbox:
     pset.addPrimitive(max, 2, name="max")
 
     # Terminale constante
-    pset.addTerminal(1.0, name="oneF")
+    pset.addTerminal(1)
     pset.addEphemeralConstant("ERC", generate_random_value_for_erc)
 
     if not hasattr(creator, "FitnessMin"):

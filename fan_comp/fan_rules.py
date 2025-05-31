@@ -236,7 +236,7 @@ def compute_priority(
         if current_job_ops_list:
             rpt_job = remaining_processing_time(current_job_ops_list, op_idx_in_job)
         slack_time = job_due_date - current_simulation_time - rpt_job
-        return slack_time  # Valori mai mici (slack mai mic sau negativ) sunt mai prioritare
+        return slack_time  # Valori mai mici (slack mai small sau negativ) sunt mai prioritare
     # --- Adăugare reguli GPHH ---
     if rule_name == "GPISRule1":
         PTO = all_sim_jobs_ops[job_sim_id][op_idx_in_job][0][1] if all_sim_jobs_ops.get(job_sim_id) and len(all_sim_jobs_ops[job_sim_id]) > op_idx_in_job and all_sim_jobs_ops[job_sim_id][op_idx_in_job] else 0
@@ -578,44 +578,35 @@ def plot_gantt(schedule: List[Tuple[int, int, int, float, float]],
         plt.close(fig)
 
 
-###############################################################################
-# 6) MAIN – evaluare reguli (Refactorizat pentru OOP)
-###############################################################################
-if __name__ == "__main__":
-    INPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/fan21/test_sets")
-    OUTPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/fan_comp/rezultate/simplu/clasic/gantt")
-    RESULTS_DIR_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/fan_comp/rezultate/simplu/clasic/text")
+def evaluate_all_rules_on_set(
+    input_dir: Path,
+    output_gantt_dir: Path,
+    output_results_dir: Path,
+    rules: List[str],
+    results_filename: str = "main_results.txt"
+):
+    output_gantt_dir.mkdir(parents=True, exist_ok=True)
+    output_results_dir.mkdir(parents=True, exist_ok=True)
+    results_file_path = output_results_dir / results_filename
 
-    OUTPUT_DIR_CLASSIC_PATH.mkdir(parents=True, exist_ok=True)
-    RESULTS_DIR_PATH.mkdir(parents=True, exist_ok=True)
+    avg_ms_per_rule = {r: [] for r in rules}
+    avg_twt_per_rule = {r: [] for r in rules}
+    avg_time_per_rule = {r: [] for r in rules}
+    avg_idle_per_rule = {r: [] for r in rules}
+    avg_wait_per_rule = {r: [] for r in rules}
 
-    # --- MODIFICARE: Lista de reguli extinsa ---
-    RULES = ["SPT", "ECT", "Random", "EDD", "MST", "GPISRule1", "GPISRule2", "GPISRule3", "GPISRule4", "GPISRule5", "GPISRule6"]  # <-- ADAUGAT EDD, MST
-
-    avg_ms_per_rule = {r: [] for r in RULES}
-    avg_twt_per_rule = {r: [] for r in RULES}
-    avg_time_per_rule = {r: [] for r in RULES}
-    avg_idle_per_rule = {r: [] for r in RULES}
-    avg_wait_per_rule = {r: [] for r in RULES}
-
-    RESULTS_FILE_CLASSIC_PATH = RESULTS_DIR_PATH / "classic_oop_main_results_ext_v3.txt"  # Nume fisier nou
-
-    with open(RESULTS_FILE_CLASSIC_PATH, "w", encoding="utf-8") as fout:
-        all_loaded_instances: List[FJSPInstance] = load_instances_from_directory(str(INPUT_DIR_CLASSIC_PATH))
-
+    with open(results_file_path, "w", encoding="utf-8") as fout:
+        all_loaded_instances: List[FJSPInstance] = load_instances_from_directory(str(input_dir))
         if not all_loaded_instances:
-            print(f"No instances found in {INPUT_DIR_CLASSIC_PATH}. Exiting.")
+            print(f"No instances found in {input_dir}. Exiting.")
         else:
             print(f"Loaded {len(all_loaded_instances)} instances for classic heuristics evaluation.")
-
         for instance_obj in all_loaded_instances:
             fout.write(
                 f"\n=== INSTANCE: {instance_obj.file_name} (Machines: {instance_obj.num_machines}, Total Jobs Defined: {instance_obj.num_total_defined_jobs}) ===\n")
             print(f"\n=== INSTANCE: {instance_obj.file_name} ===")
-
-            for rule_name_iter in RULES:
+            for rule_name_iter in rules:
                 time_start_rule = time.perf_counter()
-
                 makespan, schedule_result = schedule_dynamic_no_parallel(
                     fjsp_instance=instance_obj,
                     rule_name=rule_name_iter
@@ -642,7 +633,11 @@ if __name__ == "__main__":
                     if isinstance(bd_event, BreakdownEvent):
                         breakdowns_for_gantt[bd_event.machine_id].append((bd_event.event_time, bd_event.end_time))
 
-                save_gantt_path = OUTPUT_DIR_CLASSIC_PATH / f"{Path(instance_obj.file_name).stem}_{rule_name_iter}.png"
+                # --- ACEASTA E SINGURA LINIE CARE TREBUIE MODIFICATA:
+                rule_gantt_dir = output_gantt_dir / rule_name_iter
+                rule_gantt_dir.mkdir(parents=True, exist_ok=True)
+                save_gantt_path = rule_gantt_dir / f"{Path(instance_obj.file_name).stem}.png"
+
                 plot_gantt(
                     schedule_result,
                     instance_obj.num_machines,
@@ -650,25 +645,59 @@ if __name__ == "__main__":
                     title=f"{instance_obj.file_name} - {rule_name_iter} (MS={makespan:.2f}, TWT={twt_val:.2f})",
                     save_path=str(save_gantt_path)
                 )
-
         fout.write("\n\n=== Average Performance per Rule (across all instances) ===\n")
         print("\n=== Average Performance per Rule (across all instances) ===")
-
         final_avg_ms = metric_average(avg_ms_per_rule)
         final_avg_twt = metric_average(avg_twt_per_rule)
         final_avg_time = metric_average(avg_time_per_rule)
         final_avg_idle = metric_average(avg_idle_per_rule)
         final_avg_wait = metric_average(avg_wait_per_rule)
-
         header_line = f"{'Rule':<7}: {'AvgMS':<7}, {'AvgTWT':<8}, {'AvgIdle':<7}, {'AvgWait':<7}, {'AvgT (s)':<7}"
         fout.write(header_line + "\n")
         print(header_line)
-        for r_name_avg in RULES:
+        for r_name_avg in rules:
             fout.write(
                 f"{r_name_avg:<7}: {final_avg_ms.get(r_name_avg, 0.0):<7.2f}, {final_avg_twt.get(r_name_avg, 0.0):<8.2f}, {final_avg_idle.get(r_name_avg, 0.0):<7.2f}, {final_avg_wait.get(r_name_avg, 0.0):<7.2f}, {final_avg_time.get(r_name_avg, 0.0):<7.3f}\n")
             print(
                 f"{r_name_avg:<7}: {final_avg_ms.get(r_name_avg, 0.0):<7.2f}, {final_avg_twt.get(r_name_avg, 0.0):<8.2f}, {final_avg_idle.get(r_name_avg, 0.0):<7.2f}, {final_avg_wait.get(r_name_avg, 0.0):<7.2f}, {final_avg_time.get(r_name_avg, 0.0):<7.3f}")
+    print(f"\nRezultatele au fost scrise în {results_file_path}")
+    print(f"Graficele Gantt în directorul '{output_gantt_dir}'")
 
-    print(f"\nRezultatele pentru euristicile clasice au fost scrise în {RESULTS_FILE_CLASSIC_PATH}")
-    print(f"Graficele Gantt pentru euristicile clasice se află în directorul '{OUTPUT_DIR_CLASSIC_PATH}'")
+###############################################################################
+# 6) MAIN – evaluare reguli (Refactorizat pentru OOP)
+###############################################################################
+if __name__ == "__main__":
+    # SETURI DE DATE
+    INPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/extended/test_sets")
+    OUTPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/simplu/clasic/gantt")
+    RESULTS_DIR_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/simplu/clasic/text")
+
+    # Set small
+    INPUT_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/extended/test_sets_small")
+    OUTPUT_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/simplu/small/gantt")
+    RESULTS_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/simplu/small/text")
+
+    # REGULI
+    RULES = [
+        "SPT", "LPT", "FIFO", "LIFO", "SRPT", "OPR", "ECT", "LLM", "Random",
+        "EDD", "MST", "GPISRule1", "GPISRule2", "GPISRule3", "GPISRule4", "GPISRule5", "GPISRule6"
+    ]
+
+    # Evaluare set clasic (mare)
+    evaluate_all_rules_on_set(
+        input_dir=INPUT_DIR_CLASSIC_PATH,
+        output_gantt_dir=OUTPUT_DIR_CLASSIC_PATH,
+        output_results_dir=RESULTS_DIR_PATH,
+        rules=RULES,
+        results_filename="classic_results_ext.txt"
+    )
+
+    # Evaluare set small
+    evaluate_all_rules_on_set(
+        input_dir=INPUT_DIR_MIC_PATH,
+        output_gantt_dir=OUTPUT_DIR_MIC_PATH,
+        output_results_dir=RESULTS_DIR_MIC_PATH,
+        rules=RULES,
+        results_filename="classic_results_mic.txt"
+    )
 

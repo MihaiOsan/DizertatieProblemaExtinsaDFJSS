@@ -212,7 +212,7 @@ def compute_priority(
         if current_job_ops_list:
             rpt_job = remaining_processing_time(current_job_ops_list, op_idx_in_job)
         slack_time = job_due_date - current_simulation_time - rpt_job
-        return slack_time  # Valori mai mici (slack mai mic sau negativ) sunt mai prioritare
+        return slack_time  # Valori mai mici (slack mai small sau negativ) sunt mai prioritare
 
     return ptime_val  # Fallback la SPT
 
