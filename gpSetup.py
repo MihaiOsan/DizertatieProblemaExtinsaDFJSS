@@ -29,7 +29,7 @@ def create_toolbox(np: int = 3) -> base.Toolbox:
     definirea primitivelor GP, a tipurilor de date și
     operatorilor de încrucișare/mutare, selecție etc.
 
-    Acum definește un PrimitiveSet cu 12 argumente pentru a include ETPC.
+    definește un PrimitiveSet cu 12 argumente pentru a include ETPC.
 
     :param np: Numărul de worker-i pentru ThreadPoolExecutor (evaluare paralelă).
     :return: Obiectul DEAP Toolbox configurat.
@@ -46,7 +46,7 @@ def create_toolbox(np: int = 3) -> base.Toolbox:
     pset.renameArguments(ARG3='TQ')  # Time in Queue
     pset.renameArguments(ARG4='WIP')  # Work In Progress
     pset.renameArguments(ARG5='RPT')  # Remaining Processing Time (job-level)
-    pset.renameArguments(ARG6='TUF')  # Time Until Finish (of machine's breakdown)
+    pset.renameArguments(ARG6='TUF')  # Time Until Fixed (of machine's breakdown)
     pset.renameArguments(ARG7='DD')  # Due Date (al jobului candidat)
     pset.renameArguments(ARG8='SLK')  # Slack Time (al jobului candidat)
     pset.renameArguments(ARG9='WJ')  # Weight of Job
@@ -89,33 +89,3 @@ def create_toolbox(np: int = 3) -> base.Toolbox:
     print("Toolbox created successfully with ETPC arguments.")
     return toolbox
 
-
-if __name__ == '__main__':
-    test_toolbox = create_toolbox(np=1)
-    print("\nPrimitive Set Arguments:")
-    for i in range(test_toolbox.pset.arity):  # Arity este numarul de argumente
-        print(f"ARG{i}: {test_toolbox.pset.arguments[i]}")
-
-    print("\nTerminals:")
-    # Afisam terminalele de tip float si apoi celelalte tipuri daca exista
-    if float in test_toolbox.pset.terminals:
-        for term in test_toolbox.pset.terminals[float]:
-            print(f"Float Terminal: {term.name if hasattr(term, 'name') else term.value}")
-    for term_type in test_toolbox.pset.terminals:
-        if term_type is not float:
-            for term in test_toolbox.pset.terminals[term_type]:
-                print(f"Type {term_type} Terminal: {term.name if hasattr(term, 'name') else term.value}")
-
-    try:
-        expr_example = gp.genFull(test_toolbox.pset, min_=2, max_=3)  # Adancime mai mare pentru mai multe argumente
-        individual_example = creator.Individual(expr_example)
-        print(f"\nExample Individual Tree: {str(individual_example)}")
-
-        compiled_func = test_toolbox.compile(expr=individual_example)
-
-        # Testeaza cu valori placeholder (12 argumente)
-        # PT, RO, MW, TQ, WIP, RPT, TUF, DD, SLK, WJ, ETPC_D, N_ETPC_S
-        result = compiled_func(10, 3, 5, 2, 20, 50, 0, 200, 100, 2, 5.0, 3)
-        print(f"Compiled function result with 12 placeholder args: {result}")
-    except Exception as e:
-        print(f"Error during example individual test: {e}")

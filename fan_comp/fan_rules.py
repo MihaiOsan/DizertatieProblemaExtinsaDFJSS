@@ -269,6 +269,7 @@ def compute_priority(
         frWJETPC = get_frWJETPC(job_sim_id, op_idx_in_job, job_weight, fore_ops_map)
         return (rDDJ - rPTJ) * WJ / frWJETPC if frWJETPC != 0 else (rDDJ - rPTJ) * WJ
 
+
     if rule_name == "GPISRule5":
         atPTJ = sum(min(alt[1] for alt in op_list) for op_list in
                     all_sim_jobs_ops[job_sim_id]) / len(all_sim_jobs_ops[job_sim_id]) if all_sim_jobs_ops.get(

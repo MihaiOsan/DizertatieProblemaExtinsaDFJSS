@@ -8,6 +8,9 @@ from typing import List, Dict, Tuple, Any, Optional, Union
 import re
 import numpy as np
 import csv
+import json
+import datetime
+import itertools
 
 from deap import gp
 
@@ -19,22 +22,20 @@ from gpSetup import create_toolbox
 from simpleTree import simplify_individual, tree_str, infix_str
 
 # ---------------------------------------------------------------------------
-# CONFIG
+# CONFIG (Parametri Generali ai Experimentului)
 # ---------------------------------------------------------------------------
-TRAIN_DIR = Path("dynamic_data/extended/test_sets")
+TRAIN_DIR = Path("dynamic_data/extended/training_sets_small")
 TEST_DIR = Path("dynamic_data/extended/test_sets")
 TEST_DIR_SMALL = Path("dynamic_data/extended/test_sets_small")
-POP_SIZE = 50
-N_GENERATIONS = 25
-N_WORKERS = 5
-MAX_HOF = 5
+POP_SIZE = 60
+N_GENERATIONS = 40
+N_WORKERS = 6  # Numărul de worker-i pentru create_toolbox
+MAX_HOF = 5  # Păstrăm doar cei mai buni 5 indivizi per rulare pentru raportare detaliată
 
-BASE_OUTPUT_DIR = Path("rezultate/genetic")
-
-
+BASE_OUTPUT_DIR = Path("rezultate/genetic_experiments")  # Directorul de bază pentru toate experimentele
 
 # ----------------------------------------------------------
-# TUPLE_FIELDS si field()
+# TUPLE_FIELDS și field() (rămân neschimbate)
 # ----------------------------------------------------------
 TUPLE_FIELDS = {"job": 0, "op": 1, "machine": 2, "start": 3, "end": 4}
 
@@ -46,7 +47,7 @@ def field(op_tuple: Tuple, name: str) -> Any:
 
 
 # ---------------------------------------------------------------------------
-#  UTILITARE
+#  UTILITARE (rămân neschimbate)
 # ---------------------------------------------------------------------------
 def sanitize_filename_str(name: str, max_len: int = 100) -> str:
     name = str(name)
@@ -62,7 +63,7 @@ def calculate_std_dev(data: List[float]) -> float:
 
 
 # ---------------------------------------------------------------------------
-#  FUNCTII DE METRICA
+#  FUNCTII DE METRICA (rămân neschimbate)
 # ---------------------------------------------------------------------------
 def get_per_machine_operation_counts(sched: List[Tuple], num_total_machines: int) -> Dict[int, int]:
     op_counts = {m: 0 for m in range(num_total_machines)}
@@ -244,15 +245,16 @@ def generate_per_job_metrics_csv(
 
 
 def evaluate_and_save_results(
-    instances_for_testing: List[FJSPInstance],
-    best_individuals: List[gp.PrimitiveTree],
-    toolbox,
-    output_base_dir: Path,
-    label: str = ""
+        instances_for_testing: List[FJSPInstance],
+        best_individuals: List[gp.PrimitiveTree],
+        toolbox,
+        output_base_dir: Path,
+        label: str = ""
 ):
     output_base_dir.mkdir(parents=True, exist_ok=True)
     for rank, individual_tree_original in enumerate(best_individuals, 1):
-        individual_fitness_train = individual_tree_original.fitness.values[0] if individual_tree_original.fitness.valid else float("inf")
+        individual_fitness_train = individual_tree_original.fitness.values[
+            0] if individual_tree_original.fitness.valid else float("inf")
         simplified_individual_tree = simplify_individual(individual_tree_original, toolbox.pset)
         ind_size_original = len(individual_tree_original)
         ind_depth_original = individual_tree_original.height
@@ -416,49 +418,207 @@ def evaluate_and_save_results(
 # ---------------------------------------------------------------------------
 def main() -> None:
     global_start = time.time()
-    BASE_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    # Asigură-te că directoarele de instanțe există pentru ca codul să ruleze
+    # (poți omite dacă ești sigur că directoarele sunt deja create)
+    TRAIN_DIR.mkdir(parents=True, exist_ok=True)
+    TEST_DIR.mkdir(parents=True, exist_ok=True)
+    TEST_DIR_SMALL.mkdir(parents=True, exist_ok=True)
+
+    BASE_OUTPUT_DIR.mkdir(parents=True, exist_ok=True)  # Directorul de bază pentru toate rezultatele experimentelor
+
     print("--- Loading Training Instances ---")
     train_insts: List[FJSPInstance] = load_instances_from_directory(str(TRAIN_DIR))
     print(f"Loaded {len(train_insts)} training instances.\n")
+
     print("--- Loading Test Instances ---")
     test_insts: List[FJSPInstance] = load_instances_from_directory(str(TEST_DIR))
     print(f"Loaded {len(test_insts)} test instances.\n")
-    if not train_insts:
-        print("No training instances loaded. Exiting.");
-        return
-    toolbox = create_toolbox(np=N_WORKERS)
-    print("\n=== GP TRAINING ===")
-    hof = run_genetic_program(
-        train_instances=train_insts, toolbox=toolbox,
-        ngen=N_GENERATIONS, pop_size=POP_SIZE,
-        halloffame_size=MAX_HOF, alpha=0.2
-    )
-    best_individuals: List[gp.PrimitiveTree] = list(hof)[:MAX_HOF]
 
-    # ---- Test Set Mare ----
-    evaluate_and_save_results(
-        instances_for_testing=test_insts,
-        best_individuals=best_individuals,
-        toolbox=toolbox,
-        output_base_dir=BASE_OUTPUT_DIR / "TestSet_Big",
-        label="TestSet_Big"
-    )
-
-    # ---- Test Set Mic ----
     test_insts_small = load_instances_from_directory(str(TEST_DIR_SMALL))
     print(f"Loaded {len(test_insts_small)} small test instances.\n")
-    evaluate_and_save_results(
-        instances_for_testing=test_insts_small,
-        best_individuals=best_individuals,
-        toolbox=toolbox,
-        output_base_dir=BASE_OUTPUT_DIR / "TestSet_Small",
-        label="TestSet_Small"
-    )
+
+    if not train_insts:
+        print("No training instances loaded. Exiting.")
+        return
+
+    # --- Define Parameter Grid for Experiments ---
+    param_grid = {
+        "alpha": [0,0.2, 0.5,0.8],  # Parametru pentru funcția de fitness
+        "selection_strategy": ["tournament", "roulette", "best"],  # Strategii de selecție
+        "crossover_strategy": ["one_point"],  # Strategii de încrucișare
+        "mutation_strategy": ["uniform", "node_replacement"]  # Strategii de mutație
+    }
+    num_runs_per_config = 1  # Numărul de rulări pentru fiecare set de parametri
+
+    # Stochează rezultatele tuturor rulărilor pentru raportul final
+    all_experiment_results: List[Dict[str, Any]] = []
+
+    # Pentru a urmări cel mai bun individ găsit în toate rulările și configurațiile
+    best_overall_individual_data = {
+        "fitness": float('inf'),  # Inițializăm cu o fitness foarte mare pentru probleme de minimizare
+        "individual_str": "",
+        "config": "",
+        "run": -1
+    }
+
+    # Creăm un director unic cu timestamp pentru această rulare de experimente
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    experiment_output_root = BASE_OUTPUT_DIR
+    experiment_output_root.mkdir(parents=True, exist_ok=True)
+
+    # Fișierul pentru raportul sumar
+    report_file_path = experiment_output_root / "experiment_summary_report.txt"
+
+    print(f"\n=== Starting GP Experiments ({num_runs_per_config} runs per config) ===")
+    print(f"Results will be saved in: {experiment_output_root}")
+
+    config_counter = 0
+
+    # Iterăm prin toate combinațiile de parametri
+    # itertools.product generează produsul cartezian al listelor de parametri
+    for alpha_val, sel_strat, cx_strat, mut_strat in itertools.product(
+            param_grid["alpha"],
+            param_grid["selection_strategy"],
+            param_grid["crossover_strategy"],
+            param_grid["mutation_strategy"]
+    ):
+        config_counter += 1
+        # Generăm un nume unic și descriptiv pentru configurația curentă
+        config_name = (
+            f"alpha_{str(alpha_val).replace('.', '_')}_"  # Înlocuim '.' cu '_' pentru nume de fișiere valide
+            f"sel_{sel_strat}_"
+            f"cx_{cx_strat}_"
+            f"mut_{mut_strat}"
+        )
+
+        # Creăm un director pentru această configurație specifică
+        current_config_output_dir = experiment_output_root / config_name
+        current_config_output_dir.mkdir(parents=True, exist_ok=True)
+
+        print(f"\n--- Running Configuration {config_counter}: {config_name} ---")
+
+        # Rulăm de 10 ori (sau `num_runs_per_config`) pentru fiecare configurație
+        for run_idx in range(num_runs_per_config):
+            run_start_time = time.time()
+            print(f"  Starting Run {run_idx + 1}/{num_runs_per_config} for this config...")
+
+            # Creăm un toolbox nou pentru fiecare rulare pentru a evita efectele secundare între rulări GP
+            toolbox = create_toolbox(np=N_WORKERS)
+
+            # Apelăm funcția run_genetic_program cu parametrii curentului set de parametri
+            hof_current_run = run_genetic_program(
+                train_instances=train_insts,
+                toolbox=toolbox,
+                ngen=N_GENERATIONS,
+                pop_size=POP_SIZE,
+                halloffame_size=MAX_HOF,  # Păstrăm MAX_HOF indivizi în Hall of Fame
+                alpha=alpha_val,  # Valoarea alpha din configurația curentă
+                selection_strategy=sel_strat,
+                selection_tournsize=3,
+                crossover_strategy=cx_strat,
+                mutation_strategy=mut_strat,
+                cxpb=0.5,  # Probabilitate de crossover (fixă, poate fi parametrizată)
+                mutpb=0.3,  # Probabilitate de mutație (fixă, poate fi parametrizată)
+                MAX_DEPTH=7  # Adâncime maximă a arborelui (fixă, poate fi parametrizată)
+            )
+
+            # Obținem cel mai bun individ din această rulare
+            if hof_current_run:
+                # Obținem cel mai bun individ (de obicei primul din Hall of Fame, dacă MAX_HOF=1)
+                best_ind_this_run = hof_current_run[0]
+                current_run_fitness = best_ind_this_run.fitness.values[0] if best_ind_this_run.fitness.valid else float(
+                    'inf')
+
+                # Simplificăm arborele pentru o reprezentare mai clară
+                simplified_best_ind = simplify_individual(best_ind_this_run, toolbox.pset)
+                simplified_best_ind_str = infix_str(simplified_best_ind)
+
+                run_duration_s = time.time() - run_start_time
+                print(
+                    f"  Run {run_idx + 1} finished. Best Fitness: {current_run_fitness:.4f} (Duration: {run_duration_s:.2f}s)")
+
+                # Stocăm detaliile rulării pentru raportul final
+                run_details = {
+                    "config_name": config_name,
+                    "alpha": alpha_val,
+                    "selection_strategy": sel_strat,
+                    "crossover_strategy": cx_strat,
+                    "mutation_strategy": mut_strat,
+                    "run_index": run_idx + 1,
+                    "best_fitness": current_run_fitness,
+                    "best_individual_original_str": str(best_ind_this_run),
+                    "best_individual_simplified_str": simplified_best_ind_str,
+                    "run_duration_s": run_duration_s
+                }
+                all_experiment_results.append(run_details)
+
+                # Actualizăm cel mai bun individ general dacă rularea curentă este mai bună
+                if current_run_fitness < best_overall_individual_data["fitness"]:
+                    best_overall_individual_data["fitness"] = current_run_fitness
+                    best_overall_individual_data["individual_str"] = simplified_best_ind_str
+                    best_overall_individual_data["config"] = config_name
+                    best_overall_individual_data["run"] = run_idx + 1
+
+                # Salvarea rezultatelor detaliate pentru această rulare
+                # Creăm un director specific pentru această rulare (în interiorul directorului de configurație)
+                run_output_dir = current_config_output_dir / f"run_{run_idx + 1}"
+                run_output_dir.mkdir(parents=True, exist_ok=True)
+
+                # Salvăm rezultatele pe setul de test mare
+                evaluate_and_save_results(
+                    instances_for_testing=test_insts,
+                    best_individuals=[best_ind_this_run],  # Testăm doar cel mai bun din această rulare
+                    toolbox=toolbox,
+                    output_base_dir=run_output_dir / "TestSet_Big",
+                    label=f"{config_name}_Run{run_idx + 1}_TestSet_Big"
+                )
+
+                # Salvăm rezultatele pe setul de test mic
+                evaluate_and_save_results(
+                    instances_for_testing=test_insts_small,
+                    best_individuals=[best_ind_this_run],  # Testăm doar cel mai bun din această rulare
+                    toolbox=toolbox,
+                    output_base_dir=run_output_dir / "TestSet_Small",
+                    label=f"{config_name}_Run{run_idx + 1}_TestSet_Small"
+                )
+            else:
+                print(f"  Run {run_idx + 1} did not find any valid individual in Hall of Fame.")
+
+    # --- Generare Raport Sumar Final ---
+    print("\n\n=== EXPERIMENT SUMMARY REPORT ===")
+    with open(report_file_path, "w", encoding="utf-8") as f_report:
+        f_report.write(f"Experiment Run: {timestamp}\n")
+        f_report.write(f"Total Configurations Tested: {config_counter}\n")
+        f_report.write(f"Runs per Configuration: {num_runs_per_config}\n")
+        f_report.write(f"Parameters Grid: {json.dumps(param_grid, indent=2)}\n\n")  # Salvează gridul complet
+
+        f_report.write("--- Best Individual from Each Run (Sorted by Fitness) ---\n")
+        # Sortăm rezultatele pentru o mai bună lizibilitate în raport
+        all_experiment_results.sort(key=lambda x: x["best_fitness"])
+
+        for result in all_experiment_results:
+            f_report.write(f"Config: {result['config_name']}, Run: {result['run_index']}\n")
+            f_report.write(f"  Alpha: {result['alpha']}, Sel: {result['selection_strategy']}, "
+                           f"CX: {result['crossover_strategy']}, Mut: {result['mutation_strategy']}\n")
+            f_report.write(f"  Best Fitness: {result['best_fitness']:.4f}\n")
+            f_report.write(f"  Simplified Individual: {result['best_individual_simplified_str']}\n")
+            f_report.write(f"  Run Duration: {result['run_duration_s']:.2f}s\n\n")
+
+        f_report.write("\n--- Overall Best Individual Found Across All Runs ---\n")
+        if best_overall_individual_data["run"] != -1:  # Verificăm dacă a fost găsit un individ valid
+            f_report.write(f"Best Overall Fitness: {best_overall_individual_data['fitness']:.4f}\n")
+            f_report.write(f"Came from Config: {best_overall_individual_data['config']}\n")
+            f_report.write(f"From Run Index: {best_overall_individual_data['run']}\n")
+            f_report.write(f"Simplified Individual Formula: {best_overall_individual_data['individual_str']}\n")
+        else:
+            f_report.write("No valid best individual found across all runs.\n")
+
+    print(f"\nFull experiment results and reports saved in: {experiment_output_root}")
+    print(f"Summary report file: {report_file_path}")
 
     total_elapsed_time = time.time() - global_start
-    print(f"\nResults written to per-individual files in '{BASE_OUTPUT_DIR}'.")
-    print(f"Total execution time: {total_elapsed_time:.1f}s")
-
+    print(f"Total experiment execution time: {total_elapsed_time:.1f}s")
 
 
 if __name__ == "__main__":

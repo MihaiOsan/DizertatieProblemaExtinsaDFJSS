@@ -120,7 +120,7 @@ def multi_instance_fitness(individual: gp.PrimitiveTree,
                 toolbox=toolbox
             )
         except Exception as e_eval:
-            makespan = float('inf');
+            makespan = float('inf')
             schedule_tuples = []
         twt = calculate_total_weighted_tardiness(schedule_tuples, instance_obj, makespan)
         score_for_instance = float('inf')
@@ -137,7 +137,7 @@ def multi_instance_fitness(individual: gp.PrimitiveTree,
     return (total_combined_score / num_valid_instances_evaluated,)
 
 
-def run_genetic_program(train_instances: List[FJSPInstance],
+def run_genetic_program(train_instances: List[Any],  # Tipul real ar fi List[FJSPInstance]
                         toolbox: base.Toolbox,
                         ngen: int = 10,
                         pop_size: int = 20,
@@ -145,29 +145,95 @@ def run_genetic_program(train_instances: List[FJSPInstance],
                         halloffame_size: int = 1,
                         cxpb: float = 0.5,
                         mutpb: float = 0.3,
-                        MAX_DEPTH = 7
+                        MAX_DEPTH: int = 7,
+                        selection_strategy: str = "tournament",  # Opțiuni: "tournament", "roulette", "random", "best"
+                        selection_tournsize: int = 3,  # Rămâne pentru "tournament"
+                        crossover_strategy: str = "one_point",  # Opțiuni: "one_point", "two_point", "uniform"
+                        mutation_strategy: str = "uniform", # Opțiuni: "uniform", "gaussian", "flip_bit", "node_replacement"
                         ):
+    """
+    Rulează algoritmul de programare genetică cu operatori parametrizați prin stringuri.
+
+    Args:
+        train_instances: Lista de instanțe FJSP pentru antrenament.
+        toolbox: Obiectul DEAP toolbox configurat cu funcții specifice.
+        ngen: Numărul de generații.
+        pop_size: Dimensiunea populației.
+        alpha: Parametru pentru funcția de fitness (folosit în multi_instance_fitness).
+        halloffame_size: Dimensiunea Hall of Fame.
+        cxpb: Probabilitatea de crossover.
+        mutpb: Probabilitatea de mutație.
+        MAX_DEPTH: Adâncimea maximă a arborilor GP.
+        selection_strategy: Strategia de selecție ca string.
+        selection_tournsize: Dimensiunea turneului (relevant pentru 'tournament').
+        crossover_strategy: Strategia de încrucișare ca string.
+        mutation_strategy: Strategia de mutație ca string.
+    """
+
     toolbox.register("evaluate",
                      multi_instance_fitness,
                      fjsp_instances=train_instances,
                      toolbox=toolbox,
                      alpha=alpha)
-    toolbox.register("select", tools.selTournament, tournsize=3)
-    toolbox.register("mate", gp.cxOnePoint)
-    if not hasattr(toolbox, 'expr') or not hasattr(toolbox, 'pset'):
-        raise AttributeError("Toolbox not fully configured for mutation. Missing 'expr' or 'pset'.")
-    toolbox.register("mutate", gp.mutUniform, expr=toolbox.expr, pset=toolbox.pset)
 
+    # --- Parametrizare Operator de Selecție ---
+    if selection_strategy == "tournament":
+        toolbox.register("select", tools.selTournament, tournsize=selection_tournsize)
+    elif selection_strategy == "roulette":
+        toolbox.register("select", tools.selRoulette)
+    elif selection_strategy == "random":
+        toolbox.register("select", tools.selRandom)
+    elif selection_strategy == "best":
+        toolbox.register("select", tools.selBest)  # tools.selBest (selectează cei mai buni n indivizi)
+    else:
+        raise ValueError(f"Strategie de selecție '{selection_strategy}' necunoscută. "
+                         f"Opțiuni valide: 'tournament', 'roulette', 'random', 'best'.")
+
+    # --- Parametrizare Operator de Încrucișare (Mate) ---
+    if crossover_strategy == "one_point":
+        toolbox.register("mate", gp.cxOnePoint)
+    else:
+        raise ValueError(f"Strategie de încrucișare '{crossover_strategy}' necunoscută. "
+                         f"Opțiuni valide: 'one_point'.")
+
+    # --- Parametrizare Operator de Mutație ---
+    # `gp.mutUniform` și `gp.mutNodeReplacement` necesită `pset`.
+    if not hasattr(toolbox, 'expr') or not hasattr(toolbox, 'pset'):
+        raise AttributeError("Toolbox nu este complet configurat pentru mutație. Lipsesc 'expr' sau 'pset'. "
+                             "Asigură-te că toolbox.register('expr', ...) și toolbox.register('pset', ...) au fost apelate.")
+
+    if mutation_strategy == "uniform":
+        toolbox.register("mutate", gp.mutUniform, expr=toolbox.expr, pset=toolbox.pset)
+    elif mutation_strategy == "gaussian":
+        # gp.mutGaussian necesită 'mu' (media) și 'sigma' (deviația standard) și 'indpb'
+        # Folosim valori implicite comune pentru demonstrație.
+        toolbox.register("mutate", tools.mutGaussian, mu=0.0, sigma=1.0, indpb=0.05)
+    elif mutation_strategy == "flip_bit":
+        # tools.mutFlipBit pentru liste de biți, sau gp.mutFlipBit pentru GP ar putea fi necesar
+        # Presupunem că e pentru un context de listă de biți dacă nu e GP specific
+        # Pentru GP, ar putea fi mutNodeReplacement cu o distribuție diferită
+        toolbox.register("mutate", tools.mutFlipBit, indpb=0.05)  # indpb e probabilitatea de a schimba un bit
+    elif mutation_strategy == "node_replacement":
+        toolbox.register("mutate", gp.mutNodeReplacement, pset=toolbox.pset)
+    elif mutation_strategy == "shrink":
+        toolbox.register("mutate", gp.mutShrink)
+    else:
+        raise ValueError(f"Strategie de mutație '{mutation_strategy}' necunoscută. "
+                         f"Opțiuni valide: 'uniform', 'gaussian', 'flip_bit', 'node_replacement', 'shrink'.")
+
+    # Decoratori pentru limitarea adâncimii arborelui
     toolbox.decorate("mate", gp.staticLimit(key=operator.attrgetter("height"), max_value=MAX_DEPTH))
     toolbox.decorate("mutate", gp.staticLimit(key=operator.attrgetter("height"), max_value=MAX_DEPTH))
 
+    # Inițializarea populației și Hall of Fame
     pop = toolbox.population(n=pop_size)
     hof = tools.HallOfFame(halloffame_size)
 
+    # Configurarea statisticilor pentru monitorizarea evoluției
     stats_fit = tools.Statistics(lambda ind: ind.fitness.values[0] if ind.fitness.valid else float('inf'))
     stats_size = tools.Statistics(len)
-    stats_best_ind_obj = tools.Statistics(key=lambda ind: ind)
 
+    # Funcții safe pentru a evita erorile cu float('inf') în statistici
     safe_avg = lambda x: sum(xi for xi in x if xi != float('inf')) / len([xi for xi in x if xi != float('inf')]) if len(
         [xi for xi in x if xi != float('inf')]) > 0 else 0.0
     safe_min = lambda x: min(xi for xi in x if xi != float('inf')) if any(xi != float('inf') for xi in x) else float(
@@ -190,21 +256,21 @@ def run_genetic_program(train_instances: List[FJSPInstance],
     stats_size.register("min", min)
     stats_size.register("max", max)
 
-    # `min` va alege individul bazat pe `ind.fitness`
-    stats_best_ind_obj.register("best", lambda pop_list: min(pop_list, key=lambda
-        ind: ind.fitness if ind.fitness.valid else float('inf')))
-
     mstats = tools.MultiStatistics(fitness=stats_fit)
+    # Dacă dorești să adaugi și statistici despre mărime, poți face:
+    # mstats.register("size", stats_size)
 
+    # Rularea algoritmului evolutiv principal
     final_pop, logbook = algorithms.eaSimple(
         pop, toolbox,
         cxpb=cxpb, mutpb=mutpb,
         ngen=ngen,
         stats=mstats,
         halloffame=hof,
-        verbose=True
+        verbose=True  # Afișează progresul generațiilor
     )
 
+    # Afișarea celui mai bun individ per generație din logbook
     print("\n--- Best Individual per Generation (from Logbook) ---")
     if logbook:
         print(f"Gen\t{'MinFitness':<15}\tBest Individual Tree of Generation")
@@ -212,19 +278,19 @@ def run_genetic_program(train_instances: List[FJSPInstance],
         for gen_data in logbook:
             gen_num = gen_data["gen"]
             min_fitness_val = gen_data.get("fitness", {}).get("min", float('inf'))
-            best_ind_tree_of_gen = None
-            if "best_individual" in gen_data and "best" in gen_data["best_individual"]:
-                best_ind_tree_of_gen = gen_data["best_individual"]["best"]
+            # Logbook-ul stochează adesea doar statisticile, nu indivizii direct.
+            # Cel mai bun individ dintr-o generație e, de obicei, în HallOfFame după ce rulați.
             print(
-                f"{gen_num}\t{min_fitness_val:<15.4f}\t{str(best_ind_tree_of_gen) if best_ind_tree_of_gen else 'N/A'}")
+                f"{gen_num}\t{min_fitness_val:<15.4f}\t{'N/A (vezi Hall of Fame)'}")  # Modificat pentru claritate
     else:
         print("Logbook is empty or not generated.")
 
     print("\nGenetic program finished.")
+    # Returnează Hall of Fame, care conține cel mai bun individ găsit.
     return hof
 
 
-def run_genetic_program_subsample(instances: List[FJSPInstance],
+'''def run_genetic_program_subsample(instances: List[FJSPInstance],
                                   toolbox: base.Toolbox,
                                   ngen=10, pop_size=20,
                                   chunk_size=5,
@@ -305,4 +371,4 @@ def run_genetic_program_subsample(instances: List[FJSPInstance],
         else:
             print("Chunk logbook is empty or not generated.")
         gens_done += gens_here
-    return hof
+    return hof'''
