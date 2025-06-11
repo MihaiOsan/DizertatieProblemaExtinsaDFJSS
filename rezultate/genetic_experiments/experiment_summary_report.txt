@@ -1,0 +1,175 @@
+Experiment Run: 20250609_134102
+Total Configurations Tested: 24
+Runs per Configuration: 1
+Parameters Grid: {
+  "alpha": [
+    0,
+    0.2,
+    0.5,
+    0.8
+  ],
+  "selection_strategy": [
+    "tournament",
+    "roulette",
+    "best"
+  ],
+  "crossover_strategy": [
+    "one_point"
+  ],
+  "mutation_strategy": [
+    "uniform",
+    "node_replacement"
+  ]
+}
+
+--- Best Individual from Each Run (Sorted by Fitness) ---
+Config: alpha_0_sel_tournament_cx_one_point_mut_node_replacement, Run: 1
+  Alpha: 0, Sel: tournament, CX: one_point, Mut: node_replacement
+  Best Fitness: 383.1852
+  Simplified Individual: SLK + (max(WJ, SLK)) - (min(TQ, SLK)) + PT * PT
+  Run Duration: 4626.97s
+
+Config: alpha_0_sel_roulette_cx_one_point_mut_node_replacement, Run: 1
+  Alpha: 0, Sel: roulette, CX: one_point, Mut: node_replacement
+  Best Fitness: 473.7407
+  Simplified Individual: PT * (max(PT * (max(PT, N_ETPC_S + SLK)), RPT))
+  Run Duration: 9697.37s
+
+Config: alpha_0_sel_tournament_cx_one_point_mut_uniform, Run: 1
+  Alpha: 0, Sel: tournament, CX: one_point, Mut: uniform
+  Best Fitness: 561.0185
+  Simplified Individual: SLK - 23.425200000000004 / PT * (max(SLK, 23.425200000000004 / PT))
+  Run Duration: 5288.84s
+
+Config: alpha_0_sel_best_cx_one_point_mut_node_replacement, Run: 1
+  Alpha: 0, Sel: best, CX: one_point, Mut: node_replacement
+  Best Fitness: 778.1296
+  Simplified Individual: -1.75 / ((max(SLK, RPT)) * PT)
+  Run Duration: 5004.82s
+
+Config: alpha_0_sel_best_cx_one_point_mut_uniform, Run: 1
+  Alpha: 0, Sel: best, CX: one_point, Mut: uniform
+  Best Fitness: 808.1667
+  Simplified Individual: PT * (max(SLK / 0.06 + TQ - 1, ETPC_D * WJ * PT))
+  Run Duration: 5422.39s
+
+Config: alpha_0_sel_roulette_cx_one_point_mut_uniform, Run: 1
+  Alpha: 0, Sel: roulette, CX: one_point, Mut: uniform
+  Best Fitness: 857.4259
+  Simplified Individual: DD / 2.96 * PT
+  Run Duration: 8511.66s
+
+Config: alpha_0_2_sel_tournament_cx_one_point_mut_node_replacement, Run: 1
+  Alpha: 0.2, Sel: tournament, CX: one_point, Mut: node_replacement
+  Best Fitness: 1655.1074
+  Simplified Individual: SLK + PT * PT + 2.78 - (max(TQ + 2.78, TQ))
+  Run Duration: 4788.79s
+
+Config: alpha_0_2_sel_tournament_cx_one_point_mut_uniform, Run: 1
+  Alpha: 0.2, Sel: tournament, CX: one_point, Mut: uniform
+  Best Fitness: 1697.7333
+  Simplified Individual: SLK - WJ + PT + (max(PT, 1)) + PT - (max(RPT, WJ * WJ)) - ((min(RPT, SLK)) - ((max(MW / 1, WJ * TQ)) - (PT * MW + WJ / PT)))
+  Run Duration: 5208.78s
+
+Config: alpha_0_2_sel_roulette_cx_one_point_mut_node_replacement, Run: 1
+  Alpha: 0.2, Sel: roulette, CX: one_point, Mut: node_replacement
+  Best Fitness: 1809.4481
+  Simplified Individual: (PT - (DD - RPT)) * PT
+  Run Duration: 9535.96s
+
+Config: alpha_0_2_sel_roulette_cx_one_point_mut_uniform, Run: 1
+  Alpha: 0.2, Sel: roulette, CX: one_point, Mut: uniform
+  Best Fitness: 1928.0630
+  Simplified Individual: PT * (ETPC_D - DD)
+  Run Duration: 8783.56s
+
+Config: alpha_0_2_sel_best_cx_one_point_mut_node_replacement, Run: 1
+  Alpha: 0.2, Sel: best, CX: one_point, Mut: node_replacement
+  Best Fitness: 1931.7000
+  Simplified Individual: PT * DD - WJ
+  Run Duration: 5236.12s
+
+Config: alpha_0_2_sel_best_cx_one_point_mut_uniform, Run: 1
+  Alpha: 0.2, Sel: best, CX: one_point, Mut: uniform
+  Best Fitness: 1956.2148
+  Simplified Individual: PT * SLK
+  Run Duration: 5637.08s
+
+Config: alpha_0_5_sel_tournament_cx_one_point_mut_uniform, Run: 1
+  Alpha: 0.5, Sel: tournament, CX: one_point, Mut: uniform
+  Best Fitness: 3329.7778
+  Simplified Individual: ((max(max(DD, (max(RPT / RPT, PT)) * (SLK + (min(RPT, PT)))), RPT)) + PT - RPT) * (TUF - (TUF - PT))
+  Run Duration: 4881.11s
+
+Config: alpha_0_5_sel_tournament_cx_one_point_mut_node_replacement, Run: 1
+  Alpha: 0.5, Sel: tournament, CX: one_point, Mut: node_replacement
+  Best Fitness: 3339.0370
+  Simplified Individual: (PT - 3.43) * (1.82 + SLK / RPT)
+  Run Duration: 4675.35s
+
+Config: alpha_0_5_sel_best_cx_one_point_mut_uniform, Run: 1
+  Alpha: 0.5, Sel: best, CX: one_point, Mut: uniform
+  Best Fitness: 3554.7130
+  Simplified Individual: SLK + (max(DD * (max(PT, MW)), (max(N_ETPC_S / MW, N_ETPC_S)) * N_ETPC_S))
+  Run Duration: 5426.25s
+
+Config: alpha_0_5_sel_roulette_cx_one_point_mut_uniform, Run: 1
+  Alpha: 0.5, Sel: roulette, CX: one_point, Mut: uniform
+  Best Fitness: 3559.6481
+  Simplified Individual: PT * (max(DD, WIP))
+  Run Duration: 8655.15s
+
+Config: alpha_0_5_sel_best_cx_one_point_mut_node_replacement, Run: 1
+  Alpha: 0.5, Sel: best, CX: one_point, Mut: node_replacement
+  Best Fitness: 3559.6481
+  Simplified Individual: DD * PT
+  Run Duration: 5251.12s
+
+Config: alpha_0_5_sel_roulette_cx_one_point_mut_node_replacement, Run: 1
+  Alpha: 0.5, Sel: roulette, CX: one_point, Mut: node_replacement
+  Best Fitness: 3594.5833
+  Simplified Individual: RPT - (min(-3.11, TQ)) * PT * DD
+  Run Duration: 9746.90s
+
+Config: alpha_0_8_sel_best_cx_one_point_mut_uniform, Run: 1
+  Alpha: 0.8, Sel: best, CX: one_point, Mut: uniform
+  Best Fitness: 5082.9852
+  Simplified Individual: (max(SLK + WIP, min(TQ, SLK))) * (N_ETPC_S + PT) * (min(-2.07, WIP)) * (max(DD / RPT, N_ETPC_S))
+  Run Duration: 5639.19s
+
+Config: alpha_0_8_sel_tournament_cx_one_point_mut_node_replacement, Run: 1
+  Alpha: 0.8, Sel: tournament, CX: one_point, Mut: node_replacement
+  Best Fitness: 5092.9333
+  Simplified Individual: (PT * PT + PT * N_ETPC_S + PT) * PT * SLK * PT * PT + PT
+  Run Duration: 4564.47s
+
+Config: alpha_0_8_sel_tournament_cx_one_point_mut_uniform, Run: 1
+  Alpha: 0.8, Sel: tournament, CX: one_point, Mut: uniform
+  Best Fitness: 5104.5148
+  Simplified Individual: SLK - PT + (max(PT - WIP, RO)) * (min(PT, PT * MW * (min(PT, SLK)) * DD))
+  Run Duration: 5087.27s
+
+Config: alpha_0_8_sel_best_cx_one_point_mut_node_replacement, Run: 1
+  Alpha: 0.8, Sel: best, CX: one_point, Mut: node_replacement
+  Best Fitness: 5294.0037
+  Simplified Individual: max(SLK * PT, 1)
+  Run Duration: 5422.16s
+
+Config: alpha_0_8_sel_roulette_cx_one_point_mut_node_replacement, Run: 1
+  Alpha: 0.8, Sel: roulette, CX: one_point, Mut: node_replacement
+  Best Fitness: 5568.0741
+  Simplified Individual: PT * (max(-2.31, RO + (DD + RPT) * RO)) / RPT - (max((RO + RPT) / 1, PT + RPT)) * N_ETPC_S
+  Run Duration: 8894.73s
+
+Config: alpha_0_8_sel_roulette_cx_one_point_mut_uniform, Run: 1
+  Alpha: 0.8, Sel: roulette, CX: one_point, Mut: uniform
+  Best Fitness: 5709.5741
+  Simplified Individual: TUF - DD + SLK / SLK * (PT + N_ETPC_S)
+  Run Duration: 8302.57s
+
+
+--- Overall Best Individual Found Across All Runs ---
+Best Overall Fitness: 383.1852
+Came from Config: alpha_0_sel_tournament_cx_one_point_mut_node_replacement
+From Run Index: 1
+Simplified Individual Formula: SLK + (max(WJ, SLK)) - (min(TQ, SLK)) + PT * PT

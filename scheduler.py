@@ -1,9 +1,6 @@
 import copy
 from collections import defaultdict
 from typing import List, Dict, Tuple, Any, Optional
-import \
-    random  # Adăugat pentru a randomiza ordinea mașinilor (rămâne necesar pentru alte cazuri sau inițializare, dar nu pentru dispatching direct)
-
 from data_reader import FJSPInstance, Job, Operation, ETPCConstraint, BaseEvent, BreakdownEvent, AddJobDynamicEvent, \
     CancelJobEvent
 
@@ -122,7 +119,7 @@ def evaluate_individual(
             context.effective_ready_time[(sim_id, 0)] = max(job_obj.arrival_time, etpc_min)
             context.ready_ops.add((sim_id, 0))
 
-    # --- Funcții helper imbricate (primesc 'context' ca argument) ---
+    # --- Funcții helper imbricate ---
     def get_job_object_from_sim(sim_id: int) -> Optional[Job]:
         """Funcție helper pentru a obține un obiect Job din harta simulării."""
         return current_jobs_sim_map.get(sim_id)
@@ -223,7 +220,7 @@ def evaluate_individual(
                         m_cancel.start_time = 0.0
                         m_cancel.idle_since = current_sim_time
 
-                # Actualizare setului ready_ops prin reasignare
+                # Actualizare setului ready_ops
                 context.ready_ops = {op for op in context.ready_ops if op[0] != sim_id_to_cancel}
 
                 ops_already_done_for_cancelled = 0
@@ -317,8 +314,6 @@ def evaluate_individual(
         all_potential_assignments: List[
             Tuple[float, int, int, int, float]] = []  # (priority, machine_id, job_sim_id, op_idx, ptime)
 
-        # Initialize these variables to ensure they are always defined
-        # This addresses the "NameError: name 'MW_val' is not defined" issue
         MW_val = 0.0
         WIP_val = 0.0
         TUF_val = 0.0
