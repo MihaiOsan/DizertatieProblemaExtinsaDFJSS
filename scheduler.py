@@ -97,7 +97,7 @@ def evaluate_individual(
 
     context = SimulationContext(initial_total_ops_count)
 
-    # Procesarea constrângerilor ETPC (transferată în contextul inițial)
+    # Procesarea constrângerilor ETPC
     for etpc_constr_obj in fjsp_instance.etpc_constraints:
         fore_job_obj = fjsp_instance.get_job_by_original_id(etpc_constr_obj.fore_job_orig_id_ref)
         hind_job_obj = fjsp_instance.get_job_by_original_id(etpc_constr_obj.hind_job_orig_id_ref)
@@ -111,7 +111,7 @@ def evaluate_individual(
                 (hind_job_obj.sim_id, etpc_constr_obj.hind_op_idx, etpc_constr_obj.time_lapse)
             )
 
-    # Inițializarea operațiilor gata (transferată în contextul inițial)
+    # Inițializarea operațiilor gata
     for sim_id, job_obj in current_jobs_sim_map.items():
         if job_obj.num_operations > 0:
             context.job_internal_pred_finish_time[(sim_id, 0)] = job_obj.arrival_time
@@ -119,7 +119,7 @@ def evaluate_individual(
             context.effective_ready_time[(sim_id, 0)] = max(job_obj.arrival_time, etpc_min)
             context.ready_ops.add((sim_id, 0))
 
-    # --- Funcții helper imbricate ---
+    # --- Funcții helper ---
     def get_job_object_from_sim(sim_id: int) -> Optional[Job]:
         """Funcție helper pentru a obține un obiect Job din harta simulării."""
         return current_jobs_sim_map.get(sim_id)
