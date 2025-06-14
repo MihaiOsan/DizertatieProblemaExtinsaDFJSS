@@ -1,0 +1,51 @@
+=== Individual 1 (Rank in HoF) ===
+Training_Fitness: 431.3148
+Original_Size: 15, Original_Depth: 5
+Original_Tree (string): add(SLK, sub(mul(PT, mul(SLK, min(SLK, PT))), mul(SLK, min(SLK, PT))))
+Simplified_Size: 15, Simplified_Depth: 5
+Simplified_Formula (infix): SLK + PT * SLK * (min(SLK, PT)) - SLK * (min(SLK, PT))
+Simplified_Tree_ASCII: 
+└─ add
+   ├─ SLK
+   └─ sub
+      ├─ mul
+      │  ├─ PT
+      │  └─ mul
+      │     ├─ SLK
+      │     └─ min
+      │        ├─ SLK
+      │        └─ PT
+      └─ mul
+         ├─ SLK
+         └─ min
+            ├─ SLK
+            └─ PT
+
+Per-Instance Summary Results:
+Instance                                      MS      TWT     AvgIdle   StdIdle   AvgWait   StdWait   AvgTard   StdTard   #Tardy AvgBusy%  EvalTime(s)
+------------------------------------------------------------------------------------------------------------------------------------------------------
+test_small_flex_events_0_util0.75_ec0.08_nm10_v0 1403.00 94.00   481.10    100.60    325.16    227.25    1.88      9.21      1      65.71   % 0.007     
+test_small_flex_events_10_util0.95_ec0.15_nm13_v0 1146.00 316.00  449.38    110.07    318.76    147.53    3.16      15.48     1      60.79   % 0.008     
+test_small_flex_events_11_util0.95_ec0.15_nm16_v0 1102.00 238.00  537.88    99.29     238.68    118.26    2.88      10.25     2      51.19   % 0.010     
+test_small_flex_events_1_util0.75_ec0.08_nm13_v0 1217.00 50.00   495.54    99.29     259.00    139.78    1.00      4.90      1      59.28   % 0.008     
+test_small_flex_events_2_util0.75_ec0.08_nm16_v0 957.00  0.00    345.75    104.83    249.84    115.01    0.00      0.00      0      63.87   % 0.008     
+test_small_flex_events_3_util0.75_ec0.15_nm10_v0 1518.00 0.00    528.10    153.33    186.72    129.58    0.00      0.00      0      65.21   % 0.007     
+test_small_flex_events_4_util0.75_ec0.15_nm13_v0 1221.00 0.00    498.00    93.44     266.60    138.07    0.00      0.00      0      59.21   % 0.008     
+test_small_flex_events_5_util0.75_ec0.15_nm16_v0 979.00  202.00  354.56    129.63    219.48    105.14    6.24      23.02     2      63.78   % 0.009     
+test_small_flex_events_6_util0.95_ec0.08_nm10_v0 1527.00 217.00  535.80    137.55    261.64    190.38    5.56      19.01     2      64.91   % 0.007     
+test_small_flex_events_7_util0.95_ec0.08_nm13_v0 1163.00 58.00   423.23    113.06    254.68    148.95    1.16      5.68      1      63.61   % 0.008     
+test_small_flex_events_8_util0.95_ec0.08_nm16_v0 1162.00 515.00  577.50    127.18    274.00    133.40    14.00     41.05     4      50.30   % 0.010     
+test_small_flex_events_9_util0.95_ec0.15_nm10_v0 1568.00 74.00   573.00    122.42    161.60    110.35    1.48      7.25      1      63.46   % 0.007     
+
+--- OVERALL AVERAGES for this Individual (across test instances) ---
+Average_MS                     : 1246.92
+Average_TWT                    : 147.00
+Average_Avg_Machine_Idle       : 483.32
+Average_Std_Machine_Idle       : 115.89
+Average_Avg_Job_Wait           : 251.35
+Average_Std_Job_Wait           : 141.98
+Average_Avg_Tardiness          : 3.11
+Average_Std_Tardiness          : 11.32
+Average_Num_Tardy_Jobs         : 1.25
+Average_Avg_Machine_Utilization: 60.94%
+Average_Eval_Time              : 0.008s

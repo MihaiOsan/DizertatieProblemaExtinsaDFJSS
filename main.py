@@ -21,10 +21,10 @@ TEST_DIR = Path("dynamic_data/extended/test_sets")
 TEST_DIR_SMALL = Path("dynamic_data/extended/test_sets_small")
 POP_SIZE = 60
 N_GENERATIONS = 40
-N_WORKERS = 6  # Numărul de worker-i pentru create_toolbox
+N_WORKERS = 7  # Numărul de worker-i pentru create_toolbox
 MAX_HOF = 5  # Păstrăm doar cei mai buni 5 indivizi per rulare pentru raportare detaliată
 
-BASE_OUTPUT_DIR = Path("rezultate/genetic_experiments")  # Directorul de bază pentru toate experimentele
+BASE_OUTPUT_DIR = Path("rezultate/genetic_experiments_alpha_depend")  # Directorul de bază pentru toate experimentele
 
 # ----------------------------------------------------------
 # TUPLE_FIELDS și field
@@ -35,7 +35,6 @@ TUPLE_FIELDS = {"job": 0, "op": 1, "machine": 2, "start": 3, "end": 4}
 # ---------------------------------------------------------------------------
 #  FUNCTII DE METRICA
 # ---------------------------------------------------------------------------
-
 def evaluate_and_save_results(
         instances_for_testing: List[FJSPInstance],
         best_individuals: List[gp.PrimitiveTree],
@@ -234,12 +233,12 @@ def main() -> None:
 
     # --- Parameter Grid pentru Experimente ---
     param_grid = {
-        "alpha": [0,0.2, 0.5,0.8],  # Parametru pentru funcția de fitness
-        "selection_strategy": ["tournament", "roulette", "best"],  # Strategii de selecție
+        "alpha": [0, 0.5],  # Parametru pentru funcția de fitness
+        "selection_strategy": ["tournament"],#["tournament", "roulette", "best"],  # Strategii de selecție
         "crossover_strategy": ["one_point"],  # Strategii de încrucișare
-        "mutation_strategy": ["uniform", "node_replacement"]  # Strategii de mutație
+        "mutation_strategy": ["node_replacement"] #["uniform", "node_replacement"]  # Strategii de mutație
     }
-    num_runs_per_config = 1  # Numărul de rulări pentru fiecare set de parametri
+    num_runs_per_config = 5  # Numărul de rulări pentru fiecare set de parametri
 
     # Stochează rezultatele tuturor rulărilor pentru raportul final
     all_experiment_results: List[Dict[str, Any]] = []
@@ -352,35 +351,23 @@ def main() -> None:
                 run_output_dir = current_config_output_dir / f"run_{run_idx + 1}"
                 run_output_dir.mkdir(parents=True, exist_ok=True)
 
-                for rank, individual_to_save in enumerate(hof_current_run):
-                    # Asigură-te că individul are un fitness valid înainte de a-l procesa
-                    if not individual_to_save.fitness.valid:
-                        print(f"  Skipping individual {rank + 1} from HoF: no valid fitness.")
-                        continue
-
-                    # Creăm un sub-director pentru fiecare individ din HoF
-                    individual_output_sub_dir = run_output_dir / f"HoF_Indiv_{rank + 1}"
-                    individual_output_sub_dir.mkdir(parents=True, exist_ok=True)
-
-                    print(
-                        f"  Saving results for HoF Individual {rank + 1} (Fitness: {individual_to_save.fitness.values[0]:.4f})...")
 
                     # Salvăm rezultatele pe setul de test mare pentru individul curent din HoF
-                    evaluate_and_save_results(
+                evaluate_and_save_results(
                         instances_for_testing=test_insts,
-                        best_individuals=[individual_to_save],  # Trimitem doar individul curent
+                        best_individuals=hof_current_run,
                         toolbox=toolbox,
-                        output_base_dir=individual_output_sub_dir / "TestSet_Big",
-                        label=f"{config_name}_Run{run_idx + 1}_HoF_Indiv{rank + 1}_TestSet_Big"
+                        output_base_dir=run_output_dir / "TestSet_Big",
+                        label=f"{config_name}_Run{run_idx + 1}_TestSet_Big"
                     )
 
                     # Salvăm rezultatele pe setul de test mic pentru individul curent din HoF
-                    evaluate_and_save_results(
+                evaluate_and_save_results(
                         instances_for_testing=test_insts_small,
-                        best_individuals=[individual_to_save],  # Trimitem doar individul curent
+                        best_individuals=hof_current_run,
                         toolbox=toolbox,
-                        output_base_dir=individual_output_sub_dir / "TestSet_Small",
-                        label=f"{config_name}_Run{run_idx + 1}_HoF_Indiv{rank + 1}_TestSet_Small"
+                        output_base_dir=run_output_dir / "TestSet_Small",
+                        label=f"{config_name}_Run{run_idx + 1}_TestSet_Small"
                     )
             else:
                 print(f"  Run {run_idx + 1} did not find any valid individual in Hall of Fame.")
