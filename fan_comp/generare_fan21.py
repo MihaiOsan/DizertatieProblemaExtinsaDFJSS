@@ -7,11 +7,11 @@ if __name__ == "__main__":
     os.makedirs("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/fan21/training_sets", exist_ok=True)
     os.makedirs("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/fan21/test_sets", exist_ok=True)
 
-    train_instances_no = 10
+    train_instances_no = 3
     test_instances_no = 5
 
     # Ex. de parametri generali
-    num_jobs_train = 500
+    num_jobs_train = 100
     num_jobs_test = 500
     num_machines_range = [10]
 
@@ -73,7 +73,7 @@ if __name__ == "__main__":
 
                     print(f"[TRAIN FAN21] Generated: {fname}")
                     train_id += 1
-
+'''
     # Generez seturi TEST
     test_id = 0
     for vers in range(test_instances_no):
@@ -106,3 +106,4 @@ if __name__ == "__main__":
 
                     print(f"[TEST FAN21] Generated: {fname_test}")
                     test_id += 1
+'''

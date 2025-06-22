@@ -1,0 +1,59 @@
+=== Individual 4 (Rank in HoF) ===
+Training_Fitness: 229.3037
+Original_Size: 16, Original_Depth: 4
+Original_Tree (string): sub(add(min(DD, SLK), min(SLK, RO)), max(mul(RO, RO), neg(protected_div(WJ, SLK))))
+Simplified_Size: 15, Simplified_Depth: 3
+Simplified_Formula (infix): (min(DD, SLK)) + (min(SLK, RO)) - (max(RO * RO, WJ / SLK))
+Simplified_Tree_ASCII: 
+└─ sub
+   ├─ add
+   │  ├─ min
+   │  │  ├─ DD
+   │  │  └─ SLK
+   │  └─ min
+   │     ├─ SLK
+   │     └─ RO
+   └─ max
+      ├─ mul
+      │  ├─ RO
+      │  └─ RO
+      └─ protected_div
+         ├─ WJ
+         └─ SLK
+
+Per-Instance Summary Results:
+Instance                                      MS      TWT     AvgIdle   StdIdle   AvgWait   StdWait   AvgTard   StdTard   #Tardy AvgBusy%  EvalTime(s)
+------------------------------------------------------------------------------------------------------------------------------------------------------
+test_fan21_0_util0.7_ec0.03_nm10_v0           2982.00 6.00    984.90    125.77    80.54     82.50     0.01      0.10      2      66.97   % 0.116     
+test_fan21_10_util0.95_ec0.03_nm10_v2         2752.00 127199.00 700.30    170.62    301.58    224.55    119.56    143.75    317    74.55   % 0.215     
+test_fan21_11_util0.95_ec0.08_nm10_v2         2551.00 76364.00 531.00    142.00    243.89    157.79    69.15     71.46     332    79.18   % 0.174     
+test_fan21_12_util0.7_ec0.03_nm10_v3          2999.00 96.00   978.40    155.39    84.26     83.64     0.11      1.14      7      67.38   % 0.116     
+test_fan21_13_util0.7_ec0.08_nm10_v3          3405.00 104.00  1407.50   99.42     48.00     52.06     0.08      0.89      4      58.66   % 0.098     
+test_fan21_14_util0.95_ec0.03_nm10_v3         2531.00 51896.00 507.60    87.73     219.22    146.65    47.51     59.60     270    79.94   % 0.163     
+test_fan21_15_util0.95_ec0.08_nm10_v3         2681.00 56515.00 666.40    101.69    228.37    165.63    50.21     65.21     301    75.14   % 0.172     
+test_fan21_16_util0.7_ec0.03_nm10_v4          2840.00 94.00   825.60    162.05    92.53     86.62     0.09      0.95      8      70.93   % 0.114     
+test_fan21_17_util0.7_ec0.08_nm10_v4          3121.00 56.00   1023.10   107.44    81.63     82.17     0.04      0.43      4      67.22   % 0.117     
+test_fan21_18_util0.95_ec0.03_nm10_v4         2689.00 70292.00 669.60    161.92    245.96    168.37    62.91     76.94     332    75.10   % 0.199     
+test_fan21_19_util0.95_ec0.08_nm10_v4         2632.00 107461.00 539.50    89.53     279.82    178.67    96.86     95.61     378    79.50   % 0.173     
+test_fan21_1_util0.7_ec0.08_nm10_v0           3035.00 65.00   999.50    125.27    78.56     79.58     0.07      0.75      7      67.07   % 0.247     
+test_fan21_2_util0.95_ec0.03_nm10_v0          2690.00 51640.00 692.20    115.62    205.28    154.68    48.16     60.52     273    74.27   % 0.171     
+test_fan21_3_util0.95_ec0.08_nm10_v0          2580.00 139840.00 576.20    96.83     301.81    200.66    125.69    119.43    348    77.67   % 0.197     
+test_fan21_4_util0.7_ec0.03_nm10_v1           3173.00 6.00    1173.70   129.19    58.70     61.61     0.01      0.13      1      63.01   % 0.100     
+test_fan21_5_util0.7_ec0.08_nm10_v1           2983.00 265.00  912.30    97.96     88.42     83.02     0.25      2.14      12     69.42   % 0.118     
+test_fan21_6_util0.95_ec0.03_nm10_v1          2546.00 113844.00 527.70    120.91    273.70    183.25    99.02     105.90    368    79.27   % 0.189     
+test_fan21_7_util0.95_ec0.08_nm10_v1          2567.00 40559.00 613.90    106.39    182.79    144.74    36.80     58.26     227    76.08   % 0.151     
+test_fan21_8_util0.7_ec0.03_nm10_v2           2954.00 433.00  930.00    203.60    94.83     94.54     0.34      2.20      21     68.52   % 0.123     
+test_fan21_9_util0.7_ec0.08_nm10_v2           3013.00 50.00   1034.30   117.36    73.49     75.17     0.04      0.51      4      65.67   % 0.105     
+
+--- OVERALL AVERAGES for this Individual (across test instances) ---
+Average_MS                     : 2836.20
+Average_TWT                    : 41839.25
+Average_Avg_Machine_Idle       : 814.69
+Average_Std_Machine_Idle       : 125.83
+Average_Avg_Job_Wait           : 163.17
+Average_Std_Job_Wait           : 125.30
+Average_Avg_Tardiness          : 37.85
+Average_Std_Tardiness          : 43.29
+Average_Num_Tardy_Jobs         : 160.80
+Average_Avg_Machine_Utilization: 71.78%
+Average_Eval_Time              : 0.153s

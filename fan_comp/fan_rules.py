@@ -669,15 +669,16 @@ def evaluate_all_rules_on_set(
 ###############################################################################
 if __name__ == "__main__":
     # SETURI DE DATE
-    INPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/extended/test_sets")
-    OUTPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/simplu/clasic/gantt")
-    RESULTS_DIR_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/simplu/clasic/text")
+    INPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/fan21/test_sets")
+    OUTPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/fan/clasic/gantt")
+    RESULTS_DIR_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/fan/clasic/text")
 
     # Set small
+    '''
     INPUT_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/extended/test_sets_small")
     OUTPUT_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/simplu/small/gantt")
     RESULTS_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/simplu/small/text")
-
+'''
     # REGULI
     RULES = [
         "SPT", "LPT", "FIFO", "LIFO", "SRPT", "OPR", "ECT", "LLM", "Random",
@@ -693,12 +694,12 @@ if __name__ == "__main__":
         results_filename="classic_results_ext.txt"
     )
 
-    # Evaluare set small
+    '''# Evaluare set small
     evaluate_all_rules_on_set(
         input_dir=INPUT_DIR_MIC_PATH,
         output_gantt_dir=OUTPUT_DIR_MIC_PATH,
         output_results_dir=RESULTS_DIR_MIC_PATH,
         rules=RULES,
         results_filename="classic_results_mic.txt"
-    )
+    )'''
 
