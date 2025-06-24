@@ -225,15 +225,15 @@ def generate_flex_dataset_with_breakdowns(
 
 if __name__ == "__main__":
     os.makedirs("dynamic_data/extended/training_sets_small", exist_ok=True)
-    os.makedirs("dynamic_data/extended/test_sets", exist_ok=True)
+    os.makedirs("dynamic_data/extended/test_sets_micro", exist_ok=True)
 
     train_instances_no = 4
-    train_instances_no_small = 2
+    train_instances_no_small = 3
     test_instances_no = 2
 
     num_jobs_train = 350
     num_jobs_train_small = 150
-    num_jobs_test = 150
+    num_jobs_test = 100
     num_machines_range = (10, 13, 16)
 
     ops_range_train = (5, 15)
@@ -333,7 +333,7 @@ if __name__ == "__main__":
 
                     print(f"[TEST FLEX+BREAK+CANCEL] Generated: {fname_test}")
                     test_id += 1
-
+'''
     # Generez seturi TEST
     test_id = 0
     for vers in range(1):
@@ -342,7 +342,7 @@ if __name__ == "__main__":
                 for num_machines in num_machines_range:
                     seed_val = 3000 + test_id
                     ds_test = generate_flex_dataset_with_breakdowns(
-                        num_jobs=25,
+                        num_jobs=15,
                         num_machines=num_machines,
                         machine_util=util,
                         ec_percent=ec,
@@ -362,10 +362,9 @@ if __name__ == "__main__":
                         cancelled_job_frac=cancelled_job_frac,
                         cancel_delay_range=cancel_delay_range
                     )
-                    fname_test = f"dynamic_data/extended/test_sets_small/test_small_flex_events_{test_id}_util{util}_ec{ec}_nm{num_machines}_v{vers}.json"
+                    fname_test = f"dynamic_data/extended/test_sets_micro/test_small_flex_events_{test_id}_util{util}_ec{ec}_nm{num_machines}_v{vers}.json"
                     with open(fname_test, "w") as f:
                         json.dump(ds_test, f, indent=2)
 
                     print(f"[TEST FLEX+BREAK+CANCEL] Generated: {fname_test}")
                     test_id += 1
-'''

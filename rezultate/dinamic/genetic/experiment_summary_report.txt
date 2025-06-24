@@ -1,0 +1,62 @@
+Experiment Run: 20250623_192516
+Total Configurations Tested: 2
+Runs per Configuration: 3
+Parameters Grid: {
+  "alpha": [
+    0.2,
+    0.5
+  ],
+  "selection_strategy": [
+    "tournament"
+  ],
+  "crossover_strategy": [
+    "one_point"
+  ],
+  "mutation_strategy": [
+    "node_replacement"
+  ]
+}
+
+--- Best Individual from Each Run (Sorted by Fitness) ---
+Config: alpha_0_2_sel_tournament_cx_one_point_mut_node_replacement, Run: 2
+  Alpha: 0.2, Sel: tournament, CX: one_point, Mut: node_replacement
+  Best Fitness: 1527.8741
+  Simplified Individual: (PT + SLK / (1 + RO)) * PT
+  Run Duration: 7051.98s
+
+Config: alpha_0_2_sel_tournament_cx_one_point_mut_node_replacement, Run: 1
+  Alpha: 0.2, Sel: tournament, CX: one_point, Mut: node_replacement
+  Best Fitness: 1532.2519
+  Simplified Individual: ((min(SLK / PT / DD, SLK / PT / RPT)) - PT) * SLK / PT / RPT * PT
+  Run Duration: 7591.77s
+
+Config: alpha_0_2_sel_tournament_cx_one_point_mut_node_replacement, Run: 3
+  Alpha: 0.2, Sel: tournament, CX: one_point, Mut: node_replacement
+  Best Fitness: 1655.3358
+  Simplified Individual: SLK * (max(PT * (max(PT * (PT - 1), 1)) * WIP, 1))
+  Run Duration: 7018.61s
+
+Config: alpha_0_5_sel_tournament_cx_one_point_mut_node_replacement, Run: 3
+  Alpha: 0.5, Sel: tournament, CX: one_point, Mut: node_replacement
+  Best Fitness: 3318.2716
+  Simplified Individual: PT * (N_ETPC_S + WJ + WIP + SLK) / RPT
+  Run Duration: 7519.65s
+
+Config: alpha_0_5_sel_tournament_cx_one_point_mut_node_replacement, Run: 1
+  Alpha: 0.5, Sel: tournament, CX: one_point, Mut: node_replacement
+  Best Fitness: 3330.0741
+  Simplified Individual: max((max(PT, -3.11)) * PT * (-3.11 + PT + SLK), -3.11 + SLK + PT * PT + TQ)
+  Run Duration: 7062.33s
+
+Config: alpha_0_5_sel_tournament_cx_one_point_mut_node_replacement, Run: 2
+  Alpha: 0.5, Sel: tournament, CX: one_point, Mut: node_replacement
+  Best Fitness: 3338.4877
+  Simplified Individual: PT * ((max(RO, (max(min(PT, PT * SLK), PT * SLK)) + PT * PT)) + PT)
+  Run Duration: 7202.83s
+
+
+--- Overall Best Individual Found Across All Runs ---
+Best Overall Fitness: 1527.8741
+Came from Config: alpha_0_2_sel_tournament_cx_one_point_mut_node_replacement
+From Run Index: 2
+Simplified Individual Formula: (PT + SLK / (1 + RO)) * PT

@@ -16,15 +16,15 @@ from simpleTree import simplify_individual, tree_str, infix_str
 # ---------------------------------------------------------------------------
 # CONFIG (Parametri Generali ai Experimentului)
 # ---------------------------------------------------------------------------
-TRAIN_DIR = Path("dynamic_data/fan21/training_sets")
-TEST_DIR = Path("dynamic_data/fan21/test_sets")
-#TEST_DIR_SMALL = Path("dynamic_data/extended/test_sets_small")
+TRAIN_DIR = Path("dynamic_data/extended/training_sets_small")
+TEST_DIR = Path("dynamic_data/extended/test_sets")
+TEST_DIR_SMALL = Path("dynamic_data/extended/test_sets_micro")
 POP_SIZE = 60
 N_GENERATIONS = 40
 N_WORKERS = 7  # Numărul de worker-i pentru create_toolbox
 MAX_HOF = 5  # Păstrăm doar cei mai buni 5 indivizi per rulare pentru raportare detaliată
 
-BASE_OUTPUT_DIR = Path("rezultate/fan/genetic")  # Directorul de bază pentru toate experimentele
+BASE_OUTPUT_DIR = Path("rezultate/dinamic/genetic")  # Directorul de bază pentru toate experimentele
 
 # ----------------------------------------------------------
 # TUPLE_FIELDS și field
@@ -224,8 +224,8 @@ def main() -> None:
     test_insts: List[FJSPInstance] = load_instances_from_directory(str(TEST_DIR))
     print(f"Loaded {len(test_insts)} test instances.\n")
 
-    #test_insts_small = load_instances_from_directory(str(TEST_DIR_SMALL))
-    #print(f"Loaded {len(test_insts_small)} small test instances.\n")
+    test_insts_small = load_instances_from_directory(str(TEST_DIR_SMALL))
+    print(f"Loaded {len(test_insts_small)} small test instances.\n")
 
     if not train_insts:
         print("No training instances loaded. Exiting.")
@@ -233,12 +233,12 @@ def main() -> None:
 
     # --- Parameter Grid pentru Experimente ---
     param_grid = {
-        "alpha": [0,0.2, 0.5],  # Parametru pentru funcția de fitness
+        "alpha": [0.2, 0.5],  # Parametru pentru funcția de fitness
         "selection_strategy": ["tournament"],#["tournament", "roulette", "best"],  # Strategii de selecție
         "crossover_strategy": ["one_point"],  # Strategii de încrucișare
         "mutation_strategy": ["node_replacement"] #["uniform", "node_replacement"]  # Strategii de mutație
     }
-    num_runs_per_config = 5  # Numărul de rulări pentru fiecare set de parametri
+    num_runs_per_config = 3  # Numărul de rulări pentru fiecare set de parametri
 
     # Stochează rezultatele tuturor rulărilor pentru raportul final
     all_experiment_results: List[Dict[str, Any]] = []
@@ -362,13 +362,13 @@ def main() -> None:
                     )
 
                     # Salvăm rezultatele pe setul de test mic pentru individul curent din HoF
-                '''evaluate_and_save_results(
+                evaluate_and_save_results(
                         instances_for_testing=test_insts_small,
                         best_individuals=hof_current_run,
                         toolbox=toolbox,
                         output_base_dir=run_output_dir / "TestSet_Small",
                         label=f"{config_name}_Run{run_idx + 1}_TestSet_Small"
-                    )'''
+                    )
             else:
                 print(f"  Run {run_idx + 1} did not find any valid individual in Hall of Fame.")
 

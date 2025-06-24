@@ -196,6 +196,7 @@ def compute_priority(
         current_machine_loads: Dict[int, float],
         fore_ops_map: Dict[int, list],
         hind_ops_map: Dict[int, list],
+        jobs_ready_for_current_machine_dispatch
 ) -> float:
     ptime_val = float(processing_time_on_target)
     current_job_ops_list = all_sim_jobs_ops.get(job_sim_id)
@@ -254,33 +255,67 @@ def compute_priority(
         return rDDJ / (rPTJ * frWJETPC) if (rPTJ * frWJETPC) != 0 else (rDDJ / (rPTJ + 1e-9)) / (frWJETPC + 1e-9)
 
     if rule_name == "GPISRule3":
-        SJ = 0  # Placeholder - Slack of job (needs calculation)
+        SJ = 0
+        if job_due_date == float('inf'):
+            return float('inf')  # Joburile fara due date au slack infinit (prioritate mica)
+        rpt_job = 0.0
+        if current_job_ops_list:
+            rpt_job = remaining_processing_time(current_job_ops_list, op_idx_in_job)
+        SJ = job_due_date - current_simulation_time - rpt_job
         PTO = all_sim_jobs_ops[job_sim_id][op_idx_in_job][0][1] if all_sim_jobs_ops.get(job_sim_id) and len(all_sim_jobs_ops[job_sim_id]) > op_idx_in_job and all_sim_jobs_ops[job_sim_id][op_idx_in_job] else 0
         hrTLETPC = get_hrTLETPC(job_sim_id, op_idx_in_job, hind_ops_map)
         tPTJ = sum(alt[1] for op_list in all_sim_jobs_ops[job_sim_id] for alt in op_list) if all_sim_jobs_ops.get(
             job_sim_id) else 0  # Total processing time of job
         nOJ = len(all_sim_jobs_ops[job_sim_id]) if all_sim_jobs_ops.get(job_sim_id) else 1  # Number of operations for the job
-        return (SJ + PTO + hrTLETPC + tPTJ) / nOJ if nOJ != 0 else (SJ + PTO + hrTLETPC + tPTJ)
+        return SJ + PTO + hrTLETPC + tPTJ / nOJ if nOJ != 0 else SJ + PTO + hrTLETPC + tPTJ/(1e-9)
 
     if rule_name == "GPISRule4":
         rDDJ = job_due_dates_map.get(job_sim_id, float('inf')) - current_simulation_time  # Relative Due Date of Job
         rPTJ = remaining_processing_time(all_sim_jobs_ops[job_sim_id], op_idx_in_job)
         WJ = job_weights_map.get(job_sim_id, 1.0)  # Weight of job
         frWJETPC = get_frWJETPC(job_sim_id, op_idx_in_job, job_weight, fore_ops_map)
-        return (rDDJ - rPTJ) * WJ / frWJETPC if frWJETPC != 0 else (rDDJ - rPTJ) * WJ
-
+        return (rDDJ - rPTJ) * WJ / frWJETPC if frWJETPC != 0 else (rDDJ - rPTJ) * WJ/(1e-9)
 
     if rule_name == "GPISRule5":
-        atPTJ = sum(min(alt[1] for alt in op_list) for op_list in
-                    all_sim_jobs_ops[job_sim_id]) / len(all_sim_jobs_ops[job_sim_id]) if all_sim_jobs_ops.get(
-            job_sim_id) and len(all_sim_jobs_ops[job_sim_id]) > 0 else 0
-        rDDJ = job_due_dates_map.get(job_sim_id, float('inf')) - current_simulation_time  # Relative Due Date of Job
-        return rDDJ / atPTJ if atPTJ != 0 else rDDJ / 1e-9
+        atPTJ = (
+            sum(min(alt[1] for alt in op_list) for op_list in all_sim_jobs_ops[job_sim_id])
+            / len(all_sim_jobs_ops[job_sim_id])
+            if all_sim_jobs_ops.get(job_sim_id) else 0.0
+        )
 
-    if rule_name == "GPISRule6":
-        nUJ = len([op for op in all_sim_jobs_ops[job_sim_id] if all(alt[1] > current_simulation_time for alt in op)]) if all_sim_jobs_ops.get(job_sim_id) else 0
-        rPTJ = remaining_processing_time(all_sim_jobs_ops[job_sim_id], op_idx_in_job)
-        return nUJ / rPTJ if rPTJ != 0 else nUJ / 1e-9
+        # -- FIX WTO -------------------------------------------------------------
+        # timpul de aşteptare al operaţiei curente în coadă
+        earliest_start_current = next(
+            (jr_earliest_start_time
+             for jr_job_sim_id, _, _, jr_earliest_start_time in jobs_ready_for_current_machine_dispatch
+             if jr_job_sim_id == job_sim_id),
+            current_simulation_time,  # fallback – nu ar trebui să fie nevoie
+        )
+        WTO = max(0.0, current_simulation_time - earliest_start_current)
+        # ------------------------------------------------------------------------
+
+        nJMWPQ = sum(
+            1 for jr_job_sim_id, *_ in jobs_ready_for_current_machine_dispatch
+            if jr_job_sim_id != job_sim_id
+        )
+
+        total_waiting_time_in_queue = sum(
+            max(0.0, current_simulation_time - jr_earliest_start_time)
+            for jr_job_sim_id, _, _, jr_earliest_start_time in jobs_ready_for_current_machine_dispatch
+            if jr_job_sim_id != job_sim_id
+        )
+        num_ops_in_queue = max(1, nJMWPQ)  # evită împărţirea la 0
+        aWTWPQ = total_waiting_time_in_queue / num_ops_in_queue
+
+        frWJETPC = get_frWJETPC(job_sim_id, op_idx_in_job, job_weight, fore_ops_map)
+        WJ = job_weights_map.get(job_sim_id, 1.0)
+
+        numerator_term1 = atPTJ * nJMWPQ
+        numerator_term2 = WTO
+        numerator = min(numerator_term1 - numerator_term2, aWTWPQ)
+        denominator = frWJETPC * WJ or 1e-9  # protecţie împotriva 0
+
+        return numerator / denominator
 
     return ptime_val  # Fallback to SPT
 
@@ -446,7 +481,10 @@ def schedule_dynamic_no_parallel(
         for m_dispatch in range(n_machines):
             if active_ops_on_machines[m_dispatch] is None and \
                     not any(s_bd <= t < e_bd for s_bd, e_bd in bds_per_machine.get(m_dispatch, [])):
-                best_candidate_dispatch: Optional[Tuple[float, int, int, float]] = None
+
+                # Collect all eligible candidates for the current machine for this dispatch cycle
+                jobs_eligible_for_m_dispatch: List[Tuple[
+                    int, int, float, float]] = []  # (job_sim_id, op_idx, processing_time, effective_op_earliest_start)
 
                 for j_cand_sim_id in list(current_jobs_sim_ops.keys()):
                     job_cand_obj_disp = fjsp_instance.get_job_by_sim_id(j_cand_sim_id)
@@ -472,20 +510,28 @@ def schedule_dynamic_no_parallel(
                         if m_alt == m_dispatch:
                             pt_alt = float(pt_alt_float)
                             if pt_alt < 1e-9: continue
-                            pr = compute_priority(
-                                rule_name, j_cand_sim_id, current_op_idx_for_job, m_dispatch, pt_alt, t,
-                                all_sim_jobs_ops=current_jobs_sim_ops,
-                                job_current_progress=job_progress_sim,
-                                job_arrival_times_map=job_arrival_times_map_sim,
-                                job_weights_map=job_weights_map_sim,
-                                job_due_dates_map=job_due_dates_map_sim,
-                                current_machine_loads=current_machine_loads_sim,
-                                fore_ops_map = fore_ops_map,
-                                hind_ops_map = hind_ops_map,
-                            )
-                            if best_candidate_dispatch is None or pr < best_candidate_dispatch[0]:
-                                best_candidate_dispatch = (pr, j_cand_sim_id, current_op_idx_for_job, pt_alt)
-                            break
+                            jobs_eligible_for_m_dispatch.append(
+                                (j_cand_sim_id, current_op_idx_for_job, pt_alt, current_effective_op_earliest_start))
+                            break  # Found an alternative for this machine, move to next job
+
+                best_candidate_dispatch: Optional[Tuple[float, int, int, float]] = None
+
+                for j_cand_sim_id, current_op_idx_for_job, pt_alt, current_effective_op_earliest_start in jobs_eligible_for_m_dispatch:
+                    pr = compute_priority(
+                        rule_name, j_cand_sim_id, current_op_idx_for_job, m_dispatch, pt_alt, t,
+                        all_sim_jobs_ops=current_jobs_sim_ops,
+                        job_current_progress=job_progress_sim,
+                        job_arrival_times_map=job_arrival_times_map_sim,
+                        job_weights_map=job_weights_map_sim,
+                        job_due_dates_map=job_due_dates_map_sim,
+                        current_machine_loads=current_machine_loads_sim,
+                        fore_ops_map=fore_ops_map,
+                        hind_ops_map=hind_ops_map,
+                        jobs_ready_for_current_machine_dispatch=jobs_eligible_for_m_dispatch
+
+                    )
+                    if best_candidate_dispatch is None or pr < best_candidate_dispatch[0]:
+                        best_candidate_dispatch = (pr, j_cand_sim_id, current_op_idx_for_job, pt_alt)
 
                 if best_candidate_dispatch is not None:
                     _prio_sel, j_sel, op_sel, pt_sel = best_candidate_dispatch
@@ -669,20 +715,20 @@ def evaluate_all_rules_on_set(
 ###############################################################################
 if __name__ == "__main__":
     # SETURI DE DATE
-    INPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/fan21/test_sets")
-    OUTPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/fan/clasic/gantt")
-    RESULTS_DIR_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/fan/clasic/text")
+    INPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/extended/test_sets")
+    OUTPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/dinamic/fan/clasic/gantt")
+    RESULTS_DIR_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/dinamic/fan/clasic/text")
 
     # Set small
-    '''
-    INPUT_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/extended/test_sets_small")
-    OUTPUT_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/simplu/small/gantt")
-    RESULTS_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/simplu/small/text")
-'''
+
+    INPUT_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/extended/test_sets_micro")
+    OUTPUT_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/dinamic/fan/small/gantt")
+    RESULTS_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/dinamic/fan/small/text")
+
     # REGULI
     RULES = [
         "SPT", "LPT", "FIFO", "LIFO", "SRPT", "OPR", "ECT", "LLM", "Random",
-        "EDD", "MST", "GPISRule1", "GPISRule2", "GPISRule3", "GPISRule4", "GPISRule5", "GPISRule6"
+        "EDD", "MST", "GPISRule1", "GPISRule2", "GPISRule3", "GPISRule4", "GPISRule5"
     ]
 
     # Evaluare set clasic (mare)
@@ -694,12 +740,12 @@ if __name__ == "__main__":
         results_filename="classic_results_ext.txt"
     )
 
-    '''# Evaluare set small
+    # Evaluare set small
     evaluate_all_rules_on_set(
         input_dir=INPUT_DIR_MIC_PATH,
         output_gantt_dir=OUTPUT_DIR_MIC_PATH,
         output_results_dir=RESULTS_DIR_MIC_PATH,
         rules=RULES,
         results_filename="classic_results_mic.txt"
-    )'''
+    )
 
