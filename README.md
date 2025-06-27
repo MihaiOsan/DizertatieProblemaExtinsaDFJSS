@@ -67,6 +67,7 @@ Sistemul este construit pe o arhitectură modulară, reflectată în structura c
    deap
    matplotlib
    numpy
+   sympy 
    ```
 
    Apoi rulează comanda de instalare:
