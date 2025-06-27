@@ -84,7 +84,7 @@ def calc_machine_idle_time(sched: List[Tuple], num_total_machines: int) -> Tuple
         if machine_idx is None or op_start is None or op_end is None: continue
         ops_by_m[machine_idx].append((op_start, op_end))
         present_machines.add(machine_idx)
-        if op_end is not None:  # Adaugat verificare None
+        if op_end is not None:
             max_finish_time = max(max_finish_time, op_end)
     idle_total = 0.0
     for m_idx, ops_list in ops_by_m.items():
@@ -192,7 +192,7 @@ def compute_priority(
         job_current_progress: Dict[int, int],
         job_arrival_times_map: Dict[int, float],
         job_weights_map: Dict[int, float],
-        job_due_dates_map: Dict[int, float],  # <-- ADAUGAT: Due Dates
+        job_due_dates_map: Dict[int, float],
         current_machine_loads: Dict[int, float],
         fore_ops_map: Dict[int, list],
         hind_ops_map: Dict[int, list],
@@ -238,6 +238,7 @@ def compute_priority(
             rpt_job = remaining_processing_time(current_job_ops_list, op_idx_in_job)
         slack_time = job_due_date - current_simulation_time - rpt_job
         return slack_time  # Valori mai mici (slack mai small sau negativ) sunt mai prioritare
+
     # --- Adăugare reguli GPHH ---
     if rule_name == "GPISRule1":
         PTO = all_sim_jobs_ops[job_sim_id][op_idx_in_job][0][1] if all_sim_jobs_ops.get(job_sim_id) and len(all_sim_jobs_ops[job_sim_id]) > op_idx_in_job and all_sim_jobs_ops[job_sim_id][op_idx_in_job] else 0
