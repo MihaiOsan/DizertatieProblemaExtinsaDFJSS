@@ -439,7 +439,6 @@ def read_dynamic_fjsp_instance_txt(file_path: str) -> Optional[FJSPInstance]:
             if "Machine Breakdowns" in line_str: parsing_section = "breakdowns"; continue
             if "Added Jobs" in line_str: parsing_section = "added_jobs"; continue
             if "Cancelled Jobs" in line_str: parsing_section = "cancelled_jobs"; continue
-            # ETPC nu e definit in formatul TXT standard
 
             if parsing_section == "jobs":
                 if current_txt_job_idx >= num_jobs_header:
@@ -447,7 +446,6 @@ def read_dynamic_fjsp_instance_txt(file_path: str) -> Optional[FJSPInstance]:
                         f"   Warning (TXT): More job lines than specified in header. Line {line_idx + 1}: '{line_str}'")
                     # Consideram ca trecem la evenimente sau e o eroare
                     parsing_section = "dynamic_events"
-                    # Re-evaluam linia curenta in contextul noii sectiuni? Deocamdata nu.
                     continue
 
                 parts = list(map(int, line_str.split()))

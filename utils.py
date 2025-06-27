@@ -9,14 +9,10 @@ import csv
 from collections import defaultdict
 from typing import List, Dict, Tuple, Any, Optional, Union
 
-# Importuri necesare din alte fișiere ale proiectului.
-# Asigură-te că aceste fișiere (`data_reader.py`, `evaluator.py`) există
-# și conțin definițiile corespunzătoare (`FJSPInstance`, `BreakdownEvent`, `Job`, `get_job_completion_times_from_schedule`).
 from data_reader import FJSPInstance, BreakdownEvent, Job
 from evaluator import get_job_completion_times_from_schedule  # Necesită pentru calc_job_related_metrics
 
 # --- CONSTANTE ȘI FUNCȚII AUXILIARE PENTRU ORAR ---
-# Acestea definesc structura unui tuplu de operație în orar și o funcție helper pentru acces facil.
 TUPLE_FIELDS = {"job": 0, "op": 1, "machine": 2, "start": 3, "end": 4}
 
 

@@ -245,7 +245,7 @@ def main() -> None:
 
     # Pentru a urmări cel mai bun individ găsit în toate rulările și configurațiile
     best_overall_individual_data = {
-        "fitness": float('inf'),  # Inițializăm cu o fitness foarte mare pentru probleme de minimizare
+        "fitness": float('inf'),  # Inițializăm cu un fitness foarte mare pentru probleme de minimizare
         "individual_str": "",
         "config": "",
         "run": -1

@@ -1,8 +1,6 @@
-import copy
 import operator
 
 from deap import tools, algorithms, gp, base
-import random as rd
 from collections import defaultdict
 from typing import List, Dict, Tuple, Any, Optional
 
@@ -137,7 +135,7 @@ def multi_instance_fitness(individual: gp.PrimitiveTree,
     return (total_combined_score / num_valid_instances_evaluated,)
 
 
-def run_genetic_program(train_instances: List[Any],  # Tipul real ar fi List[FJSPInstance]
+def run_genetic_program(train_instances: List[Any],
                         toolbox: base.Toolbox,
                         ngen: int = 10,
                         pop_size: int = 20,
@@ -147,7 +145,7 @@ def run_genetic_program(train_instances: List[Any],  # Tipul real ar fi List[FJS
                         mutpb: float = 0.3,
                         MAX_DEPTH: int = 7,
                         selection_strategy: str = "tournament",  # Opțiuni: "tournament", "roulette", "random", "best"
-                        selection_tournsize: int = 3,  # Rămâne pentru "tournament"
+                        selection_tournsize: int = 3,
                         crossover_strategy: str = "one_point",  # Opțiuni: "one_point", "two_point", "uniform"
                         mutation_strategy: str = "uniform", # Opțiuni: "uniform", "gaussian", "flip_bit", "node_replacement"
                         ):
@@ -205,13 +203,8 @@ def run_genetic_program(train_instances: List[Any],  # Tipul real ar fi List[FJS
     if mutation_strategy == "uniform":
         toolbox.register("mutate", gp.mutUniform, expr=toolbox.expr, pset=toolbox.pset)
     elif mutation_strategy == "gaussian":
-        # gp.mutGaussian necesită 'mu' (media) și 'sigma' (deviația standard) și 'indpb'
-        # Folosim valori implicite comune pentru demonstrație.
         toolbox.register("mutate", tools.mutGaussian, mu=0.0, sigma=1.0, indpb=0.05)
     elif mutation_strategy == "flip_bit":
-        # tools.mutFlipBit pentru liste de biți, sau gp.mutFlipBit pentru GP ar putea fi necesar
-        # Presupunem că e pentru un context de listă de biți dacă nu e GP specific
-        # Pentru GP, ar putea fi mutNodeReplacement cu o distribuție diferită
         toolbox.register("mutate", tools.mutFlipBit, indpb=0.05)  # indpb e probabilitatea de a schimba un bit
     elif mutation_strategy == "node_replacement":
         toolbox.register("mutate", gp.mutNodeReplacement, pset=toolbox.pset)

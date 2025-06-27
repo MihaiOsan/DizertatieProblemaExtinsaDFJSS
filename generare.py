@@ -49,14 +49,12 @@ def generate_flex_dataset_with_breakdowns(
         min_proc_time,
         max_proc_time,
         allowance_factors,
-        # breakdown params
         max_time_horizon,
         mean_time_to_failure,
         mean_repair_time,
         seed=None,
         etpc_min_lapse=5,
         etpc_max_lapse=15,
-        # cancelled jobs params
         cancelled_job_frac=0.0,
         cancel_delay_range=(10, 1000)
 ):
@@ -259,9 +257,6 @@ if __name__ == "__main__":
 
     cancelled_job_frac = 0.05   # 10% din joburi anulate
     cancel_delay_range = (250, 1000) # Anulare la 10-1000 timp după sosire
-
-    # Generez seturi TRAINING MICI
-
 
 
     # Generez seturi TRAINING

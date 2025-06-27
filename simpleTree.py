@@ -18,10 +18,10 @@ from typing import Any, Sequence, Union, Dict, Tuple
 from deap import gp
 
 try:
-    import sympy  # noqa: F401 – numai pentru gp.simplify
+    import sympy
 
     _HAS_SYMPY = True
-except ImportError:  # pragma: no cover
+except ImportError:
     _HAS_SYMPY = False
 
 # ---------------------------------------------------------------------------
@@ -33,7 +33,7 @@ def _is_const(node) -> bool:
 
 
 def _const_val(node) -> Union[int, float]:
-    return float(node)  # type: ignore[arg-type]
+    return float(node)
 
 
 # ---------------------------------------------------------------------------
@@ -115,8 +115,8 @@ def _to_nested(expr: gp.PrimitiveTree, idx: int = 0):
 
     if arity == 0:  # terminal
         if hasattr(node, "value"):
-            return node.value, idx + 1  # constant
-        return node.name, idx + 1       # variable
+            return node.value, idx + 1
+        return node.name, idx + 1
 
     children = []
     next_idx = idx + 1

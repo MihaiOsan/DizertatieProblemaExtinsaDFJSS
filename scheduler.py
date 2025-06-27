@@ -249,7 +249,6 @@ def evaluate_individual(
                 _handle_add_job_event(event, context.current_time)
             elif isinstance(event, CancelJobEvent):
                 _handle_cancel_job_event(event, context.current_time)
-            # Nu există 'else: break' aici, deoarece dorim să procesăm toate evenimentele relevante.
 
     # --- Funcții pentru actualizarea mașinilor ---
     def _update_machine_state():
@@ -321,8 +320,6 @@ def evaluate_individual(
         # 1. Colectează toți candidații posibili (mașină, operație, prioritate)
         for machine in machines:
             if not machine.busy and machine.broken_until <= context.current_time + 0:
-                # Recalculate for the current machine
-                # These variables are correctly calculated here, but initialized above
                 MW_val = (context.current_time + 1.0) - machine.idle_since
                 WIP_val = sum(1 for m_wip in machines if m_wip.busy)
                 TUF_val = max(0.0, machine.broken_until - context.current_time)

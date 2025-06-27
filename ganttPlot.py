@@ -1,12 +1,7 @@
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
-from collections import defaultdict  # Necesar pentru breakdowns_for_plot in __main__ example
 from typing import List, Dict, Tuple, Any, Optional  # Pentru type hints
-from pathlib import Path  # Adaugat pentru exemplul __main__
 
-# Presupunem ca TUPLE_FIELDS si field sunt definite undeva accesibil
-# Daca nu, le putem include aici sau importa.
-# Pentru acest exemplu, le voi include aici pentru a face functia auto-suficienta.
 
 TUPLE_FIELDS = {
     "job": 0,
@@ -20,15 +15,12 @@ TUPLE_FIELDS = {
 def field(op_tuple: Tuple, name: str) -> Any:
     """Returnează câmpul `name` dintr‑un tuplu de operație din schedule."""
     if not isinstance(op_tuple, tuple) or len(op_tuple) < max(TUPLE_FIELDS.values()) + 1:
-        # print(f"Warning: field() received unexpected op_tuple format: {op_tuple}")
         return None  # Sau ridica o eroare mai specifica
     try:
         return op_tuple[TUPLE_FIELDS[name]]
     except KeyError:
-        # print(f"Warning: field '{name}' not found in TUPLE_FIELDS.")
         return None
     except IndexError:
-        # print(f"Warning: IndexError accessing field '{name}' in op_tuple: {op_tuple}")
         return None
 
 
@@ -81,14 +73,12 @@ def plot_gantt(
     # 2) Plot operațiile
     cmap = None
     try:
-        # --- MODIFICARE AICI ---
-        cmap = plt.colormaps.get_cmap("tab20")  # Noua API asteapta doar numele
-        # --- SFARSIT MODIFICARE ---
+        cmap = plt.colormaps.get_cmap("tab20")
     except AttributeError:
         try:
-            cmap = plt.cm.get_cmap("tab20", 20)  # API veche, lut=20 e ok pentru tab20
+            cmap = plt.cm.get_cmap("tab20", 20)
         except ValueError:
-            cmap = plt.cm.get_cmap("viridis", 20)  # Fallback general
+            cmap = plt.cm.get_cmap("viridis", 20)
 
     if cmap is None:  # Fallback final daca totul esueaza
         cmap = plt.cm.get_cmap("viridis", 20)

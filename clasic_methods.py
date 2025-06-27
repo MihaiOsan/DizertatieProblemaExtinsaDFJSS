@@ -1,5 +1,3 @@
-import os
-import copy
 import random
 from collections import defaultdict
 from typing import List, Dict, Tuple, Any, Optional
@@ -170,7 +168,7 @@ def compute_priority(
         job_current_progress: Dict[int, int],
         job_arrival_times_map: Dict[int, float],
         job_weights_map: Dict[int, float],
-        job_due_dates_map: Dict[int, float],  # <-- ADAUGAT: Due Dates
+        job_due_dates_map: Dict[int, float],
         current_machine_loads: Dict[int, float]
 ) -> float:
     ptime_val = float(processing_time_on_target)
@@ -519,7 +517,7 @@ if __name__ == "__main__":
     RESULTS_DIR_PATH.mkdir(parents=True, exist_ok=True)
 
     # --- MODIFICARE: Lista de reguli extinsa ---
-    RULES = ["SPT", "LPT", "FIFO", "LIFO", "SRPT", "OPR", "ECT", "LLM", "Random", "EDD", "MST"]  # <-- ADAUGAT EDD, MST
+    RULES = ["SPT", "LPT", "FIFO", "LIFO", "SRPT", "OPR", "ECT", "LLM", "Random", "EDD", "MST"]
 
     avg_ms_per_rule = {r: [] for r in RULES}
     avg_twt_per_rule = {r: [] for r in RULES}
@@ -527,7 +525,7 @@ if __name__ == "__main__":
     avg_idle_per_rule = {r: [] for r in RULES}
     avg_wait_per_rule = {r: [] for r in RULES}
 
-    RESULTS_FILE_CLASSIC_PATH = RESULTS_DIR_PATH / "classic_oop_main_results_ext_v2.txt"  # Nume fisier nou
+    RESULTS_FILE_CLASSIC_PATH = RESULTS_DIR_PATH / "classic_oop_main_results_ext_v2.txt"
 
     with open(RESULTS_FILE_CLASSIC_PATH, "w", encoding="utf-8") as fout:
         all_loaded_instances: List[FJSPInstance] = load_instances_from_directory(str(INPUT_DIR_CLASSIC_PATH))
