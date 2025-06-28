@@ -1,6 +1,8 @@
 # **Planificarea Dinamică a Evenimentelor folosind Programarea Genetică**
 
-Acest proiect reprezintă o implementare în Python a unei soluții bazate pe Programare Genetică (GP) pentru rezolvarea Problemei Planificării Dinamice în Ateliere de tip Job Shop (Dynamic Job Shop Scheduling Problem \- DJSSP). Sistemul generează automat reguli de dispecerizare (dispatching rules) adaptate la condiții în schimbare (ex: apariția de noi joburi, defectarea mașinilor), având ca scop principal optimizarea performanței atelierului (minimizarea timpului total de finalizare \- makespan).
+Acest proiect reprezintă o implementare în Python a unei soluții bazate pe Programare Genetică (GP) pentru rezolvarea Problemei Planificării Flexibile și Dinamice în Ateliere de tip Job Shop (Dynamic Flexible Job Shop Scheduling Problem \- DFJSSP). Sistemul generează automat reguli de dispecerizare (dispatching rules) adaptate la condiții în schimbare (ex: apariția de noi joburi, defectarea mașinilor), având ca scop principal optimizarea performanței atelierului (minimizarea timpului total de finalizare \- makespan).
+
+Demo: https://youtu.be/jqSRslWqF-o
 
 ## **Concepte Cheie**
 
