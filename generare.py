@@ -222,17 +222,26 @@ def generate_flex_dataset_with_breakdowns(
 
 
 if __name__ == "__main__":
-    os.makedirs("dynamic_data/extended/training_sets_small", exist_ok=True)
-    os.makedirs("dynamic_data/extended/test_sets_micro", exist_ok=True)
 
-    train_instances_no = 4
-    train_instances_no_small = 3
-    test_instances_no = 2
+    BASE_PATH = "dynamic_data/demo"
 
-    num_jobs_train = 350
-    num_jobs_train_small = 150
-    num_jobs_test = 100
-    num_machines_range = (10, 13, 16)
+    TRAIN_DATA_DIR = f"{BASE_PATH}/training_sets"
+    TEST_DATA_DIR = f"{BASE_PATH}/test_sets"
+    TEST_DATA_SMALL_DIR = f"{BASE_PATH}/test_sets_small"
+
+    os.makedirs(TRAIN_DATA_DIR, exist_ok=True)
+    os.makedirs(TEST_DATA_DIR, exist_ok=True)
+    os.makedirs(TEST_DATA_SMALL_DIR, exist_ok=True)
+
+    train_instances_no = 1
+    test_instances_no = 1
+    test_instances_no_small = 1
+
+    num_jobs_train = 10
+    num_jobs_test = 10
+    num_jobs_test_small = 10
+
+    num_machines_range = (6, 10)
 
     ops_range_train = (5, 15)
     ops_range_test = (6, 12)
@@ -259,15 +268,17 @@ if __name__ == "__main__":
     cancel_delay_range = (250, 1000) # Anulare la 10-1000 timp după sosire
 
 
+
+
     # Generez seturi TRAINING
     train_id = 0
-    for vers in range(train_instances_no_small):
+    for vers in range(train_instances_no):
         for util in train_util_list:
             for ec in train_etpc_list:
                 for num_machines in num_machines_range:
                     seed_val = 100 + train_id
                     ds = generate_flex_dataset_with_breakdowns(
-                        num_jobs=num_jobs_train_small,
+                        num_jobs=num_jobs_train,
                         num_machines=num_machines,
                         machine_util=util,
                         ec_percent=ec,
@@ -287,7 +298,7 @@ if __name__ == "__main__":
                         cancelled_job_frac=cancelled_job_frac,
                         cancel_delay_range=cancel_delay_range
                     )
-                    fname = f"dynamic_data/extended/training_sets_small/train_flex_events_{train_id}_util{util}_ec{ec}_nm{num_machines}_v{vers}.json"
+                    fname = f"{TRAIN_DATA_DIR}/train_flex_events_{train_id}_util{util}_ec{ec}_nm{num_machines}_v{vers}.json"
                     with open(fname, "w") as f:
                         json.dump(ds, f, indent=2)
 
@@ -295,7 +306,7 @@ if __name__ == "__main__":
                     train_id += 1
 
     # Generez seturi TEST
-    '''test_id = 0
+    test_id = 0
     for vers in range(test_instances_no):
         for util in test_util_list:
             for ec in test_etpc_list:
@@ -322,22 +333,22 @@ if __name__ == "__main__":
                         cancelled_job_frac=cancelled_job_frac,
                         cancel_delay_range=cancel_delay_range
                     )
-                    fname_test = f"dynamic_data/extended/test_sets/test_flex_events_{test_id}_util{util}_ec{ec}_nm{num_machines}_v{vers}.json"
+                    fname_test = f"{TEST_DATA_DIR}/test_flex_events_{test_id}_util{util}_ec{ec}_nm{num_machines}_v{vers}.json"
                     with open(fname_test, "w") as f:
                         json.dump(ds_test, f, indent=2)
 
                     print(f"[TEST FLEX+BREAK+CANCEL] Generated: {fname_test}")
                     test_id += 1
-'''
-    # Generez seturi TEST
+
+    # Generez seturi TEST mic
     test_id = 0
-    for vers in range(1):
+    for vers in range(test_instances_no_small):
         for util in test_util_list:
             for ec in test_etpc_list:
                 for num_machines in num_machines_range:
                     seed_val = 3000 + test_id
                     ds_test = generate_flex_dataset_with_breakdowns(
-                        num_jobs=15,
+                        num_jobs=num_jobs_test_small,
                         num_machines=num_machines,
                         machine_util=util,
                         ec_percent=ec,
@@ -357,7 +368,7 @@ if __name__ == "__main__":
                         cancelled_job_frac=cancelled_job_frac,
                         cancel_delay_range=cancel_delay_range
                     )
-                    fname_test = f"dynamic_data/extended/test_sets_micro/test_small_flex_events_{test_id}_util{util}_ec{ec}_nm{num_machines}_v{vers}.json"
+                    fname_test = f"{TEST_DATA_SMALL_DIR}/test_small_flex_events_{test_id}_util{util}_ec{ec}_nm{num_machines}_v{vers}.json"
                     with open(fname_test, "w") as f:
                         json.dump(ds_test, f, indent=2)
 

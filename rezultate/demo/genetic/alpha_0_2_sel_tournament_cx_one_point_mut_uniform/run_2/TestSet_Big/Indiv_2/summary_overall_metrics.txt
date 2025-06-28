@@ -1,0 +1,43 @@
+=== Individual 2 (Rank in HoF) ===
+Training_Fitness: 165.0444
+Original_Size: 12, Original_Depth: 5
+Original_Tree (string): add(protected_div(DD, 1), mul(PT, neg(sub(sub(TQ, RO), PT))))
+Simplified_Size: 11, Simplified_Depth: 4
+Simplified_Formula (infix): DD / 1 + PT * (TQ - RO - PT)
+Simplified_Tree_ASCII: 
+└─ add
+   ├─ protected_div
+   │  ├─ DD
+   │  └─ 1
+   └─ mul
+      ├─ PT
+      └─ sub
+         ├─ sub
+         │  ├─ TQ
+         │  └─ RO
+         └─ PT
+
+Per-Instance Summary Results:
+Instance                                      MS      TWT     AvgIdle   StdIdle   AvgWait   StdWait   AvgTard   StdTard   #Tardy AvgBusy%  EvalTime(s)
+------------------------------------------------------------------------------------------------------------------------------------------------------
+test_flex_events_0_util0.75_ec0.08_nm6_v0     1152.00 809.00  350.33    44.53     237.40    147.97    26.60     53.09     3      69.59   % 0.003     
+test_flex_events_1_util0.75_ec0.08_nm10_v0    888.00  830.00  432.90    101.32    179.40    60.01     37.50     46.08     6      51.25   % 0.004     
+test_flex_events_2_util0.75_ec0.15_nm6_v0     1142.00 1732.00 428.67    84.69     266.20    135.09    84.70     167.59    4      62.46   % 0.003     
+test_flex_events_3_util0.75_ec0.15_nm10_v0    889.00  330.00  422.40    116.32    217.90    101.17    13.00     29.26     2      52.49   % 0.004     
+test_flex_events_4_util0.95_ec0.08_nm6_v0     1219.00 870.00  413.50    90.64     275.80    128.40    56.10     78.75     5      66.08   % 0.003     
+test_flex_events_5_util0.95_ec0.08_nm10_v0    949.00  566.00  484.90    120.47    174.40    93.25     28.30     77.23     2      48.90   % 0.004     
+test_flex_events_6_util0.95_ec0.15_nm6_v0     1111.00 0.00    436.83    117.42    311.90    153.68    0.00      0.00      0      60.68   % 0.003     
+test_flex_events_7_util0.95_ec0.15_nm10_v0    889.00  392.00  445.40    108.48    159.20    65.84     9.80      29.40     1      49.90   % 0.004     
+
+--- OVERALL AVERAGES for this Individual (across test instances) ---
+Average_MS                     : 1029.88
+Average_TWT                    : 691.12
+Average_Avg_Machine_Idle       : 426.87
+Average_Std_Machine_Idle       : 97.98
+Average_Avg_Job_Wait           : 227.78
+Average_Std_Job_Wait           : 110.68
+Average_Avg_Tardiness          : 32.00
+Average_Std_Tardiness          : 60.18
+Average_Num_Tardy_Jobs         : 2.88
+Average_Avg_Machine_Utilization: 57.67%
+Average_Eval_Time              : 0.004s

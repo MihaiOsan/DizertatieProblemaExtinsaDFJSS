@@ -16,15 +16,18 @@ from simpleTree import simplify_individual, tree_str, infix_str
 # ---------------------------------------------------------------------------
 # CONFIG (Parametri Generali ai Experimentului)
 # ---------------------------------------------------------------------------
-TRAIN_DIR = Path("dynamic_data/extended/training_sets_small")
-TEST_DIR = Path("dynamic_data/extended/test_sets")
-TEST_DIR_SMALL = Path("dynamic_data/extended/test_sets_micro")
-POP_SIZE = 60
-N_GENERATIONS = 40
+TRAIN_DIR = Path("dynamic_data/demo/training_sets")
+TEST_DIR = Path("dynamic_data/demo/test_sets")
+
+#pentru diagrame Gantt
+TEST_DIR_SMALL = Path("dynamic_data/demo/test_sets_small")
+
+POP_SIZE = 20
+N_GENERATIONS = 15
 N_WORKERS = 7  # Numărul de worker-i pentru create_toolbox
 MAX_HOF = 5  # Păstrăm doar cei mai buni 5 indivizi per rulare pentru raportare detaliată
 
-BASE_OUTPUT_DIR = Path("rezultate/dinamic/genetic")  # Directorul de bază pentru toate experimentele
+BASE_OUTPUT_DIR = Path("rezultate/demo/genetic")  # Directorul de bază pentru toate experimentele
 
 # ----------------------------------------------------------
 # TUPLE_FIELDS și field
@@ -236,9 +239,9 @@ def main() -> None:
         "alpha": [0.2, 0.5],  # Parametru pentru funcția de fitness
         "selection_strategy": ["tournament"],#["tournament", "roulette", "best"],  # Strategii de selecție
         "crossover_strategy": ["one_point"],  # Strategii de încrucișare
-        "mutation_strategy": ["node_replacement"] #["uniform", "node_replacement"]  # Strategii de mutație
+        "mutation_strategy": ["node_replacement", "uniform" ] #["uniform", "node_replacement"]  # Strategii de mutație
     }
-    num_runs_per_config = 3  # Numărul de rulări pentru fiecare set de parametri
+    num_runs_per_config = 2  # Numărul de rulări pentru fiecare set de parametri
 
     # Stochează rezultatele tuturor rulărilor pentru raportul final
     all_experiment_results: List[Dict[str, Any]] = []

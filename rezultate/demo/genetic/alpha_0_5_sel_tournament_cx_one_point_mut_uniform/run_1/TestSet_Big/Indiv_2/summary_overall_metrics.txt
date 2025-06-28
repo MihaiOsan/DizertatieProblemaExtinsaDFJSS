@@ -1,0 +1,39 @@
+=== Individual 2 (Rank in HoF) ===
+Training_Fitness: 401.0278
+Original_Size: 7, Original_Depth: 3
+Original_Tree (string): add(add(3.05, protected_div(SLK, RPT)), PT)
+Simplified_Size: 7, Simplified_Depth: 3
+Simplified_Formula (infix): 3.05 + SLK / RPT + PT
+Simplified_Tree_ASCII: 
+└─ add
+   ├─ add
+   │  ├─ 3.05
+   │  └─ protected_div
+   │     ├─ SLK
+   │     └─ RPT
+   └─ PT
+
+Per-Instance Summary Results:
+Instance                                      MS      TWT     AvgIdle   StdIdle   AvgWait   StdWait   AvgTard   StdTard   #Tardy AvgBusy%  EvalTime(s)
+------------------------------------------------------------------------------------------------------------------------------------------------------
+test_flex_events_0_util0.75_ec0.08_nm6_v0     976.00  32.00   327.17    89.72     192.60    84.34     3.20      9.60      1      66.48   % 0.002     
+test_flex_events_1_util0.75_ec0.08_nm10_v0    707.00  92.00   335.30    92.47     123.90    59.54     4.60      13.80     1      52.57   % 0.004     
+test_flex_events_2_util0.75_ec0.15_nm6_v0     841.00  0.00    292.50    62.27     127.40    65.39     0.00      0.00      0      65.22   % 0.002     
+test_flex_events_3_util0.75_ec0.15_nm10_v0    768.00  0.00    340.60    85.22     188.00    64.09     0.00      0.00      0      55.65   % 0.004     
+test_flex_events_4_util0.95_ec0.08_nm6_v0     859.00  0.00    273.67    70.47     241.20    106.99    0.00      0.00      0      68.14   % 0.002     
+test_flex_events_5_util0.95_ec0.08_nm10_v0    641.00  0.00    274.90    93.89     113.70    61.52     0.00      0.00      0      57.11   % 0.003     
+test_flex_events_6_util0.95_ec0.15_nm6_v0     814.00  0.00    287.50    120.25    215.80    84.56     0.00      0.00      0      64.68   % 0.002     
+test_flex_events_7_util0.95_ec0.15_nm10_v0    745.00  0.00    378.60    132.12    107.40    55.63     0.00      0.00      0      49.18   % 0.004     
+
+--- OVERALL AVERAGES for this Individual (across test instances) ---
+Average_MS                     : 793.88
+Average_TWT                    : 15.50
+Average_Avg_Machine_Idle       : 313.78
+Average_Std_Machine_Idle       : 93.30
+Average_Avg_Job_Wait           : 163.75
+Average_Std_Job_Wait           : 72.76
+Average_Avg_Tardiness          : 0.97
+Average_Std_Tardiness          : 2.93
+Average_Num_Tardy_Jobs         : 0.25
+Average_Avg_Machine_Utilization: 59.88%
+Average_Eval_Time              : 0.003s

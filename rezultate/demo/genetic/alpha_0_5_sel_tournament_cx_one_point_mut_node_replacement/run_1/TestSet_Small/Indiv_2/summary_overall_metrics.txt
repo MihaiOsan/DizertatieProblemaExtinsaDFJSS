@@ -1,0 +1,41 @@
+=== Individual 2 (Rank in HoF) ===
+Training_Fitness: 401.1944
+Original_Size: 9, Original_Depth: 3
+Original_Tree (string): add(protected_div(sub(RO, WIP), RPT), add(RO, PT))
+Simplified_Size: 9, Simplified_Depth: 3
+Simplified_Formula (infix): (RO - WIP) / RPT + RO + PT
+Simplified_Tree_ASCII: 
+└─ add
+   ├─ protected_div
+   │  ├─ sub
+   │  │  ├─ RO
+   │  │  └─ WIP
+   │  └─ RPT
+   └─ add
+      ├─ RO
+      └─ PT
+
+Per-Instance Summary Results:
+Instance                                      MS      TWT     AvgIdle   StdIdle   AvgWait   StdWait   AvgTard   StdTard   #Tardy AvgBusy%  EvalTime(s)
+------------------------------------------------------------------------------------------------------------------------------------------------------
+test_small_flex_events_0_util0.75_ec0.08_nm6_v0 873.00  0.00    326.33    60.47     216.20    139.84    0.00      0.00      0      62.62   % 0.003     
+test_small_flex_events_1_util0.75_ec0.08_nm10_v0 623.00  0.00    247.80    63.05     107.30    39.09     0.00      0.00      0      60.22   % 0.003     
+test_small_flex_events_2_util0.75_ec0.15_nm6_v0 890.00  734.00  307.17    75.07     230.70    136.86    36.70     80.24     2      65.49   % 0.003     
+test_small_flex_events_3_util0.75_ec0.15_nm10_v0 760.00  0.00    412.60    83.48     135.00    59.39     0.00      0.00      0      45.71   % 0.004     
+test_small_flex_events_4_util0.95_ec0.08_nm6_v0 886.00  472.00  319.83    45.56     204.70    126.81    21.40     57.24     2      63.90   % 0.003     
+test_small_flex_events_5_util0.95_ec0.08_nm10_v0 682.00  114.00  299.70    81.60     146.40    45.82     5.70      17.10     1      56.06   % 0.003     
+test_small_flex_events_6_util0.95_ec0.15_nm6_v0 908.00  356.00  257.33    98.08     200.50    103.56    10.60     22.84     2      71.66   % 0.002     
+test_small_flex_events_7_util0.95_ec0.15_nm10_v0 721.00  0.00    356.20    71.67     127.40    58.52     0.00      0.00      0      50.60   % 0.004     
+
+--- OVERALL AVERAGES for this Individual (across test instances) ---
+Average_MS                     : 792.88
+Average_TWT                    : 209.50
+Average_Avg_Machine_Idle       : 315.87
+Average_Std_Machine_Idle       : 72.37
+Average_Avg_Job_Wait           : 171.03
+Average_Std_Job_Wait           : 88.74
+Average_Avg_Tardiness          : 9.30
+Average_Std_Tardiness          : 22.18
+Average_Num_Tardy_Jobs         : 0.88
+Average_Avg_Machine_Utilization: 59.53%
+Average_Eval_Time              : 0.003s

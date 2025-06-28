@@ -716,15 +716,15 @@ def evaluate_all_rules_on_set(
 ###############################################################################
 if __name__ == "__main__":
     # SETURI DE DATE
-    INPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/extended/test_sets")
-    OUTPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/dinamic/fan/clasic/gantt")
-    RESULTS_DIR_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/dinamic/fan/clasic/text")
+    INPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/demo/test_sets")
+    OUTPUT_DIR_CLASSIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/demo/fan/clasic/gantt")
+    RESULTS_DIR_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/demo/fan/clasic/text")
 
     # Set small
 
-    INPUT_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/extended/test_sets_micro")
-    OUTPUT_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/dinamic/fan/small/gantt")
-    RESULTS_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/dinamic/fan/small/text")
+    INPUT_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/dynamic_data/demo/test_sets_small")
+    OUTPUT_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/demo/fan/small/gantt")
+    RESULTS_DIR_MIC_PATH = Path("/Users/mihaiosan/PycharmProjects/DizertatieProblemaExtinsaDFJSS/rezultate/demo/fan/small/text")
 
     # REGULI
     RULES = [
