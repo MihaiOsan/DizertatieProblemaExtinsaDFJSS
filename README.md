@@ -83,24 +83,32 @@ Proiectul poate fi rulat în mai multe moduri, în funcție de obiectivul urmăr
 
 ### **1\. (Opțional) Generarea Seturilor de Date**
 
-Dacă dorești să creezi noi instanțe de test, poți rula scriptul generare.py. Poți modifica parametrii de generare (număr de joburi, mașini, etc.) direct în interiorul fișierului.  
+Dacă dorești să creezi noi instanțe de test, poți rula scriptul generare.py. Poți modifica parametrii de generare (număr de joburi, mașini, etc.) direct în interiorul fișierului. 
+```bash
 python generare.py
+```
 
 ### **2\. Rularea Algoritmului Evolutiv (GP)**
 
 Acesta este scriptul principal al proiectului. El încarcă o instanță, rulează procesul evolutiv pentru a descoperi o regulă de dispecerizare optimă și salvează rezultatele în directorul rezultate/.  
+```bash
 python main.py
+```
 
 Poți configura fișierele de intrare/ieșire și parametrii algoritmului (dimensiunea populației, numărul de generații etc.) în secțiunea de configurare a scriptului main.py.
 
 ### **3\. Rularea Testelor cu Metode Clasice**
 
 Pentru a obține un baseline de performanță, poți evalua regulile de dispecerizare standard (FIFO, SPT, LPT etc.) pe un set de instanțe.  
+```bash
 python clasic\_methods.py
+```
 
 ### **4\. Rularea Testelor Comparative (inclusiv reguli Fan)**
 
 Acest script oferă o analiză comparativă mai complexă, incluzând atât regulile clasice, cât și reguli mai avansate propuse în literatura de specialitate, pe aceleași seturi de date.  
+```bash
 python fan\_comp/fan\_rules.py
+```
 
 **Autor:** Oșan Mihai
